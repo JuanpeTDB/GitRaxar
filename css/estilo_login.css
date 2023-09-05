@@ -1,0 +1,128 @@
+@font-face {
+    font-family: cocogoose;
+    src: url(../fonts/Cocogoose.ttf);
+}
+
+@font-face {
+    font-family: nexa;
+    src: url(../fonts/Nexa.ttf);
+}
+
+@font-face {
+    font-family: heavitas;
+    src: url(../fonts/Heavitas.ttf);
+}
+
+@font-face {
+    font-family: bebas;
+    src: url(../fonts/Bebas.otf);
+}
+
+body {
+    background-color: #F8F8F8;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+#box {
+    width: 57.11%;
+    height: 60.70vh;
+    box-shadow: 4px 4px 44px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.div_logo {
+    width: 38.76%;
+    height: 60.70vh;
+    background-color: #9ED4AE;
+    border-radius: 12px;
+    position: absolute;
+}
+
+#logo {
+    position: absolute;
+    width: 60%;
+    left: 20%;
+    top: 25%;
+}
+
+#Usu {
+    width: 22.18%;
+    height: 9vh;
+    border-radius: 20px;
+    border-color: black;
+    border-width: 1px;
+    left: 46.41%;
+    top: 35vh;
+    position: fixed;
+    font-size: 25px;
+    padding-left: 2%;
+    border-color: #20A144;
+    border-style: solid;
+    color: #20A144;
+    margin-left: 2.1%;
+}
+
+#Passwd {
+    width: 22.18%;
+    height: 9vh;
+    border-radius: 20px;
+    border-color: black;
+    border-width: 1px;
+    position: fixed;
+    left: 46.41%;
+    top: 50.76vh;
+    font-size: 25px;
+    padding-left: 2%;
+    border-color: #20A144;
+    border-style: solid;
+    color: #20A144;
+    margin-left: 2.1%;
+}
+
+input::placeholder {
+    font-size: 20px;
+    padding-top: 0%;
+    transform: translateY(-50%);
+    padding-left: 6%;
+    transition: font-size 0.3s ease;
+}
+
+input:focus::placeholder {
+    transform: translateY(-150%);
+    left: -40%;
+    font-size: 14px;
+}
+
+#btnIngresar {
+    padding: auto;
+    background-color: #9ED4AEaa;
+    border-radius: 10px;
+    height: 5.46vh;
+    width: 14.53%;
+    left: 53.61%;
+    position: fixed;
+    top: 66.70vh;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #20A144;
+    color: #20A144;
+    font-family: cocogoose;
+}
+
+#msj_error {
+    font-family: nexa;
+    color: red;
+    position: fixed;
+    top: 72vh;
+    width: 43.09%;
+    right: 17.7%;
+    text-align: center;
+}

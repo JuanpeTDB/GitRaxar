@@ -1,0 +1,332 @@
+@font-face {
+    font-family: cocogoose;
+    src: url(../fonts/Cocogoose.ttf);
+}
+
+@font-face {
+    font-family: nexa;
+    src: url(../fonts/Nexa.ttf);
+}
+
+@font-face {
+    font-family: heavitas;
+    src: url(../fonts/Heavitas.ttf);
+}
+
+@font-face {
+    font-family: bebas;
+    src: url(../fonts/Bebas.otf);
+}
+
+body {
+    background-color: #F8F8F8;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    position: relative;
+    width: 5.5%;
+    left: 6%;
+    top: 14%;
+}
+
+header {
+    background-color: #9ED4AE;
+    height: 15vh;
+    border-bottom: #20A144;
+    border-bottom-style: solid;
+    border-bottom-width: 4px;
+}
+
+.logos {
+    margin-top: 4vh;
+    height: 20vh;
+    object-fit: cover;
+}
+
+.btnatras {
+    color: #20A144;
+    font-family: nexa;
+    font-size: 20px;
+    background-color: #ffffff00;
+    border-style: none;
+    position: absolute;
+    right: 80px;
+    top: 40px;
+    text-decoration: none;
+}
+
+.footer {
+    position: absolute;
+    background-color: #9ED4AE;
+    height: 15vh;
+    border-top: #20A144;
+    border-top-style: solid;
+    border-top-width: 4px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+}
+
+.contenedor {
+    text-align: center;
+    padding: 1%;
+}
+
+h1 {
+    font-size: 68px;
+    font-family: nexa;
+    color: #20A144;
+}
+
+
+/*================= ADM CHOFERES ==================*/
+
+table {
+    width: 100%;
+    text-align: left;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+h2 {
+    font-size: 36px;
+    font-family: nexa;
+    color: #20A144;
+    padding-left: 10%;
+}
+
+hr {
+    border-width: 1.5px;
+    border-style: solid;
+    color: #20A144;
+}
+
+.agregar {
+    width: 9%;
+    position: absolute;
+    right: 9%;
+    top: 27%;
+    border-radius: 15px;
+    background-color: #9ED4AE;
+    border-style: none;
+}
+
+.boton {
+    width: 45%;
+}
+
+
+/*============ ADM DENTRO CHOFERES ============*/
+
+.info {
+    text-align: center;
+    width: 100%;
+}
+
+h3 {
+    font-size: 36px;
+    font-family: nexa;
+    color: #20A144;
+}
+
+h4 {
+    font-size: 30px;
+    font-family: nexa;
+    color: #9ED4AE;
+}
+
+.tbtn {
+    width: 100%;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.btns {
+    display: inline-block;
+    margin: 0 150px;
+    width: 220px;
+    height: 300px;
+    border-radius: 30px;
+    background-color: #9ED4AE;
+    padding: 5px;
+}
+
+.logos {
+    margin-top: 4vh;
+    height: 20vh;
+}
+
+.subtit {
+    font-size: 24px;
+    font-family: nexa;
+    color: #20A144;
+}
+
+.acciones {
+    position: absolute;
+    width: 300px;
+    right: 100px;
+    top: 180px;
+}
+
+.imgboton {
+    width: 70%;
+}
+
+button {
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    background-color: #9ED4AE;
+    border-radius: 180px;
+    border-style: none;
+}
+
+
+/*========== ADM DENTRO PLANILLA =========*/
+
+table {
+    width: 100%;
+    text-align: left;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+.titulo {
+    font-size: 58px;
+    font-family: nexa;
+    color: #20A144;
+    display: inline;
+    padding-top: 100px;
+}
+
+.subtitDP {
+    font-size: 36px;
+    font-family: nexa;
+    color: #20A144;
+}
+
+h3 {
+    font-size: 32px;
+    font-family: nexa;
+    color: #20A144;
+}
+
+.datos {
+    font-size: 28px;
+    font-family: nexa;
+    color: #20A144;
+}
+
+.datos_planilla {
+    width: 200px;
+    position: relative;
+    text-align: center;
+    text-align: center;
+}
+
+
+/*====== ADM EDITAR CHOFER======*/
+
+.container {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 60px;
+    padding-top: 15px;
+}
+
+
+/*tr td {
+    text-align: center;
+}*/
+
+.subtitulos {
+    font-size: 26px;
+    font-family: nexa;
+    color: #20A144;
+}
+
+.campos {
+    height: 50px;
+    width: 300px;
+    border-color: #9ED4AE;
+    border-style: solid;
+    border-width: 3px;
+    font-size: 20px;
+    color: #20A144;
+    font-family: nexa;
+    padding-left: 15px;
+}
+
+.botones {
+    font-family: nexa;
+    color: #20A144;
+    background-color: #9ED4AE;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #20A144;
+    border-radius: 15px;
+    margin: 40px;
+    width: 180px;
+    height: 50px;
+    font-size: 20px;
+}
+
+.campos2 {
+    height: 50px;
+    width: 350px;
+    border-color: #9ED4AE;
+    border-style: solid;
+    border-width: 3px;
+    font-size: 20px;
+    color: #20A144;
+    font-family: nexa;
+    padding-left: 15px;
+}
+
+
+/*======= COCHES =======*/
+
+.campos3 {
+    height: 50px;
+    width: 300px;
+    border-color: #9ED4AE;
+    border-style: solid;
+    border-width: 3px;
+    font-size: 20px;
+    color: #20A144;
+    font-family: nexa;
+    padding-left: 15px;
+}
+
+.btn1 {
+    font-family: nexa;
+    color: #20A144;
+    background-color: #9ED4AE;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #20A144;
+    border-radius: 15px;
+    margin: 40px;
+    width: 180px;
+    height: 50px;
+    font-size: 20px;
+}
+
+.cont2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabla {
+    width: 60%;
+    text-align: center;
+    padding-bottom: 60px;
+}

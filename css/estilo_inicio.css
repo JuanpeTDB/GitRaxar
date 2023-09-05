@@ -1,0 +1,89 @@
+@font-face {
+    font-family: cocogoose;
+    src: url(../fonts/Cocogoose.ttf);
+}
+
+@font-face {
+    font-family: nexa;
+    src: url(../fonts/Nexa.ttf);
+}
+
+@font-face {
+    font-family: heavitas;
+    src: url(../fonts/Heavitas.ttf);
+}
+
+@font-face {
+    font-family: bebas;
+    src: url(../fonts/Bebas.otf);
+}
+
+body {
+    background-color: #F8F8F8;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    position: relative;
+    width: 5.5%;
+    left: 6%;
+    top: 14%;
+}
+
+header {
+    background-color: #9ED4AE;
+    height: 15vh;
+    border-bottom: #20A144;
+    border-bottom-style: solid;
+    border-bottom-width: 4px;
+}
+
+.logos {
+    margin-top: 4vh;
+    height: 20vh;
+    object-fit: cover;
+}
+
+.contenedor {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    display: grid;
+    justify-content: center;
+}
+
+.footer {
+    position: absolute;
+    background-color: #9ED4AE;
+    height: 15vh;
+    border-top: #20A144;
+    border-top-style: solid;
+    border-top-width: 4px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 100px;
+}
+
+td {
+    width: 250px;
+    height: 320px;
+    border-radius: 30px;
+    background-color: #9ED4AE;
+    text-align: center;
+}
+
+h2 {
+    font-size: 36px;
+    font-family: nexa;
+    color: #20A144;
+    width: auto;
+}
