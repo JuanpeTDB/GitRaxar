@@ -15,13 +15,13 @@
 
     <?php
         require_once '../../conexion.php';
-        $cod_chofer = $_GET['cod_chofer'];
-        $query = "SELECT * FROM chofer WHERE cod_chofer = '$cod_chofer'";
+        $ci = $_GET['ci'];
+        $query = "SELECT * FROM chofer WHERE ci = '$ci'";
 		$result = mysqli_query($conn, $query);
 		$json = array();
 		if($result) {
 			while($row = mysqli_fetch_assoc($result)) {
-                $cod_chofer = $row['cod_chofer'];
+                $ci = $row['ci'];
                 $nombre = $row['nombre'];
                 $apellido = $row['apellido'];
                 $telefono = $row['telefono'];

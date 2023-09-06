@@ -1,8 +1,8 @@
 <?php
 	require_once '../../conexion.php';
  
-	$cod_chofer = $_POST['cod_chofer'];
-    $query = "UPDATE `auto` set `activo` = 0 WHERE `ci` = '$cod_chofer'";
+	$ci = $_POST['ci'];
+    $query = "UPDATE `auto` set `activo` = 0 WHERE `ci` = '$ci'";
 	$result = mysqli_query($conn, $query);
 
 	echo 'ok';

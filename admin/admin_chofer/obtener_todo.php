@@ -7,7 +7,7 @@
 		if($result) {
 			while($row = mysqli_fetch_assoc($result)) {
             $json[] = array(
-                'cod_chofer' => $row['ci'],
+                'ci' => $row['ci'],
                 'nombre' => $row['nombre'],
                 'apellido' => $row['apellido'],
                 'telefono' => $row['telefono'],
