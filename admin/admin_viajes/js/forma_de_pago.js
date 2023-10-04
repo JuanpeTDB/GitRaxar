@@ -1,5 +1,6 @@
 $(document).ready(function() {
     $("#metodoPago").change(function() {
+        var tarjeta = " ";
         if ($(this).val() === "4") {
             $("#opcionesTarjeta").show();
         } else {
@@ -8,17 +9,33 @@ $(document).ready(function() {
     });
 
     $("#btnContinuar").click(function() {
+        var metodoPago = $("#metodoPago").val();
+        var MP = " ";
+        var tipoTarjeta = $("input[name='tipoTarjeta']:checked").val();
 
-        $("#metodoPago").change(function() {
-            if ($(this).val() != "") {
-                abrirPopup();
-            } else {
-                alert("Por favor seleccione una opcion");
-            }
-        });
+        if (metodoPago === null || metodoPago === "") {
+            alert("Por favor, seleccione un método de pago.");
+        } else if (metodoPago === "4" && (tipoTarjeta === undefined || tipoTarjeta === null)) {
+            alert("Por favor, seleccione un tipo de tarjeta.");
+        } else if (metodoPago === "4" && (tipoTarjeta === "debito")) {
+            MP = "debito";
+            abrirPopup();
+        } else if (metodoPago === "4" && (tipoTarjeta === "credito")) {
+            MP = "credito";
+            abrirPopup();
+        } else if (metodoPago === "1") {
+            MP = "efectivo";
+            abrirPopup();
+        } else if (metodoPago === "2") {
+            MP = "transferencia";
+            abrirPopup();
+        } else if (metodoPago === "3") {
+            MP = "cta_corriente";
+            abrirPopup();
+        }
     });
-
 });
+
 
 function abrirPopup() {
     var contenedor = $("<div>").css({
