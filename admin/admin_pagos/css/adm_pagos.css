@@ -80,9 +80,11 @@ header {
 }
 
 h1 {
-    font-size: 72px;
+    font-size: 64px;
     font-family: nexa;
     color: #20A144;
+    margin: 0px;
+    padding-top: 30px;
 }
 
 

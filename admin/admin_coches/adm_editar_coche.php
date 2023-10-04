@@ -7,8 +7,12 @@
     <link rel="stylesheet" type="text/css" href="css/estilo_adm_editar_coche.css">
 </head>
 <body>
-    <header>
-		<img class="logo" src="img/REMI_completo.png">
+<header>
+		<div class="logo">
+			<img src="img/REMI_logo.png" alt="logo remi">
+			<h2 class="nombre-remi">REMI</h2>
+		</div>
+        
 	</header>
 
 
@@ -43,17 +47,14 @@
                             <h2>Marca</h2>
                             <input type="text" name="marca" value="<?php echo $marca; ?>"></input>
                         </td>
+                    </tr>
+                    <tr>
                         <td>
                             <h2>Modelo</h2>
                             <input type="text" name="modelo" value="<?php echo $modelo; ?>"></input>
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            <h2>Matricula</h2>
-                            <input type="text" name="newMatricula" minlength="8" maxlength="8" value="<?php echo $newMatricula; ?>"></input>
-                            
-                        </td>
                         <td>
                             <h2>Año</h2>
                             <input type="text" name="anio" value="<?php echo $anio; ?>"></input>
@@ -68,11 +69,12 @@
             <button id="btnAtras">ATRAS</button>    
             <button id="btnGuardar">GUARDAR</button>    
         
-            <br><br><br><br><br>
+            
+    </div>
+    <br><br><br>
             <div class="footer">
                 
         </div>
-    </div>
 
 
 

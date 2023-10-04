@@ -28,22 +28,37 @@ body {
 }
 
 .logo {
-    position: relative;
-    width: 5.5%;
-    left: 6%;
-    top: 14%;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 70px;
+    margin-right: 10px;
+    margin-left: 40px;
+}
+
+.nombre-remi {
+    font-size: 40px;
+    padding: 0%;
+    font-family: nexa;
+    color: #20A144;
 }
 
 header {
     background-color: #9ED4AE;
-    height: 15vh;
+    min-height: 70px;
     border-bottom: #20A144;
     border-bottom-style: solid;
     border-bottom-width: 4px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
 }
 
 .footer {
-    position: absolute;
+    flex-shrink: 0;
     background-color: #9ED4AE;
     height: 15vh;
     border-top: #20A144;
@@ -54,31 +69,41 @@ header {
     margin: 0;
     left: 0;
     right: 0;
-    bottom: auto;
+    bottom: 0;
+    margin-top: auto;
 }
 
 .contenedor {
     text-align: center;
-    padding: 1%;
+}
+
+.cont2 {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 h1 {
-    font-size: 72px;
+    font-size: 64px;
     font-family: nexa;
     color: #20A144;
+    padding-top: 30px;
+    margin: 0;
 }
 
 
 /*============================================================================================================*/
 
 table {
-    width: 100%;
+    width: 70%;
     text-align: center;
-    padding-bottom: 60px;
-    padding-top: 15px;
+    padding-bottom: 10px;
 }
 
 tr td {
+    padding-top: 5px;
     text-align: center;
 }
 
@@ -97,19 +122,19 @@ input {
     font-size: 20px;
     color: #20A144;
     font-family: nexa;
-    padding-left: 15px;
+    padding-left: 10px;
 }
 
 select {
     height: 50px;
-    width: 300px;
+    width: 50%;
     border-color: #9ED4AE;
     border-style: solid;
     border-width: 3px;
     font-size: 20px;
     color: #20A144;
     font-family: nexa;
-    padding-left: 15px;
+    padding-left: 10px;
 }
 
 button {
@@ -120,8 +145,48 @@ button {
     border-width: 2px;
     border-color: #20A144;
     border-radius: 15px;
-    margin: 40px;
+    margin-top: 40px;
     width: 180px;
     height: 50px;
     font-size: 20px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+@media (max-width: 1000px) {
+    header {
+        flex-direction: column;
+    }
+    nav {
+        padding: 10px 0px;
+        text-align: center;
+    }
+    .logo img {
+        height: 50px;
+    }
+}
+
+@media (max-width: 860px) {
+    h1 {
+        font-size: 42px;
+        font-family: nexa;
+        color: #20A144;
+        padding-bottom: 4px;
+    }
+    input {
+        width: 75%;
+        font-size: 16px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+    #btnGuardar {
+        width: 120px;
+    }
+    #btnAtras {
+        width: 120px;
+    }
+    body {
+        justify-content: space-between;
+    }
 }

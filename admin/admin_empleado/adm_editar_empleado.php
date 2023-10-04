@@ -7,50 +7,99 @@
     <link rel="stylesheet" type="text/css" href="css/estilo_adm_editar_empleado.css">
 </head>
 <body>
+
+    <?php
+        require_once '../../conexion.php';
+        $ci = $_GET['ci'];
+        $query = "SELECT * FROM usuario WHERE ci = '$ci'";
+		$result = mysqli_query($conn, $query);
+		$json = array();
+		if($result) {
+			while($row = mysqli_fetch_assoc($result)) {
+                $nombre = $row['nombre'];
+                $apellido = $row['apellido'];
+                $usuario = $row['nombre_usuario'];
+                $contrasenia = $row['contrasenia'];
+                $rol = $row['rol'];
+                $telefono = $row['telefono'];
+                $ci = $row['ci'];
+        	}
+		}
+    ?>
+
     <header>
-		<img class="logo" src="img/REMI_completo.png">
+    <div class="logo">
+			<img src="img/REMI_logo.png" alt="logo remi">
+			<h2 class="nombre-remi">REMI</h2>
+		</div>
 	</header>
 
+<form id="edicion" action="editarEmpleado.php" method="POST">
     <div class="contenedor">
     
         <h1>EDITAR EMPLEADO</h1>
 
         <div class="cont2">
-
-            <table>
+        
+        <input type="hidden" name="ci" value="<?php echo $ci; ?>">
+            <table class="div-dek">
                 <tr>
                     <td>
                         <h2>Nombre</h2>
-                        <input type="text" value="Juan Fripp"></input>
+                        <input name="nombre" type="text" value="<?php echo $nombre ?>"></input>
                     </td>
                     <td>
-                        <h2>Cedula</h2>
-                        <input type="text" value="5.432.029-1"></input>
+                        <h2>Apellido</h2>
+                        <input name="apellido" type="text" value="<?php echo $apellido ?>"></input>
+                    </td>
+                    <td>
+                        <h2>Nombre de usuario</h2>
+                        <input name="usuario" type="text" value="<?php echo $usuario ?>"></input>
                     </td>
                 </tr>
                 <tr>
                     <td>
+                        <h2>Contraseña</h2>
+                        <input name="contrasenia" type="text" value="<?php echo $contrasenia ?>"></input>
+                    </td>
+                    <td>
                         <h2>Telefono</h2>
-                        <input type="text" value="+598 99 121 023"></input>
+                        <input type="text" name="telefono" value="<?php echo $telefono ?>"></input>
                     </td>
                     <td>
                         <h2>Rol</h2>
-                        <select>
-                            <option value="empleado">Empleado</option>
+                        <select name="rol">
+                            <option value="administrador">Administrador</option>
                             <option value="administrativo">Administrativo</option>
                         </select>
                     </td>
                 </tr>
             </table>
+
+            
+        
             
         </div>
-
-        <button onclick="window.location.href='adm_dentro_empleado.php';">ATRAS</button>    
-        <button onclick="window.location.href='adm_dentro_empleado.php';">GUARDAR</button>    
-    
-        <br><br><br><br><br>
-        <div class="footer">
+</form>
+        <button id="btnAtras">ATRAS</button>    
+        <button id="btnGuardar">GUARDAR</button> 
             
         </div>
     </div>
+
+    <br><br><br>
+    <div class="footer">
+
 </body>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        $("#btnAtras").click(function() {
+            window.history.back();
+        });
+        $("#btnGuardar").click(function() {
+            $("#edicion").submit();
+        });
+</script>
+</html>

@@ -8,7 +8,10 @@
 </head>
 <body>
 <header>
-		<img class="logo" src="img/REMI_completo.png">
+		<div class="logo">
+			<img src="img/REMI_logo.png" alt="logo remi">
+			<h2 class="nombre-remi">REMI</h2>
+		</div>
         <a href="adm_viajes.php" class="btnatras">ATRAS</a>
 	</header>
 
@@ -16,51 +19,10 @@
         <h1>VIAJES</h1>
 
         <div class="box">
-            <table>
-                <tr onclick="window.location.href='adm_dentro_viaje.php';">
-                    <td>
-                        <h2>Rodrigo Aguirre</h2>
-                        <hr>
-                    </td>
-                </tr>
+            <table id="container_info">
                 
-                <tr>
-                    <td>
-                        <h2>Gonzalo Bergessio</h2>
-                        <hr>
-                    </td>
-                </tr>
                 
-                <tr>
-                    <td>
-                        <h2>Mateo Ponte</h2>
-                        <hr>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <h2>Fabricio Diaz</h2>
-                        <hr>
-                        
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <h2>Rodrgio Chagas</h2>
-                        <hr>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <h2>Renzo Sanchez</h2>
-                        <hr>
-                    </td>
-                </tr>
-                
-            <table>
+            </table>
             
         </div>
     </div>
@@ -70,4 +32,8 @@
 		
     </div>
 </body>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script_funciones.js"></script>
 </html>

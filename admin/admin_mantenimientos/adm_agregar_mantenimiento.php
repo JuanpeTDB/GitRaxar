@@ -7,59 +7,87 @@
     <link rel="stylesheet" type="text/css" href="css/estilo_agregar_mantenimiento.css">
 </head>
 <body>
+
+    <?php
+        require_once '../../conexion.php';
+        $matricula = $_GET['matricula'];
+        $query = "SELECT * FROM auto a
+        INNER JOIN requiere r on r.matricula = a.matricula
+        INNER JOIN mantenimiento m on m.cod_mantenimiento = r.cod_mantenimiento
+        WHERE a.matricula = '$matricula';";
+		$result = mysqli_query($conn, $query);
+		$json = array();
+		if($result) {
+			while($row = mysqli_fetch_assoc($result)) {
+                $matricula = $row['matricula'];
+                $marca = $row['marca'];
+                $modelo = $row['modelo'];
+                $anio = $row['anio'];
+                $cod_mantenimiento = $row['cod_mantenimiento'];
+                $tipo = $row['tipo']; 
+                $descripcion = $row['descripcion'];
+        	}
+		}
+        
+    ?>
+
     <header>
 		<img class="logo" src="img/REMI_completo.png">
+        <a href="adm_dtro_mantenimiento.php?matricula=<?php echo $matricula; ?>" class="btnatras">ATRAS</a>
 	</header>
 
     <div class="contenedor">
     
         <h1>AGREGAR MANTENIMIENTO</h1>
 
-        <div class="cont2">
+        <form action="agregarMantenimiento.php?matricula=<?php echo $matricula; ?>" method="POST">
+        <input type="hidden" name="matricula" value="<?php echo $matricula; ?>">
+            <div class="cont2">
 
-            <table>
-                <tr>
-                    <td>
-                        <h2>Concepto</h2>
-                        <select>
-                        <option value="gasoil">Gasoil</option>
-                        <option value="electricista">Electricista</option>
-                        <option value="cambio_aceite">Cambio aceite</option>
-                        <option value="alineacion_balanceo">Alineacion y balanceo</option>
-                        <option value="cambio_cubierta">Cambio de cubierta</option>
-                        <option value="gomeria">Gomeria</option>
-                        <option value="cambio_correa">Cambio de correa</option>
-                        <option value="frenos">Frenos</option>
-                        <option value="embrague">Embrague</option>
-                        <option value="chapista">Chapista</option>
-                        <option value="otros">Otros</option>
-                    </select>
-                    </td>
-                    <td>
-                        <h2>Descripcion</h2>
-                        <input type="text"></input>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <h2>Fecha</h2>
-                        <input type="text"></input>
-                    </td>
-                    <td>
-                        <h2>Importe</h2>
-                        <input type="text"></input>
-                    </td>
-                </tr>
-            </table>
-            
-        </div>
-
-        <button onclick="window.location.href='adm_dtro_mantenimiento.php';">ATRAS</button>    
-        <button onclick="window.location.href='adm_dtro_mantenimiento.php';">GUARDAR</button>    
+                <table>
+                    <tr>
+                        <td>
+                            <h2>Concepto</h2>
+                            <select name="tipo">
+                            <option value="Gasoil">Gasoil</option>
+                            <option value="Electricista">Electricista</option>
+                            <option value="Cambio aceite">Cambio aceite</option>
+                            <option value="Alineacion balanceo">Alineacion y balanceo</option>
+                            <option value="Cambio cubierta">Cambio de cubierta</option>
+                            <option value="Gomeria">Gomeria</option>
+                            <option value="Cambio correa">Cambio de correa</option>
+                            <option value="Frenos">Frenos</option>
+                            <option value="Embrague">Embrague</option>
+                            <option value="Chapista">Chapista</option>
+                            <option value="Otros">Otros</option>
+                        </select>
+                        </td>
+                        <td>
+                            <h2>Descripcion</h2>
+                            <input name="descripcion" type="text"></input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h2>Fecha</h2>
+                            <input name="fecha" type="date"></input>
+                        </td>
+                        <td>
+                            <h2>Importe</h2>
+                            <input name="costo" type="text"></input>
+                        </td>
+                    </tr>
+                </table>
+                
+            </div>
+            <br><br>
+            <button action="agregarMantenimiento.php?matricula=<?php echo $matricula; ?>">GUARDAR</button> 
+        </frorm>
+    
     
         
     </div>
-    <br><br><br><br><br>
+    <br><br>
         <div class="footer">
             
         </div>

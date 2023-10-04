@@ -32,21 +32,6 @@ body {
     min-height: 100vh;
 }
 
-.logo {
-    position: relative;
-    width: 5.5%;
-    left: 6%;
-    top: 14%;
-}
-
-header {
-    background-color: #9ED4AE;
-    height: 15vh;
-    border-bottom: #20A144;
-    border-bottom-style: solid;
-    border-bottom-width: 4px;
-}
-
 .btnatras {
     color: #20A144;
     font-family: nexa;
@@ -59,8 +44,38 @@ header {
     text-decoration: none;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 70px;
+    margin-right: 10px;
+    margin-left: 40px;
+}
+
+.nombre-remi {
+    font-size: 40px;
+    padding: 0%;
+    font-family: nexa;
+    color: #20A144;
+}
+
+header {
+    background-color: #9ED4AE;
+    min-height: 70px;
+    border-bottom: #20A144;
+    border-bottom-style: solid;
+    border-bottom-width: 4px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+}
+
 .footer {
-    position: absolute;
+    flex-shrink: 0;
     background-color: #9ED4AE;
     height: 15vh;
     border-top: #20A144;
@@ -71,12 +86,22 @@ header {
     margin: 0;
     left: 0;
     right: 0;
-    bottom: auto;
+    bottom: 0;
+    margin-top: auto;
 }
 
 .contenedor {
     text-align: center;
-    padding: 60px;
+    margin-top: 5vh;
+}
+
+hr {
+    border-width: 1.5px;
+    border-style: solid;
+    color: #20A144;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 90%;
 }
 
 h1 {
@@ -89,9 +114,18 @@ h1 {
 
 /*============================================================================================================*/
 
+.ganancias {
+    font-size: 36px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border-style: dashed;
+    width: 30%;
+    background-color: #9ed4ae30;
+}
+
 table {
     width: 100%;
-    text-align: left;
     padding-right: 5%;
     padding-left: 5%;
     text-align: center;
@@ -101,22 +135,153 @@ h2 {
     font-size: 36px;
     font-family: nexa;
     color: #20A144;
+    text-align: center;
 }
 
 h3 {
     font-size: 32px;
     font-family: nexa;
     color: #20A144;
+    text-align: center;
 }
 
 h4 {
     font-size: 28px;
     font-family: louis;
     color: #20A144;
+    text-align: center;
 }
 
 td {
-    width: 200px;
+    width: 33.33%;
     position: relative;
     text-align: center;
+}
+
+#totalContado {
+    background-color: #F8F8F8;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+tr:nth-child(even) {
+    background-color: #9ed4ae30;
+}
+
+@media (max-width: 1000px) {
+    header {
+        flex-direction: column;
+    }
+    nav {
+        padding: 10px 0px;
+        text-align: center;
+    }
+    .logo img {
+        height: 50px;
+    }
+    .nombres {
+        font-size: 28px;
+        font-family: nexa;
+        color: #20A144;
+        padding-left: 5%;
+        width: 100%;
+        display: inline;
+        text-align: center;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    h4 {
+        font-size: 22px;
+    }
+    .ganancias {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 860px) {
+    h1 {
+        font-size: 36px;
+        font-family: nexa;
+        color: #20A144;
+        padding-bottom: 20px;
+    }
+    .nombres {
+        font-size: 26px;
+        padding: 0%;
+        font-family: nexa;
+        color: #20A144;
+        width: 100%;
+        display: inline;
+        text-align: center;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    h4 {
+        font-size: 20px;
+    }
+    .ganancias {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 560px) {
+    h1 {
+        font-size: 30px;
+        font-family: nexa;
+        color: #20A144;
+        padding-bottom: 20px;
+    }
+    .nombres {
+        font-size: 20px;
+        padding: 0%;
+        font-family: nexa;
+        color: #20A144;
+        width: 100%;
+        display: inline;
+        text-align: center;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    h4 {
+        font-size: 16px;
+    }
+    .cont-botones {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 50px;
+    }
+    .boton {
+        display: inline-block;
+        width: 80px;
+        height: 40px;
+        background-color: #9ED4AE;
+        margin-right: 2%;
+        color: #20A144;
+        font-family: nexa;
+        border-style: solid;
+        border-color: #20A144;
+        font-size: 14px;
+    }
+    h3 {
+        font-size: x-large;
+    }
+    .btnatras {
+        color: #20A144;
+        font-family: nexa;
+        font-size: 14px;
+        background-color: #ffffff00;
+        border-style: none;
+        position: absolute;
+        right: 33px;
+        top: 20px;
+        text-decoration: none;
+    }
+    .ganancias {
+        font-size: 20px;
+    }
 }

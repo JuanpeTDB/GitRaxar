@@ -7,8 +7,11 @@
     <link rel="stylesheet" type="text/css" href="css/estilo_agregar_coche.css">
 </head>
 <body>
-    <header>
-		<img class="logo" src="img/REMI_completo.png">
+<header>
+		<div class="logo">
+			<img src="img/REMI_logo.png" alt="logo remi">
+			<h2 class="nombre-remi">REMI</h2>
+		</div>
         <a href="adm_coches.php" class="btnatras">ATRAS</a>
 	</header>
 

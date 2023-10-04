@@ -15,9 +15,11 @@ $(document).ready(function() {
                 console.log(JSON.parse(response));
                 choferes.forEach(res => {
                     ret += `
-						<tr cod="${res.cod_chofer}">
-							<td><h2>${res.nombre} ${res.apellido}<button class="boton btnInfo" data-cod_chofer="${res.cod_chofer}">Info</button><button class="boton btnEditar" data-cod_chofer="${res.cod_chofer}"> Editar </button> <button class="btneliminar boton"> Eliminar </button> <hr> </h2></td>
+						<tr cod="${res.ci}">
+							<td><h2 class="nombres">${res.nombre} ${res.apellido}</h2><div class="cont-botones"><button class="boton btnInfo" data-ci="${res.ci}">Info</button><button class="boton btnEditar" data-ci="${res.ci}"> Editar </button> <button class="btneliminar boton"> Eliminar </button></div></td>
+
 						</tr>
+                        <tr><td><hr></td></tr>
 					`
                     $('#container_info').html(ret);
 
@@ -43,7 +45,7 @@ $(document).ready(function() {
             "align-items": "center"
         });
 
-        var contenido = $("<div>").css({
+        var contenido = $("<div>").addClass("contElim").css({
             "width": "40%",
             "padding": "80px",
             "height": "40%",
@@ -65,7 +67,7 @@ $(document).ready(function() {
             "width": "100%",
             "position": "relative",
             "padding": "0",
-            "padding-top": "60px",
+            /* "padding-top": "60px", */
             "display": "flex",
             "justify-content": "center",
             "align-items": "center"
@@ -74,8 +76,8 @@ $(document).ready(function() {
         var botonCancelar = $("<button>").attr("id", "btnCancelar").text("CANCELAR").css({
             "width": "180px",
             "height": "60px",
-            "position": "absolute",
-            "left": "0px",
+            "position": "relative",
+            "left": "10%",
             "text-align": "center",
             "background-color": "#9ED4AE",
             "border-color": "#20A144",
@@ -85,14 +87,15 @@ $(document).ready(function() {
             "font-family": "nexa",
             "font-size": "25px",
             "color": "#20A144",
-            "margin-left": "50px"
+            "margin-top": "50px"
+
         });
 
-        var botonAceptar = $("<button>").attr("class", "btnAceptar").text("ACEPTAR").css({
+        var botonAceptar = $("<button>").attr("id", "btnAceptar").text("ACEPTAR").css({
             "width": "180px",
             "height": "60px",
-            "position": "absolute",
-            "right": "0px",
+            "position": "relative",
+            "right": "10%",
             "text-align": "center",
             "background-color": "#9ED4AE",
             "border-color": "#20A144",
@@ -102,18 +105,19 @@ $(document).ready(function() {
             "font-family": "nexa",
             "font-size": "25px",
             "color": "#20A144",
-            "margin-right": "50px"
+            "margin-top": "50px"
         });
 
         div.append(botonAceptar).append(botonCancelar);
-        contenido.append("<p>¿Seguro que deseas eliminar al chofer del sistema?</p>");
+        contenido.append("<p class='parrafoElim'>¿Seguro que deseas eliminar al chofer del sistema?</p>");
         contenido.append(div);
 
         contenedor.append(contenido);
 
         $("body").append(contenedor);
 
-
+        let item = $(this).closest('tr');
+        let ci = item.attr('cod');
 
         function eliminarChofer(a) {
             console.log(a);
@@ -122,7 +126,7 @@ $(document).ready(function() {
                 url: 'eliminarChofer.php',
                 type: 'POST',
                 data: {
-                    cod_chofer: a
+                    ci: a
                 },
                 success: function(data) {
                     getAll();
@@ -130,13 +134,11 @@ $(document).ready(function() {
             });
         };
 
-
-        let item = $(this).closest('tr');
-        let cod_chofer = item.attr('cod');
-
-
-        $(document).on('click', '.btnAceptar', eliminarChofer(cod_chofer), function() {
+        $(document).on('click', '#btnAceptar', function() {
+            eliminarChofer(ci);
             contenedor.remove();
+            eliminar = true;
+
         });
 
         contenedor.fadeIn();
@@ -147,13 +149,13 @@ $(document).ready(function() {
     });
 
     $(document).on('click', '.btnEditar', function() {
-        var cod_chofer = $(this).data("cod_chofer");
-        window.location.href = "adm_editar_chofer.php?cod_chofer=" + cod_chofer;
+        var ci = $(this).data("ci");
+        window.location.href = "adm_editar_chofer.php?ci=" + ci;
     });
 
     $(document).on('click', '.btnInfo', function() {
-        var cod_chofer = $(this).data("cod_chofer");
-        window.location.href = "adm_dentro_chofer.php?cod_chofer=" + cod_chofer;
+        var ci = $(this).data("ci");
+        window.location.href = "adm_dentro_chofer.php?ci=" + ci;
     });
 
 });

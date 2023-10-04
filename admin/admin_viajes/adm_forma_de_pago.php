@@ -7,23 +7,35 @@
     <link rel="stylesheet" type="text/css" href="css/adm_agendar_viaje.css">
 </head>
 <body>
+
+   <?php
+        require_once '../../conexion.php';
+        $cod_viaje = $_GET['cod_viaje'];        
+    ?>
+
     <header>
-		<img class="logo" src="img/REMI_completo.png">
+		<div class="logo">
+			<img src="img/REMI_logo.png" alt="logo remi">
+			<h2 class="nombre-remi">REMI</h2>
+		</div>
 	</header>
 
     <div class="contenedor">
 
         <h1>AGENDAR VIAJE</h1>
 
+
+        <input type="hidden" id="cod_viaje" name="cod_viaje" value="<?php echo $cod_viaje; ?>">
         <table>
             <tr>
                 <td>
                     <h2>Forma de pago</h2>
-                    <select id="metodoPago" style="width: 50%">
-                        <option value="efectivo">Efectivo</option>
-                        <option value="transferencia">Transferencia</option>
-                        <option value="cta_corriente">Cta. Corriente</option>
-                        <option value="tarjeta">Tarjeta</option>
+                    <select name="metodoPago" id="metodoPago" style="width: 50%">
+                        <option value="" disabled selected> Seleccione una forma de pago </option>
+                        <option value="1">Efectivo</option>
+                        <option value="2">Transferencia</option>
+                        <option value="3">Cta. Corriente</option>
+                        <option value="4">Tarjeta</option>
                     </select>
                 </td>
             </tr>
@@ -39,7 +51,7 @@
         <br>
 
         <div>
-            <button onclick="window.location.href='adm_agendar_viaje.php';">ATRAS</button>
+            <button id="btnAtras">ATRAS</button>
             <button id="btnContinuar">CONTINUAR</button>
         </div>
     
@@ -50,7 +62,7 @@
     </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/forma_de_pago.js"></script>
 </body>
 </html>

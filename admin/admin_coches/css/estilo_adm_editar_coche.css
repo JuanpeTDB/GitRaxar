@@ -28,22 +28,37 @@ body {
 }
 
 .logo {
-    position: relative;
-    width: 5.5%;
-    left: 6%;
-    top: 14%;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 70px;
+    margin-right: 10px;
+    margin-left: 40px;
+}
+
+.nombre-remi {
+    font-size: 40px;
+    padding: 0%;
+    font-family: nexa;
+    color: #20A144;
 }
 
 header {
     background-color: #9ED4AE;
-    height: 15vh;
+    min-height: 70px;
     border-bottom: #20A144;
     border-bottom-style: solid;
     border-bottom-width: 4px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
 }
 
 .footer {
-    position: absolute;
+    flex-shrink: 0;
     background-color: #9ED4AE;
     height: 15vh;
     border-top: #20A144;
@@ -54,7 +69,8 @@ header {
     margin: 0;
     left: 0;
     right: 0;
-    bottom: auto;
+    bottom: 0;
+    margin-top: auto;
 }
 
 .contenedor {
@@ -70,9 +86,11 @@ header {
 }
 
 h1 {
-    font-size: 72px;
+    font-size: 64px;
     font-family: nexa;
     color: #20A144;
+    margin: 0px;
+    margin-top: 10px;
 }
 
 
@@ -81,8 +99,7 @@ h1 {
 table {
     width: 60%;
     text-align: center;
-    padding-bottom: 60px;
-    padding-top: 15px;
+    padding-bottom: 35px;
 }
 
 tr td {
@@ -131,4 +148,75 @@ button {
     width: 180px;
     height: 50px;
     font-size: 20px;
+}
+
+@media (max-width: 1000px) {
+    header {
+        flex-direction: column;
+    }
+    nav {
+        padding: 10px 0px;
+        text-align: center;
+    }
+    .logo img {
+        height: 50px;
+    }
+    .nombres {
+        font-size: 28px;
+        font-family: nexa;
+        color: #20A144;
+        padding-left: 5%;
+        width: 100%;
+        display: inline;
+        text-align: center;
+    }
+}
+
+@media (max-width:800px) {
+    h1 {
+        font-size: 56px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    input {
+        height: 40px;
+        font-size: 18px;
+    }
+    #btnGuardar {
+        width: 120px;
+        margin: 0px;
+        margin-left: 10px;
+    }
+    #btnAtras {
+        width: 120px;
+        margin: 0px;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width:530px) {
+    h1 {
+        font-size: 52px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    input {
+        height: 40px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width:480px) {
+    h1 {
+        font-size: 44px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    input {
+        height: 40px;
+        font-size: 16px;
+    }
 }

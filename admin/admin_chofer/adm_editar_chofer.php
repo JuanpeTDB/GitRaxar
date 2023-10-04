@@ -8,19 +8,24 @@
 </head>
 <body>
     <header>
-		<img class="logo" src="img/REMI_completo.png">
+		<div class="logo">
+			<img src="img/REMI_logo.png" alt="logo remi">
+			<h2 class="nombre-remi">REMI</h2>
+		</div>
 	</header>
 
 
     <?php
         require_once '../../conexion.php';
         $ci = $_GET['ci'];
+        
         $query = "SELECT * FROM chofer WHERE ci = '$ci'";
 		$result = mysqli_query($conn, $query);
 		$json = array();
 		if($result) {
 			while($row = mysqli_fetch_assoc($result)) {
                 $ci = $row['ci'];
+                $new_ci = $row['ci'];
                 $nombre = $row['nombre'];
                 $apellido = $row['apellido'];
                 $telefono = $row['telefono'];
@@ -43,7 +48,7 @@
                         <td>
                             <h2>Nombre</h2>
                             <input type="text" name="nombre" value="<?php echo $nombre; ?>"></input>
-                        </td>\
+                        </td>
                         <td>
                             <h2>Apellido</h2>
                             <input type="text" name="apellido" value="<?php echo $apellido; ?>"></input>
@@ -55,12 +60,13 @@
                             <input type="text" name="telefono" value="<?php echo $telefono; ?>"></input>
                         </td>
                         <td>
-                            <h2>Tipo de chofer</h2>
+                        <h2>Tipo de chofer</h2>
                             <select name="de_la_casa" value="<?php echo $de_la_casa; ?>">
-                                <option value="1">De la casa</option>
-                                <option value="0">Externo</option>
+                                <option value="true">De la casa</option>
+                                <option value="false">Externo</option>
                             </select>
                         </td>
+                        
                     </tr>
                 </table>
                 

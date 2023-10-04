@@ -1,13 +1,22 @@
 $(document).ready(function() {
     $("#metodoPago").change(function() {
-        if ($(this).val() === "tarjeta") {
+        if ($(this).val() === "4") {
             $("#opcionesTarjeta").show();
         } else {
             $("#opcionesTarjeta").hide();
         }
     });
 
-    $("#btnContinuar").click(abrirPopup);
+    $("#btnContinuar").click(function() {
+
+        $("#metodoPago").change(function() {
+            if ($(this).val() != "") {
+                abrirPopup();
+            } else {
+                alert("Por favor seleccione una opcion");
+            }
+        });
+    });
 
 });
 

@@ -8,69 +8,59 @@
     <link rel="stylesheet" type="text/css" href="css/estilo_adm_dtro_viaje_chof.css">
 </head>
 <body>
-    <header>
-		<img class="logo" src="img/REMI_completo.png">
-        <a href="adm_dentro_chofer.php" class="btnatras">ATRAS</a>
+<?php
+        require_once '../../conexion.php';
+        $ci = $_GET['ci'];
+        $query = "SELECT *
+        FROM chofer c
+        INNER JOIN conduce co ON c.ci = co.ci
+        INNER JOIN auto a ON co.matricula = a.matricula
+        WHERE c.ci = $ci";
+		$result = mysqli_query($conn, $query);
+		$json = array();
+		if($result) {
+			while($row = mysqli_fetch_assoc($result)) {
+                $ci = $row['ci'];
+                $nombre = $row['nombre'];
+                $apellido = $row['apellido'];
+                $telefono = $row['telefono'];
+                $de_la_casa = $row['de_la_casa'];
+                $marca = $row['marca']; 
+                $modelo = $row['modelo']; 
+                $matricula = $row['matricula']; 
+        	}
+		}
+        
+    ?>
+<header>
+		<div class="logo">
+			<img src="img/REMI_logo.png" alt="logo remi">
+			<h2 class="nombre-remi">REMI</h2>
+		</div>
+        <a href="adm_choferes.php" class="btnatras">ATRAS</a>
 	</header>
 
+    <input type="hidden" id="ci_chofer" value="<?php echo $ci; ?>">
+
     <div class="contenedor">
-        <h1>JUAN PEREZ</h1>
+        <h1><?php echo $nombre; ?> <?php echo $apellido; ?></h1>
 
         <div class="box">
-            <table>
-                <tr onclick="window.location.href='adm_info_viaje_chof.php';">
-                    <td>
-                        <h2>11/06/2023</h2>
-                        <hr>
-                    </td>
-                </tr>
+            <table id="container_info">
                 
-                <tr>
-                    <td>
-                        <h2>10/06/2023</h2>
-                        <hr>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <h2>10/06/2023</h2>
-                        <hr>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <h2>08/06/2023</h2>
-                        <hr>
-                        
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <h2>08/06/2023</h2>
-                        <hr>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <h2>08/06/2023</h2>
-                        <hr>
-                    </td>
-                </tr>
-                
-            <table>
-            
+            </table>
         </div>
     
-    
-        <br><br><br><br><br>
-        <div class="footer">
-            
-        </div>
-
     </div>
+    <br><br><br><br><br>
+    <div class="footer">
+        
+    </div>
+
+    
 </body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="js/mostrar_viajes.js"></script>
+
 </html>

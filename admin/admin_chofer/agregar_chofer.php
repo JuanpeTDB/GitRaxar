@@ -6,9 +6,39 @@
     <title>REMI</title>
     <link rel="stylesheet" type="text/css" href="css/estilo_agregar_chofer.css">
 </head>
+
+<?php
+    require_once '../../conexion.php';
+
+    $query = "SELECT a.matricula, a.marca, a.modelo
+    FROM auto a
+    LEFT JOIN conduce c ON a.matricula = c.matricula
+    WHERE c.ci IS NULL;";
+    $result = mysqli_query($conn, $query);
+    $json = array();
+
+    if ($result) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            
+            $marca = $row['marca'];
+            $modelo = $row['modelo'];
+            $matricula = $row['matricula'];
+            
+            $json[] = array(
+                'marca' => $marca,
+                'modelo' => $modelo,
+                'matricula' => $matricula
+            );
+        }
+    }
+?>
+
 <body>
-    <header>
-		<img class="logo" src="img/REMI_completo.png">
+<header>
+		<div class="logo">
+			<img src="img/REMI_logo.png" alt="logo remi">
+			<h2 class="nombre-remi">REMI</h2>
+		</div>
         <a href="adm_choferes.php" class="btnatras">ATRAS</a>
 	</header>
 
@@ -27,16 +57,37 @@
                         </td>
                         <td>
                             <h2>Apellido</h2>
-                            <input type="text"  name="Apellido"></input>
+                            <input type="text"  name="apellido"></input>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <h2>Telefono</h2>
-                            <input type="text"  name="matricula"></input>
+                            <input type="text"  name="telefono"></input>
                         </td>
                         <td>
-                            <h2>De la casa</h2>
+                            <h2>Cedula de Identidad</h2>
+                            <input type="text"  name="ci"></input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h2>Coche que conduce</h2>
+                            <select id="auto" name="matricula">
+                                <?php if (empty($json)) { ?>
+                                    <option value="" disabled selected>No hay coches disponibles</option>
+                                <?php } else { ?>
+                                    <option value="" disabled selected>Seleccione un coche</option>
+                                    <?php foreach ($json as $auto) { ?>
+                                        <option value="<?php echo $auto['matricula']; ?>">
+                                            <?php echo $auto['marca'] . ' ' . $auto['modelo'] . ' ' . $auto['matricula']; ?>
+                                        </option>
+                                    <?php } ?>
+                                <?php } ?>
+                            </select>
+                        </td>
+                        <td>
+                            <h2>Tipo de chofer</h2>
                             <select name="de_la_casa">
                                 <option value="1">De la casa</option>
                                 <option value="0">Externo</option>
@@ -44,6 +95,7 @@
                         </td>
                     </tr>
                 </table>
+               
                 
             </div>
 

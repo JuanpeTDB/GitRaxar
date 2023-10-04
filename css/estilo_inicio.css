@@ -25,32 +25,124 @@ body {
 }
 
 .logo {
-    position: relative;
-    width: 5.5%;
-    left: 6%;
-    top: 14%;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 70px;
+    margin-right: 10px;
+    margin-left: 40px;
+}
+
+.nombre-remi {
+    font-size: 40px;
+    padding: 0%;
 }
 
 header {
     background-color: #9ED4AE;
-    height: 15vh;
+    min-height: 70px;
     border-bottom: #20A144;
     border-bottom-style: solid;
     border-bottom-width: 4px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+a {
+    text-decoration: none;
+    color: #20A144;
+    font-family: nexa;
+    font-size: 16px;
+}
+
+nav a {
+    font-weight: 600;
+    padding-right: 20px;
+}
+
+nav a:hover {
+    color: #F8F8F8;
+    font-weight: 800;
 }
 
 .logos {
     margin-top: 4vh;
-    height: 20vh;
+    height: 200px;
     object-fit: cover;
 }
 
-.contenedor {
-    width: 100%;
-    margin: 0;
-    text-align: center;
-    display: grid;
+.centered-container {
+    display: flex;
     justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 80px;
+}
+
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 80px;
+    justify-content: center;
+}
+
+@media (max-width: 1000px) {
+    .contenedor {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    header {
+        flex-direction: column;
+    }
+    nav {
+        padding: 10px 0px;
+        text-align: center;
+    }
+    .logo img {
+        height: 50px;
+    }
+}
+
+.cards {
+    width: 250px;
+    border-radius: 30px;
+    background-color: #9ED4AE;
+    text-align: center;
+}
+
+h2 {
+    font-size: 36px;
+    font-family: nexa;
+    color: #20A144;
+    width: auto;
+}
+
+@media (max-width: 680px) {
+    .contenedor {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 60px;
+    }
+    .logos {
+        margin-top: 4vh;
+        height: 100px;
+        object-fit: cover;
+    }
+    .cards {
+        width: 140px;
+        border-radius: 30px;
+        background-color: #9ED4AE;
+        text-align: center;
+    }
+    h2 {
+        font-size: 24px;
+        font-family: nexa;
+        color: #20A144;
+        width: auto;
+        padding: 5px;
+    }
 }
 
 .footer {
@@ -71,19 +163,4 @@ header {
 table {
     border-collapse: separate;
     border-spacing: 100px;
-}
-
-td {
-    width: 250px;
-    height: 320px;
-    border-radius: 30px;
-    background-color: #9ED4AE;
-    text-align: center;
-}
-
-h2 {
-    font-size: 36px;
-    font-family: nexa;
-    color: #20A144;
-    width: auto;
 }

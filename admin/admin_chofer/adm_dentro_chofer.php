@@ -8,15 +8,21 @@
 </head>
 <body>
     <header>
-    <script>alert("PAGINA EN DESARROLLO");</script>
-		<img class="logo" src="img/REMI_completo.png">
+		<div class="logo">
+			<img src="img/REMI_logo.png" alt="logo remi">
+			<h2 class="nombre-remi">REMI</h2>
+		</div>
         <a href="adm_choferes.php" class="btnatras">ATRAS</a>
 	</header>
 
     <?php
         require_once '../../conexion.php';
         $ci = $_GET['ci'];
-        $query = "SELECT * FROM chofer WHERE ci = '$ci'";
+        $query = "SELECT *
+        FROM chofer c
+        INNER JOIN conduce co ON c.ci = co.ci
+        INNER JOIN auto a ON co.matricula = a.matricula
+        WHERE c.ci = $ci";
 		$result = mysqli_query($conn, $query);
 		$json = array();
 		if($result) {
@@ -26,12 +32,14 @@
                 $apellido = $row['apellido'];
                 $telefono = $row['telefono'];
                 $de_la_casa = $row['de_la_casa'];
-            
+                $marca = $row['marca']; 
+                $modelo = $row['modelo']; 
+                $matricula = $row['matricula']; 
         	}
 		}
         
     ?>
-
+    <input type="hidden" name="ci" value="<?php echo $ci; ?>" id="ci">
     <div class="contenedor">
         <h1><?php echo $nombre; ?> <?php echo $apellido; ?></h1>
 
@@ -44,7 +52,7 @@
             </tr>
             <tr>
                 <td><h4><?php echo $telefono; ?></h4></td>
-                <td><h4>Toyota Corolla SBI 2344</h4></td>
+                <td><h4><?php echo $marca; ?> <?php echo $modelo; ?> <?php echo $matricula; ?></h4></td>
                 <td><h4><?php if ($de_la_casa == 1) {
             echo 'De la casa';
         } else {
@@ -56,11 +64,11 @@
 
         <table class="tbtn">
             <tr>
-                <td class="btns" onclick="window.location.href='adm_dtro_viaje_chof.php';">
+                <td class="btns" onclick="window.location.href = 'adm_dtro_viaje_chof.php?ci=<?php echo $ci; ?>'">
                     <img class="logos" src="img/viaje.png">
                     <h2>Ver viajes</h2>
                 </td>
-                <td class="btns" onclick="window.location.href='adm_planilla_cierre_dia.php';">
+                <td class="btns" onclick="window.location.href='adm_planilla_cierre_dia.php?ci=<?php echo $ci; ?>';">
                     <img class="logos" src="img/pago.png">
                     <h2>Planilla de cierre del dia</h2>
                 </td>

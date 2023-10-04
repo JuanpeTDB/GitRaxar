@@ -9,8 +9,10 @@
 <body>
     <header>
 		<img class="logo" src="img/REMI_completo.png">
+        <a href="adm_empleados.php" class="btnatras">ATRAS</a>
 	</header>
 
+    <form action="agregarEmpleado.php" method="POST">
     <div class="contenedor">
     
         <h1>AGREGAR EMPLEADO</h1>
@@ -21,36 +23,51 @@
                 <tr>
                     <td>
                         <h2>Nombre</h2>
-                        <input type="text"></input>
+                        <input type="text" name="nombre"></input>
+                    </td>
+                    <td>
+                        <h2>Apellido</h2>
+                        <input type="text" name="apellido"></input>
                     </td>
                     <td>
                         <h2>Cedula</h2>
-                        <input type="text"></input>
+                        <input type="text" name="ci"></input>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <h2>Telefono</h2>
-                        <input type="text"></input>
+                        <input type="text" name="telefono"></input>
                     </td>
                     <td>
+                        <h2>Nombre de usuario</h2>
+                        <input type="text" name="nombre_usuario"></input>
+                    </td>
+                    <td>
+                        <h2>Contraseña</h2>
+                        <input type="text" name="contrasenia"></input>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
                         <h2>Rol</h2>
-                        <select>
-                            <option value="empleado">Empleado</option>
+                        <select name="rol">
+                            <option value="" disabled selected>Seleccione un rol</option>
                             <option value="administrativo">Administrativo</option>
+                            <option value="administrador">Administrador</option>
                         </select>
                     </td>
                 </tr>
             </table>
             
         </div>
-
-        <button onclick="window.location.href='adm_empleados.php';">ATRAS</button>    
-        <button onclick="window.location.href='adm_empleados.php';">GUARDAR</button>    
-    
+        
+        <button action="agregarEmpleado.php">GUARDAR</button>
+</form>
         
     </div>
-    <br><br><br><br><br>
+    <br>
     <div class="footer">
         
     </div>

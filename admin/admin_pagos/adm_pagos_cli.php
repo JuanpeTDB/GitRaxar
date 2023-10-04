@@ -71,9 +71,7 @@
 
     <br><br>
 
-    <button>
-        SALDAR
-    </button>  
+    
 
     <br><br><br><br><br>
     <div class="footer">

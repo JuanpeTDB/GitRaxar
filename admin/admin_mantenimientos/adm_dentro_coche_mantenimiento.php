@@ -7,34 +7,60 @@
     <link rel="stylesheet" type="text/css" href="css/estilo_adm_dentro_coche_mantenimiento.css">
 </head>
 <body>
+
+    <?php
+        require_once '../../conexion.php';
+        $cod_mantenimiento = $_GET['cod_mantenimiento'];
+        $query = "SELECT * FROM auto a
+        INNER JOIN requiere r on r.matricula = a.matricula
+        INNER JOIN mantenimiento m on m.cod_mantenimiento = r.cod_mantenimiento
+        WHERE m.cod_mantenimiento = '$cod_mantenimiento';";
+		$result = mysqli_query($conn, $query);
+		$json = array();
+		if($result) {
+			while($row = mysqli_fetch_assoc($result)) {
+                $matricula = $row['matricula'];
+                $marca = $row['marca'];
+                $modelo = $row['modelo'];
+                $anio = $row['anio'];
+                $cod_mantenimiento = $row['cod_mantenimiento'];
+                $tipo = $row['tipo']; 
+                $descripcion = $row['descripcion'];
+                $fecha = $row['fecha'];
+                $costo = $row['costo'];
+        	}
+		}
+        
+    ?>
+
     <header>
 		<img class="logo" src="img/REMI_completo.png">
-        <a href="adm_dtro_mantenimiento.php" class="btnatras">ATRAS</a>
+        <a href="adm_dtro_mantenimiento.php?matricula=<?php echo $matricula; ?>" class="btnatras">ATRAS</a>
 	</header>
 
     <div class="contenedor">
-        <h1>Toyota Corolla SRE 8537</h1>
+        <h1><?php echo $marca; ?> <?php echo $modelo; ?> <?php echo $matricula; ?></h1>
 
         <div class="cont2">
             <table class="info">
                 <tr>
                     <td>
-                        <h3>Concepto</h3>
-                        <h4>Gasoil</h4>
+                        <h3>Tipo</h3>
+                        <h4><?php echo $tipo; ?></h4>
                     </td>
                     <td>
                         <h3>Comentario</h3>
-                        <h4>Tanque lleno</h4>
+                        <h4><?php echo $descripcion; ?></h4>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <h3>Fecha</h3>
-                        <h4>26/07/23</h4>
+                        <h4><?php echo $fecha; ?></h4>
                     </td>
                     <td>
                         <h3>Importe</h3>
-                        <h4>$2700</h4>
+                        <h4>$<?php echo $costo; ?></h4>
                     </td>
                 </tr>
             </table>

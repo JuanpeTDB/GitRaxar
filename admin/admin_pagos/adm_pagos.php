@@ -15,7 +15,7 @@
 
     <div class="contenedor">
 
-        <h1>VIAJES</h1>
+        <h1>CUENTAS CORRIENTES</h1>
 
         <table class="tbtn">
             <tr>

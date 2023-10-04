@@ -33,18 +33,33 @@ body {
 }
 
 .logo {
-    position: relative;
-    width: 5.5%;
-    left: 6%;
-    top: 14%;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 70px;
+    margin-right: 10px;
+    margin-left: 40px;
+}
+
+.nombre-remi {
+    font-size: 40px;
+    padding: 0%;
+    font-family: nexa;
+    color: #20A144;
 }
 
 header {
     background-color: #9ED4AE;
-    height: 15vh;
+    min-height: 70px;
     border-bottom: #20A144;
     border-bottom-style: solid;
     border-bottom-width: 4px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
 }
 
 .btnatras {
@@ -59,8 +74,13 @@ header {
     text-decoration: none;
 }
 
+#container_info {
+    flex-grow: 1;
+    overflow: auto;
+}
+
 .footer {
-    position: relative;
+    flex-shrink: 0;
     background-color: #9ED4AE;
     height: 15vh;
     border-top: #20A144;
@@ -71,12 +91,15 @@ header {
     margin: 0;
     left: 0;
     right: 0;
-    bottom: auto;
+    bottom: 0;
+    margin-top: auto;
 }
 
 .contenedor {
     text-align: center;
     padding: 1%;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
@@ -91,6 +114,11 @@ h1 {
 .info {
     width: 100%;
     padding: 0 auto;
+    text-align: center;
+}
+
+tr td {
+    width: 30%;
 }
 
 h3 {
@@ -113,9 +141,9 @@ h4 {
 
 .btns {
     display: inline-block;
-    margin: 0 150px;
-    width: 220px;
-    height: 300px;
+    margin: 0 139px;
+    width: 200px;
+    height: 320px;
     border-radius: 30px;
     background-color: #9ED4AE;
     padding: 5px;
@@ -123,7 +151,7 @@ h4 {
 
 .logos {
     margin-top: 4vh;
-    height: 20vh;
+    width: 70%;
 }
 
 h2 {
@@ -150,4 +178,122 @@ button {
     background-color: #9ED4AE;
     border-radius: 180px;
     border-style: none;
+}
+
+@media (max-width: 1000px) {
+    .btns {
+        display: inline-block;
+        margin: 0 90px;
+        width: 190x;
+        height: 280px;
+        border-radius: 30px;
+        background-color: #9ED4AE;
+        padding: 5px;
+    }
+    header {
+        flex-direction: column;
+    }
+    nav {
+        padding: 10px 0px;
+        text-align: center;
+    }
+    .logo img {
+        height: 50px;
+    }
+    h4 {
+        margin: 0px;
+        font-size: 24px;
+    }
+    h3 {
+        font-size: 26px;
+    }
+    h1 {
+        font-size: 58px;
+        margin: 0px;
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 860px) {
+    .btns {
+        display: inline-block;
+        margin: 0 55px;
+        width: 170px !important;
+        height: 240px;
+        border-radius: 30px;
+        background-color: #9ED4AE;
+        padding: 5px;
+    }
+    h1 {
+        font-size: 42px;
+        font-family: nexa;
+        color: #20A144;
+        padding-bottom: 4px;
+    }
+    input {
+        width: 75%;
+        font-size: 16px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+    #btnGuardar {
+        width: 120px;
+    }
+    #btnAtras {
+        width: 120px;
+    }
+}
+
+@media (max-width: 600px) {
+    .btns {
+        display: inline-block;
+        margin: 0 5%;
+        width: 150x;
+        height: 210px;
+        border-radius: 30px;
+        background-color: #9ED4AE;
+        padding: 5px;
+        margin-top: 35px;
+    }
+    h1 {
+        font-size: 36px;
+        font-family: nexa;
+        color: #20A144;
+        padding-bottom: 4px;
+        padding-top: 20px;
+    }
+    h4 {
+        margin: 0px;
+        font-size: 18px;
+    }
+    input {
+        width: 75%;
+        font-size: 16px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 16px;
+    }
+    .imgboton {
+        width: 60%;
+    }
+    .tbtn {
+        width: 100%;
+        text-align: center;
+        padding-top: 10px;
+    }
+    .btnatras {
+        color: #20A144;
+        font-family: nexa;
+        font-size: 14px;
+        background-color: #ffffff00;
+        border-style: none;
+        position: absolute;
+        right: 33px;
+        top: 20px;
+        text-decoration: none;
+    }
 }

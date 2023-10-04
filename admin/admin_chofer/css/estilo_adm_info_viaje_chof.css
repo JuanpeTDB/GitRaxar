@@ -27,21 +27,6 @@ body {
     min-height: 100vh;
 }
 
-.logo {
-    position: relative;
-    width: 5.5%;
-    left: 6%;
-    top: 14%;
-}
-
-header {
-    background-color: #9ED4AE;
-    height: 15vh;
-    border-bottom: #20A144;
-    border-bottom-style: solid;
-    border-bottom-width: 4px;
-}
-
 .btnatras {
     color: #20A144;
     font-family: nexa;
@@ -54,8 +39,38 @@ header {
     text-decoration: none;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 70px;
+    margin-right: 10px;
+    margin-left: 40px;
+}
+
+.nombre-remi {
+    font-size: 40px;
+    padding: 0%;
+    font-family: nexa;
+    color: #20A144;
+}
+
+header {
+    background-color: #9ED4AE;
+    min-height: 70px;
+    border-bottom: #20A144;
+    border-bottom-style: solid;
+    border-bottom-width: 4px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+}
+
 .footer {
-    position: relative;
+    flex-shrink: 0;
     background-color: #9ED4AE;
     height: 15vh;
     border-top: #20A144;
@@ -66,17 +81,28 @@ header {
     margin: 0;
     left: 0;
     right: 0;
-    bottom: auto;
+    bottom: 0;
+    margin-top: auto;
 }
 
 .contenedor {
     text-align: center;
 }
 
+.cont2 {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 h1 {
-    font-size: 72px;
+    font-size: 64px;
     font-family: nexa;
     color: #20A144;
+    padding-top: 30px;
+    margin: 0;
 }
 
 
@@ -87,41 +113,107 @@ h1 {
     width: 100%;
 }
 
+tr td {
+    width: 30%;
+}
+
 h3 {
-    font-size: 36px;
+    font-size: 32px;
     font-family: nexa;
     color: #20A144;
 }
 
 h4 {
-    font-size: 30px;
+    font-size: 26px;
     font-family: nexa;
     color: #9ED4AE;
+    margin-top: 0px;
 }
 
-.tbtn {
-    width: 100%;
-    text-align: center;
-    padding-top: 50px;
+@media (max-width: 1000px) {
+    header {
+        flex-direction: column;
+    }
+    nav {
+        padding: 10px 0px;
+        text-align: center;
+    }
+    .logo img {
+        height: 50px;
+    }
 }
 
-.btns {
-    display: inline-block;
-    margin: 0 150px;
-    width: 220px;
-    height: 300px;
-    border-radius: 30px;
-    background-color: #9ED4AE;
-    padding: 5px;
+@media (max-width: 860px) {
+    h1 {
+        font-size: 42px;
+        font-family: nexa;
+        color: #20A144;
+        padding-bottom: 4px;
+    }
+    input {
+        width: 75%;
+        font-size: 16px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+    #btnGuardar {
+        width: 120px;
+    }
+    #btnAtras {
+        width: 120px;
+    }
+    .btnatras {
+        color: #20A144;
+        font-family: nexa;
+        font-size: 14px;
+        background-color: #ffffff00;
+        border-style: none;
+        position: absolute;
+        right: 33px;
+        top: 20px;
+        text-decoration: none;
+    }
 }
 
-.logos {
-    margin-top: 4vh;
-    height: 20vh;
+@media (max-width:700px) {
+    h3 {
+        font-size: 26px;
+        font-family: nexa;
+        color: #20A144;
+    }
+    h4 {
+        font-size: 22px;
+        font-family: nexa;
+        color: #9ED4AE;
+        margin-top: 0px;
+    }
 }
 
-h2 {
-    font-size: 24px;
-    font-family: nexa;
-    color: #20A144;
+@media (max-width:450px) {
+    h3 {
+        font-size: 22px;
+        font-family: nexa;
+        color: #20A144;
+    }
+    h4 {
+        font-size: 18px;
+        font-family: nexa;
+        color: #9ED4AE;
+        margin-top: 0px;
+    }
+}
+
+@media (max-width:390px) {
+    h3 {
+        font-size: 20px;
+        font-family: nexa;
+        color: #20A144;
+    }
+    h4 {
+        font-size: 16px;
+        font-family: nexa;
+        color: #9ED4AE;
+        margin-top: 0px;
+    }
 }

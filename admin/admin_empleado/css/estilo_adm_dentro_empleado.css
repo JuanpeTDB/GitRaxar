@@ -4,11 +4,6 @@
 }
 
 @font-face {
-    font-family: louis;
-    src: url(../../fonts/Louis.ttf);
-}
-
-@font-face {
     font-family: nexa;
     src: url(../../fonts/Nexa.ttf);
 }
@@ -33,18 +28,33 @@ body {
 }
 
 .logo {
-    position: relative;
-    width: 5.5%;
-    left: 6%;
-    top: 14%;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 70px;
+    margin-right: 10px;
+    margin-left: 40px;
+}
+
+.nombre-remi {
+    font-size: 40px;
+    padding: 0%;
+    font-family: nexa;
+    color: #20A144;
 }
 
 header {
     background-color: #9ED4AE;
-    height: 15vh;
+    min-height: 70px;
     border-bottom: #20A144;
     border-bottom-style: solid;
     border-bottom-width: 4px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
 }
 
 .btnatras {
@@ -59,8 +69,19 @@ header {
     text-decoration: none;
 }
 
+.box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#container_info {
+    flex-grow: 1;
+    overflow: auto;
+}
+
 .footer {
-    position: relative;
+    flex-shrink: 0;
     background-color: #9ED4AE;
     height: 15vh;
     border-top: #20A144;
@@ -71,12 +92,14 @@ header {
     margin: 0;
     left: 0;
     right: 0;
-    bottom: auto;
+    bottom: 0;
+    margin-top: auto;
 }
 
 .contenedor {
     text-align: center;
     padding: 1%;
+    flex-direction: column;
 }
 
 .cont2 {
@@ -87,76 +110,152 @@ header {
 }
 
 h1 {
-    font-size: 72px;
+    font-size: 64px;
     font-family: nexa;
     color: #20A144;
+    margin: 0px;
+    padding-top: 15px;
+}
+
+.div-mobile {
+    display: none;
 }
 
 
 /*============================================================================================================*/
 
 table {
-    width: 60%;
-    text-align: center;
-    padding-bottom: 60px;
-    padding-top: 15px;
-}
-
-h3 {
-    font-size: 36px;
-    font-family: nexa;
-    color: #20A144;
-}
-
-h4 {
-    font-size: 30px;
-    font-family: louis;
-    color: #9ED4AE;
-}
-
-.tbtn {
     width: 100%;
     text-align: center;
-    padding-top: 50px;
+    padding-bottom: 20px;
+    padding-top: 0px;
 }
 
-.btns {
-    display: inline-block;
-    margin: 0 150px;
-    width: 220px;
-    height: 300px;
-    border-radius: 30px;
-    background-color: #9ED4AE;
-    padding: 5px;
-}
-
-.logos {
-    margin-top: 4vh;
-    height: 20vh;
+tr td {
+    text-align: center;
+    width: 33.33%;
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 28px;
     font-family: nexa;
     color: #20A144;
 }
 
-.acciones {
-    position: absolute;
-    width: 300px;
-    right: 100px;
-    top: 180px;
+h3 {
+    font-size: 24px;
+    font-family: nexa;
+    color: #9ED4AE;
 }
 
-.imgboton {
-    width: 70%;
+input {
+    height: 50px;
+    width: 300px;
+    border-color: #9ED4AE;
+    border-style: solid;
+    border-width: 3px;
+    font-size: 20px;
+    color: #20A144;
+    font-family: nexa;
+    padding-left: 15px;
+}
+
+select {
+    height: 50px;
+    width: 300px;
+    border-color: #9ED4AE;
+    border-style: solid;
+    border-width: 3px;
+    font-size: 20px;
+    color: #20A144;
+    font-family: nexa;
+    padding-left: 15px;
 }
 
 button {
-    width: 80px;
-    height: 80px;
-    text-align: center;
+    font-family: nexa;
+    color: #20A144;
     background-color: #9ED4AE;
-    border-radius: 180px;
-    border-style: none;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #20A144;
+    border-radius: 15px;
+    margin: 40px;
+    width: 180px;
+    height: 50px;
+    font-size: 20px;
+}
+
+@media (max-width: 1000px) {
+    header {
+        flex-direction: column;
+    }
+    nav {
+        padding: 10px 0px;
+        text-align: center;
+    }
+    .logo img {
+        height: 50px;
+    }
+    h1 {
+        font-size: 52px;
+    }
+    h2 {
+        font-size: 22px;
+    }
+    h3 {
+        font-size: 16px;
+    }
+    select {
+        height: 45px;
+        width: 220px;
+        font-size: 16px;
+    }
+    button {
+        height: 45px;
+        width: 160px;
+        font-size: 18px;
+        margin: 30px;
+    }
+    .btnatras {
+        color: #20A144;
+        font-family: nexa;
+        font-size: 14px;
+        background-color: #ffffff00;
+        border-style: none;
+        position: absolute;
+        right: 33px;
+        top: 20px;
+        text-decoration: none;
+    }
+}
+
+@media (max-width: 690px) {
+    .div-mobile {
+        display: block;
+    }
+    .div-dek {
+        display: none;
+    }
+    h1 {
+        font-size: 46px;
+    }
+    button {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 490px) {
+    h1 {
+        font-size: 32px;
+    }
+    button {
+        margin: 0px;
+        margin-top: 50px;
+        height: 40px;
+        width: 140px;
+        font-size: 16px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
 }

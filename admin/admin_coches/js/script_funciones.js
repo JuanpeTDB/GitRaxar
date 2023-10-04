@@ -16,8 +16,10 @@ $(document).ready(function() {
                 coches.forEach(res => {
                     ret += `
 						<tr cod="${res.matricula}">
-							<td><h2>${res.marca} ${res.modelo} - ${res.matricula} - ${res.anio} <button class="boton btnEditar" data-matricula="${res.matricula}"> Editar </button> <button class="btneliminar boton"> Eliminar </button> <hr> </h2></td>
+							<td><h2 class="nombres">${res.marca} ${res.modelo} - ${res.matricula} - ${res.anio} </h2><div class="cont-botones"><button class="boton btnEditar" data-matricula="${res.matricula}"> Editar </button> <button class="btneliminar boton"> Eliminar </button></div></td>
+
 						</tr>
+                        <tr><td><hr></td></tr>
 					`
                     $('#container_info').html(ret);
 
@@ -41,7 +43,7 @@ $(document).ready(function() {
             "align-items": "center"
         });
 
-        var contenido = $("<div>").css({
+        var contenido = $("<div>").addClass("contElim").css({
             "width": "40%",
             "padding": "80px",
             "height": "40%",
@@ -63,7 +65,7 @@ $(document).ready(function() {
             "width": "100%",
             "position": "relative",
             "padding": "0",
-            "padding-top": "60px",
+            /* "padding-top": "60px", */
             "display": "flex",
             "justify-content": "center",
             "align-items": "center"
@@ -72,8 +74,8 @@ $(document).ready(function() {
         var botonCancelar = $("<button>").attr("id", "btnCancelar").text("CANCELAR").css({
             "width": "180px",
             "height": "60px",
-            "position": "absolute",
-            "left": "0px",
+            "position": "relative",
+            "left": "10%",
             "text-align": "center",
             "background-color": "#9ED4AE",
             "border-color": "#20A144",
@@ -83,14 +85,15 @@ $(document).ready(function() {
             "font-family": "nexa",
             "font-size": "25px",
             "color": "#20A144",
-            "margin-left": "50px"
+            "margin-top": "50px"
+
         });
 
-        var botonAceptar = $("<button>").attr("class", "btnAceptar").text("ACEPTAR").css({
+        var botonAceptar = $("<button>").attr("id", "btnAceptar").text("ACEPTAR").css({
             "width": "180px",
             "height": "60px",
-            "position": "absolute",
-            "right": "0px",
+            "position": "relative",
+            "right": "10%",
             "text-align": "center",
             "background-color": "#9ED4AE",
             "border-color": "#20A144",
@@ -100,11 +103,11 @@ $(document).ready(function() {
             "font-family": "nexa",
             "font-size": "25px",
             "color": "#20A144",
-            "margin-right": "50px"
+            "margin-top": "50px"
         });
 
         div.append(botonAceptar).append(botonCancelar);
-        contenido.append("<p>¿Seguro que deseas eliminar el coche del sistema?</p>");
+        contenido.append("<p class='parrafoElim'>¿Seguro que deseas eliminar el coche del sistema?</p>");
         contenido.append(div);
 
         contenedor.append(contenido);

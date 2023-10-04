@@ -75,9 +75,11 @@ header {
 }
 
 h1 {
-    font-size: 72px;
+    font-size: 64px;
     font-family: nexa;
     color: #20A144;
+    margin: 0px;
+    padding-top: 30px;
 }
 
 
@@ -110,7 +112,8 @@ hr {
     top: 27%;
     border-radius: 15px;
     background-color: #9ED4AE;
-    border-style: none;
+    border-style: solid;
+    border-color: #20A144;
 }
 
 

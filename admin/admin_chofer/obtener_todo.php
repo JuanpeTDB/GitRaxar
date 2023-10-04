@@ -1,7 +1,7 @@
 <?php
 	require_once '../../conexion.php';
 	if(ISSET($_POST['res'])){
-		$query = "SELECT * FROM chofer";
+		$query = "SELECT * FROM chofer WHERE `activo` = 1";
 		$result = mysqli_query($conn, $query);
 		$json = array();
 		if($result) {

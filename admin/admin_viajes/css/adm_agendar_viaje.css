@@ -27,13 +27,6 @@ body {
     min-height: 100vh;
 }
 
-.logo {
-    position: relative;
-    width: 5.5%;
-    left: 6%;
-    top: 14%;
-}
-
 .btnatras {
     color: #20A144;
     font-family: nexa;
@@ -46,16 +39,38 @@ body {
     text-decoration: none;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 70px;
+    margin-right: 10px;
+    margin-left: 40px;
+}
+
+.nombre-remi {
+    font-size: 40px;
+    padding: 0%;
+    font-family: nexa;
+    color: #20A144;
+}
+
 header {
     background-color: #9ED4AE;
-    height: 15vh;
+    min-height: 70px;
     border-bottom: #20A144;
     border-bottom-style: solid;
     border-bottom-width: 4px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
 }
 
 .footer {
-    position: absolute;
+    flex-shrink: 0;
     background-color: #9ED4AE;
     height: 15vh;
     border-top: #20A144;
@@ -66,18 +81,28 @@ header {
     margin: 0;
     left: 0;
     right: 0;
-    bottom: auto;
+    bottom: 0;
+    margin-top: auto;
 }
 
 .contenedor {
     text-align: center;
-    padding: 1%;
+}
+
+.cont2 {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 h1 {
-    font-size: 72px;
+    font-size: 64px;
     font-family: nexa;
     color: #20A144;
+    padding-top: 30px;
+    margin: 0;
 }
 
 
@@ -99,7 +124,7 @@ h2 {
 
 input {
     height: 50px;
-    width: 100%;
+    width: 300px;
     box-sizing: border-box;
     border-color: #9ED4AE;
     border-style: solid;
@@ -112,7 +137,7 @@ input {
 
 select {
     height: 50px;
-    width: 100%;
+    width: 300px;
     box-sizing: border-box;
     border-color: #9ED4AE;
     border-style: solid;
@@ -131,32 +156,12 @@ button {
     border-width: 2px;
     border-color: #20A144;
     border-radius: 15px;
-    margin: 40px;
+    margin-top: 40px;
     width: 180px;
     height: 50px;
     font-size: 20px;
-}
-
-td {
-    padding-left: 80px;
-    padding-right: 80px;
-}
-
-button {
-    width: 180px;
-    height: 50px;
-    left: 0px;
-    text-align: center;
-    background-color: #9ED4AE;
-    border-color: #20A144;
-    border-style: solid;
-    border-width: 3px;
-    border-radius: 15px;
-    font-family: nexa;
-    font-size: 22px;
-    color: #20A144;
-    margin: 40px;
-    margin-bottom: 0px;
+    margin-left: 8px;
+    margin-right: 8px;
 }
 
 .opcs {
@@ -175,4 +180,63 @@ button {
 #opcionesTarjeta {
     width: 100%;
     display: inline-block;
+}
+
+@media (max-width: 1000px) {
+    header {
+        flex-direction: column;
+    }
+    nav {
+        padding: 10px 0px;
+        text-align: center;
+    }
+    .logo img {
+        height: 50px;
+    }
+    h1 {
+        font-size: 50px;
+        font-family: nexa;
+        color: #20A144;
+        padding-bottom: 4px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    input {
+        width: 240px;
+        font-size: 18px;
+    }
+    select {
+        width: 240px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 860px) {
+    h1 {
+        font-size: 42px;
+        font-family: nexa;
+        color: #20A144;
+        padding-bottom: 4px;
+    }
+    input {
+        width: 75%;
+        font-size: 16px;
+    }
+    select {
+        width: 75%;
+        font-size: 16px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+    #btnGuardar {
+        width: 120px;
+    }
+    #btnAtras {
+        width: 120px;
+    }
+    body {
+        justify-content: space-between;
+    }
 }
