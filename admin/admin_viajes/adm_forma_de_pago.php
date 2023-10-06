@@ -18,6 +18,7 @@
 			<img src="img/REMI_logo.png" alt="logo remi">
 			<h2 class="nombre-remi">REMI</h2>
 		</div>
+        <a href="adm_agendar_viaje.php"  id="btnAtras" class="btnatras">ATRAS</a>
 	</header>
 
     <div class="contenedor">
@@ -42,16 +43,29 @@
 
         </table>
         
-        <div id="opcionesTarjeta" style="display: none;">
-            <label class="opcs"><input type="radio" name="tipoTarjeta" value="debito"> Débito</label>
-            <label class="opcs"><input type="radio" name="tipoTarjeta" value="credito"> Crédito</label>
-        </div>
+        <table class="tarjeta" style="display: none" id="opcionesTarjeta">
+            <tr>
+                <td>
+                    <input type="radio" name="tipoTarjeta" value="debito">
+                </td>
+                <td>
+                    <input type="radio" name="tipoTarjeta" value="credito">
+                </td>
+            </tr>
+            <tr>
+                <td class="opcs">
+                    Débito
+                </td>
+                <td class="opcs">
+                    Crédito
+                </td>
+            </tr>
+        </table>
 
         <br>
         <br>
 
         <div>
-            <button id="btnAtras">ATRAS</button>
             <button id="btnContinuar">CONTINUAR</button>
         </div>
     

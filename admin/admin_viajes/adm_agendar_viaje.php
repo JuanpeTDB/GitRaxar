@@ -9,29 +9,28 @@
 <body>
 
 <?php
-        require_once '../../conexion.php';
-        
-        $queryChoferes = "SELECT ci, nombre, apellido, de_la_casa FROM chofer where activo = 1";
-        $resultChoferes = mysqli_query($conn, $queryChoferes);
-        $jsonChoferes = array();
+    require_once '../../conexion.php';
 
-        if (mysqli_num_rows($resultChoferes) > 0) {
+    $queryChoferes = "SELECT ci, nombre, apellido, de_la_casa FROM chofer where activo = 1";
+    $resultChoferes = mysqli_query($conn, $queryChoferes);
+    $jsonChoferes = array();
+
+    if (mysqli_num_rows($resultChoferes) > 0) {
         while ($rowChofer = mysqli_fetch_assoc($resultChoferes)) {
             $ciChofer = $rowChofer['ci'];
             $de_la_casa = $rowChofer['de_la_casa'];
             $nombreChofer = $rowChofer['nombre'] . ' ' . $rowChofer['apellido'];
             $jsonChoferes[] = array('ci' => $ciChofer, 'nombre' => $nombreChofer, 'de_la_casa' => $de_la_casa);
         } 
-}
-
-        
-    ?>
+    }    
+?>
 
     <header>
 		<div class="logo">
 			<img src="img/REMI_logo.png" alt="logo remi">
 			<h2 class="nombre-remi">REMI</h2>
 		</div>
+        <a href="adm_viajes.php" class="btnatras">ATRAS</a>
 	</header>
     <div class="contenedor">
 
@@ -68,7 +67,7 @@
             </tr>
             <tr>
                 <td>
-                    <h2>Monto ($U)</h2>
+                    <h2>Monto</h2>
                     <input name="importe" type="text"></input>
                 </td>
                 <td>
@@ -102,7 +101,6 @@
         </form>
         <br>
         <br>
-            <button id="btnAtras">ATRAS</button>    
             <button id="btnGuardar">CONTINUAR</button> 
     
     </div>
@@ -114,9 +112,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script>
-        $("#btnAtras").click(function() {
-            window.history.back();
-        });
         $("#btnGuardar").click(function() {
             var camposVacios = false;
             $("input[type='text'], input[type='time'], input[type='date']").each(function() {
@@ -127,7 +122,7 @@
             });
 
             if (camposVacios) {
-                alert("Por favor, complete todos los campos antes de guardar.");
+                alert("Por favor, complete todos los campos antes de continuar");
             } else {
                 $("#agendar").submit();
             }

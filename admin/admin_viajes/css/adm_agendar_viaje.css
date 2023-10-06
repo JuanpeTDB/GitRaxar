@@ -116,6 +116,14 @@ table {
     border-collapse: collapse;
 }
 
+.tarjeta {
+    width: 50%;
+    position: relative;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 h2 {
     font-size: 26px;
     font-family: nexa;
@@ -169,7 +177,6 @@ button {
     border-color: #20A144;
     font-family: nexa;
     font-size: 22px;
-    display: inline-block;
     width: 10%;
     box-sizing: border-box;
     text-align: center;
@@ -177,12 +184,35 @@ button {
     margin-top: 30px;
 }
 
-#opcionesTarjeta {
-    width: 100%;
-    display: inline-block;
+@media (max-width: 1240px) {
+    #agendarOtro {
+        width: 140px !important;
+        font-size: 20px !important;
+    }
+    #volverInicio {
+        width: 140px !important;
+        font-size: 20px !important;
+    }
+    .parrafoElim {
+        margin: 0px !important;
+    }
 }
 
 @media (max-width: 1000px) {
+    .contElim {
+        height: 28% !important;
+    }
+    #agendarOtro {
+        width: 120px !important;
+        font-size: 17px !important;
+    }
+    #volverInicio {
+        width: 120px !important;
+        font-size: 17px !important;
+    }
+    .parrafoElim {
+        font-size: 26px !important;
+    }
     header {
         flex-direction: column;
     }
@@ -231,12 +261,33 @@ button {
         font-size: 18px;
     }
     #btnGuardar {
-        width: 120px;
-    }
-    #btnAtras {
-        width: 120px;
+        width: 120px !important;
+        font-size: 16px;
     }
     body {
         justify-content: space-between;
+    }
+    .btnatras {
+        color: #20A144;
+        font-family: nexa;
+        font-size: 14px;
+        background-color: #ffffff00;
+        border-style: none;
+        position: absolute;
+        right: 33px;
+        top: 20px;
+        text-decoration: none;
+    }
+}
+
+@media (max-width: 500px) {
+    #agendarOtro {
+        margin-top: 20px !important;
+    }
+    #volverInicio {
+        margin-top: 20px !important;
+    }
+    .contElim {
+        width: 80% !important;
     }
 }

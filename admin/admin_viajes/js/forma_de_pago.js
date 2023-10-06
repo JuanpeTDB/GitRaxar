@@ -50,7 +50,7 @@ function abrirPopup() {
         "align-items": "center"
     });
 
-    var contenido = $("<div>").css({
+    var contenido = $("<div>").addClass("contElim").css({
         "width": "40%",
         "padding": "80px",
         "height": "40%",
@@ -72,17 +72,17 @@ function abrirPopup() {
         "width": "100%",
         "position": "relative",
         "padding": "0",
-        "padding-top": "60px",
+        /* "padding-top": "60px", */
         "display": "flex",
         "justify-content": "center",
         "align-items": "center"
     });
 
-    var agendarOtro = $("<button>").attr("id", "agendarOtro").text("AGENDAR OTRO VIAJE").css({
-        "width": "190px",
-        "height": "100px",
-        "position": "absolute",
-        "left": "0px",
+    var agendarOtro = $("<button>").attr("id", "agendarOtro").text("Agendar otro").css({
+        "width": "180px",
+        "height": "60px",
+        "position": "relative",
+        "left": "10%",
         "text-align": "center",
         "background-color": "#9ED4AE",
         "border-color": "#20A144",
@@ -90,16 +90,16 @@ function abrirPopup() {
         "border-width": "3px",
         "border-radius": "15px",
         "font-family": "nexa",
-        "font-size": "25px",
+        "font-size": "22px",
         "color": "#20A144",
+        "margin-top": "50px"
     });
 
-    var volverInicio = $("<button>").attr("id", "volverInicio").text("VOLVER A INICIO").css({
-        "width": "190px",
-        "height": "100px",
-        "position": "absolute",
-        "left": "350px",
-        "right": "0px",
+    var volverInicio = $("<button>").attr("id", "volverInicio").text("Volver a inicio").css({
+        "width": "180px",
+        "height": "60px",
+        "position": "relative",
+        "right": "10%",
         "text-align": "center",
         "background-color": "#9ED4AE",
         "border-color": "#20A144",
@@ -107,13 +107,14 @@ function abrirPopup() {
         "border-width": "3px",
         "border-radius": "15px",
         "font-family": "nexa",
-        "font-size": "25px",
+        "font-size": "22px",
         "color": "#20A144",
+        "margin-top": "50px"
 
     });
 
     div.append(volverInicio).append(agendarOtro);
-    contenido.append("<p>Viaje confirmado, que deseas hacer ahora?</p>");
+    contenido.append("<p class='parrafoElim'>Viaje confirmado, que deseas hacer ahora?</p>");
     contenido.append(div);
 
     contenedor.append(contenido);
