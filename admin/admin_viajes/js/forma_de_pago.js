@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    var cod_viaje = $("#cod_viaje").val();
+
     $("#metodoPago").change(function() {
         var tarjeta = " ";
         if ($(this).val() === "4") {
@@ -19,22 +21,43 @@ $(document).ready(function() {
             alert("Por favor, seleccione un tipo de tarjeta.");
         } else if (metodoPago === "4" && (tipoTarjeta === "debito")) {
             MP = "debito";
+            almacenarViaje(cod_viaje, MP);
             abrirPopup();
         } else if (metodoPago === "4" && (tipoTarjeta === "credito")) {
             MP = "credito";
+            almacenarViaje(cod_viaje, MP);
             abrirPopup();
         } else if (metodoPago === "1") {
             MP = "efectivo";
+            almacenarViaje(cod_viaje, MP);
             abrirPopup();
         } else if (metodoPago === "2") {
             MP = "transferencia";
+            almacenarViaje(cod_viaje, MP);
             abrirPopup();
         } else if (metodoPago === "3") {
             MP = "cta_corriente";
+            almacenarViaje(cod_viaje, MP);
             abrirPopup();
         }
     });
 });
+
+
+function almacenarViaje(cod_viaje, MP) {
+    $.ajax({
+        url: 'almacenarFp.php',
+        type: 'POST',
+        data: {
+            res: 1,
+            cod_viaje: cod_viaje,
+            MP: MP
+        },
+        success: function(response) {
+            console.log(response);
+        }
+    });
+}
 
 
 function abrirPopup() {

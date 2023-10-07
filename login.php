@@ -13,11 +13,15 @@
                 <div class="div_logo">
                     <img id="logo" src="img/REMI_completo.png">
                 </div>
-                <input type="text" id="Usu" name="usuario" placeholder="Usuario">
-                <input type="password" id="Passwd" name="contrasenia" placeholder="Contraseña">
-                <button name="btnIngresar" id="btnIngresar" type="submit">Ingresar</button>
-                <div id="msj_error">
-                    
+                <div class="div_logo2" style="display: none;">
+                    <img id="logo" src="img/REMI_completo.png">
+                </div>
+                <div class="formulario">
+                    <input type="text" id="Usu" name="usuario" placeholder="Usuario">
+                    <input type="password" id="Passwd" name="contrasenia" placeholder="Contraseña">
+                    <button name="btnIngresar" id="btnIngresar" type="submit"><span>Ingresar</span></button>
+                    <div id="msj_error">
+                    </div>
                 </div>
             </div>
         </form>

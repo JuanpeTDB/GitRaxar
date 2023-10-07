@@ -74,6 +74,19 @@ nav a:hover {
     font-weight: 800;
 }
 
+button {
+    cursor: pointer !important;
+    transition: transform 0.2s, opacity 0.2s !important;
+}
+
+button:active {
+    transform: scale(0.95) !important;
+}
+
+button:hover {
+    opacity: 0.8 !important;
+}
+
 .box {
     flex: 1;
     display: flex;
