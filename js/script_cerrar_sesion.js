@@ -3,7 +3,7 @@ $(document).ready(function() {
 });
 
 function abrirPopup() {
-    var contenedor = $("<div>").css({
+    var cont1 = $("<div>").css({
         "position": "fixed",
         "top": "0",
         "left": "0",
@@ -15,11 +15,10 @@ function abrirPopup() {
         "align-items": "center"
     });
 
-    var contenido = $("<div>").css({
-        "width": "30%",
-        "padding": "50px",
-        "padding-bottom": "100px",
-        "height": "25%",
+    var contenido = $("<div>").addClass("contElim").css({
+        "width": "40%",
+        "padding": "80px",
+        "height": "40%",
         "position": "fixed",
         "text-align": "center",
         "background-color": "#F5F5F5",
@@ -38,17 +37,17 @@ function abrirPopup() {
         "width": "100%",
         "position": "relative",
         "padding": "0",
-        "padding-top": "20px",
+        /* "padding-top": "60px", */
         "display": "flex",
         "justify-content": "center",
         "align-items": "center"
     });
 
     var botonCancelar = $("<button>").attr("id", "btnCancelar").text("CANCELAR").css({
-        "width": "150px",
-        "height": "40px",
-        "position": "absolute",
-        "left": "0px",
+        "width": "180px",
+        "height": "60px",
+        "position": "relative",
+        "left": "10%",
         "text-align": "center",
         "background-color": "#9ED4AE",
         "border-color": "#20A144",
@@ -56,16 +55,17 @@ function abrirPopup() {
         "border-width": "3px",
         "border-radius": "15px",
         "font-family": "nexa",
-        "font-size": "22px",
+        "font-size": "25px",
         "color": "#20A144",
-        "margin-left": "30px"
+        "margin-top": "50px"
+
     });
 
     var botonAceptar = $("<button>").attr("id", "btnAceptar").text("ACEPTAR").css({
-        "width": "150px",
-        "height": "40px",
-        "position": "absolute",
-        "right": "0px",
+        "width": "180px",
+        "height": "60px",
+        "position": "relative",
+        "right": "10%",
         "text-align": "center",
         "background-color": "#9ED4AE",
         "border-color": "#20A144",
@@ -73,23 +73,23 @@ function abrirPopup() {
         "border-width": "3px",
         "border-radius": "15px",
         "font-family": "nexa",
-        "font-size": "22px",
+        "font-size": "25px",
         "color": "#20A144",
-        "margin-right": "30px"
+        "margin-top": "50px"
     });
 
     div.append(botonAceptar).append(botonCancelar);
-    contenido.append("<p>¿Seguro que deseas cerrar sesion?</p>");
+    contenido.append("<p class='parrafoElim'>¿Seguro que deseas eliminar al chofer del sistema?</p>");
     contenido.append(div);
 
-    contenedor.append(contenido);
+    cont1.append(contenido);
 
-    $("body").append(contenedor);
+    $("body").append(cont1);
 
-    contenedor.fadeIn();
+    cont1.fadeIn();
 
     $("#btnCancelar").click(function() {
-        contenedor.remove();
+        cont1.remove();
     });
 
     $("#btnAceptar").click(function() {
