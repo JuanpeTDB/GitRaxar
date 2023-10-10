@@ -28,7 +28,7 @@
     <div class="contenedor">
         <h1>LISTA NEGRA</h1>
 
-        <a class="agregar"  onclick="window.location.href='adm_agregar_lisanegra.php';">
+        <a class="agregar"  onclick="window.location.href='adm_agregar_listanegra.php';">
             <img src="img/agregar.png" class="boton_agregar"><img src="img/silueta.png" class="boton_agregar">
         </a>
 

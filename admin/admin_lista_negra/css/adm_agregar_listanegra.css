@@ -27,6 +27,18 @@ body {
     min-height: 100vh;
 }
 
+.btnatras {
+    color: #20A144;
+    font-family: nexa;
+    font-size: 20px;
+    background-color: #ffffff00;
+    border-style: none;
+    position: absolute;
+    right: 80px;
+    top: 40px;
+    text-decoration: none;
+}
+
 button {
     cursor: pointer !important;
     transition: transform 0.2s, opacity 0.2s !important;
@@ -41,34 +53,54 @@ button:hover {
 }
 
 .logo {
-    position: relative;
-    width: 5.5%;
-    left: 6%;
-    top: 14%;
+    display: flex;
+    align-items: center;
 }
 
-.btnatras {
-    color: #20A144;
+.logo img {
+    height: 70px;
+    margin-right: 10px;
+    margin-left: 40px;
+}
+
+.nombre-remi {
+    font-size: 40px;
+    padding: 0%;
     font-family: nexa;
-    font-size: 20px;
-    background-color: #ffffff00;
-    border-style: none;
-    position: absolute;
-    right: 80px;
-    top: 40px;
-    text-decoration: none;
+    color: #20A144;
 }
 
 header {
     background-color: #9ED4AE;
-    height: 15vh;
+    min-height: 70px;
     border-bottom: #20A144;
     border-bottom-style: solid;
     border-bottom-width: 4px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+a {
+    text-decoration: none;
+    color: #20A144;
+    font-family: nexa;
+    font-size: 16px;
+}
+
+nav a {
+    font-weight: 600;
+    padding-right: 20px;
+}
+
+nav a:hover {
+    color: #F8F8F8;
+    font-weight: 800;
 }
 
 .footer {
-    position: absolute;
+    flex-shrink: 0;
     background-color: #9ED4AE;
     height: 15vh;
     border-top: #20A144;
@@ -79,7 +111,8 @@ header {
     margin: 0;
     left: 0;
     right: 0;
-    bottom: auto;
+    bottom: 0;
+    margin-top: auto;
 }
 
 .contenedor {
@@ -88,9 +121,11 @@ header {
 }
 
 h1 {
-    font-size: 72px;
+    font-size: 58px;
     font-family: nexa;
     color: #20A144;
+    margin: 0px;
+    margin-top: 15px;
 }
 
 
