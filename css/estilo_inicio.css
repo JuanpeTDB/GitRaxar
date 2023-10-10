@@ -241,13 +241,17 @@ h2 {
         height: 100px;
         object-fit: cover;
     }
+    .container {
+        width: 200px;
+        height: 250px;
+    }
     .cards {
         width: 140px;
         border-radius: 30px;
         background-color: #9ED4AE;
         text-align: center;
     }
-    h2 {
+    .h2-front {
         font-size: 24px;
         font-family: nexa;
         color: #20A144;
@@ -256,8 +260,15 @@ h2 {
     }
 }
 
+@media (max-width: 480px) {
+    .contenedor {
+        grid-template-columns: repeat(1, 2fr);
+        gap: 60px;
+    }
+}
+
 .footer {
-    position: absolute;
+    flex-shrink: 0;
     background-color: #9ED4AE;
     height: 15vh;
     border-top: #20A144;
@@ -268,7 +279,8 @@ h2 {
     margin: 0;
     left: 0;
     right: 0;
-    bottom: auto;
+    bottom: 0;
+    margin-top: auto;
 }
 
 table {
