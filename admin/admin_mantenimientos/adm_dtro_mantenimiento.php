@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REMI</title>
     <link rel="stylesheet" type="text/css" href="css/estilo_adm_dtro_mantenimiento.css">
+    <link rel="icon" href="img/REMI_logo.png">
 </head>
 <body>
 
@@ -61,7 +62,7 @@
         <h1><?php echo $marca; ?> <?php echo $modelo; ?> <?php echo $matricula; ?></h1>
 
         <a class="agregar"  onclick="window.location.href='adm_agregar_mantenimiento.php?matricula=<?php echo $matricula; ?>';">
-            <img src="img/agrega.png" class="boton_agregar"><img src="img/silueta_mantenimiento.png" class="boton_agregar">
+            <img src="img/agregar.png" class="boton_agregar"><img src="img/silueta_mantenimiento.png" class="boton_agregar">
         </a>
 
         <div class="box">

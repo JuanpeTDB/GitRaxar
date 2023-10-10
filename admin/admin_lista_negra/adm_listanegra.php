@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REMI</title>
     <link rel="stylesheet" type="text/css" href="css/estilo_adm_listanegra.css">
+    <link rel="icon" href="img/REMI_logo.png">
 </head>
 <body>
-<header><script>alert("PAGINA EN DESARROLLO");</script>
+<header>
 		<div class="logo">
 			<img src="img/REMI_logo.png" alt="logo remi">
 			<h2 class="nombre-remi">REMI</h2>
@@ -27,63 +28,26 @@
     <div class="contenedor">
         <h1>LISTA NEGRA</h1>
 
-        <a class="agregar"  onclick="window.location.href='adm_agregar_listanegra.php';">
-            <img src="img/agregar.png" class="boton"><img src="img/silueta.png" class="boton">
+        <a class="agregar"  onclick="window.location.href='adm_agregar_lisanegra.php';">
+            <img src="img/agregar.png" class="boton_agregar"><img src="img/silueta.png" class="boton_agregar">
         </a>
 
         <div class="box">
-            <table>
-                <tr onclick="window.location.href='adm_dentro_listanegra.php';">
-                    <td>
-                        <h2>Federico Garcia</h2>
-                        <hr>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <h2>Bruno Damiani</h2>
-                        <hr>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <h2>Juan Ignacio Ramirez</h2>
-                        <hr>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <h2>Emmanuel Giggliotti</h2>
-                        <hr>
-                        
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <h2>Yonatan Rodriguez</h2>
-                        <hr>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <h2>Diego Rodriguez</h2>
-                        <hr>
-                    </td>
-                </tr>
-                
-            <table>
+            <table id="container_info">
+                                
+            </table>
             
         </div>
     </div>
     
     <br><br><br><br><br>
     <div class="footer">
-		
+
     </div>
+		
+    
 </body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+	<script src="js/script_funciones.js"></script>
 </html>

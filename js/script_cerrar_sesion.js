@@ -79,7 +79,7 @@ function abrirPopup() {
     });
 
     div.append(botonAceptar).append(botonCancelar);
-    contenido.append("<p class='parrafoElim'>¿Seguro que deseas eliminar al chofer del sistema?</p>");
+    contenido.append("<p class='parrafoElim'>¿Seguro que deseas cerrar sesión?</p>");
     contenido.append(div);
 
     cont1.append(contenido);

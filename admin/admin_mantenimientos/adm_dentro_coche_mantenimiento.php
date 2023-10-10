@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REMI</title>
     <link rel="stylesheet" type="text/css" href="css/estilo_adm_dentro_coche_mantenimiento.css">
+    <link rel="icon" href="img/REMI_logo.png">
 </head>
 <body>
 

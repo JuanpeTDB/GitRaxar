@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>REMI</title>
     <link rel="stylesheet" type="text/css" href="css/estilo_login.css">
+    <link rel="icon" href="img/REMI_logo.png">
 </head>
 <body>
     <div class="contenedor">

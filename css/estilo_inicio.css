@@ -94,6 +94,7 @@ nav a:hover {
     position: relative;
     width: 250px;
     height: 320px;
+    perspective: 500px;
 }
 
 .card {
@@ -162,6 +163,42 @@ p {
     width: auto;
     text-align: center;
     width: 80%;
+}
+
+.container {
+    cursor: pointer !important;
+    transition: transform 0.2s, opacity 0.2s !important;
+}
+
+.container:active {
+    transform: scale(0.95) !important;
+}
+
+button {
+    cursor: pointer !important;
+    transition: transform 0.2s, opacity 0.2s !important;
+}
+
+button:active {
+    transform: scale(0.95) !important;
+}
+
+button:hover {
+    opacity: 0.8 !important;
+}
+
+.parrafoElim {
+    font-size: 40px;
+    position: relative;
+    left: 50%;
+    margin: 0px;
+    transform: translateX(-50%);
+    font-family: nexa;
+    color: #20A144 !important;
+    width: auto;
+    text-align: center;
+    width: 80%;
+    margin-top: 20px;
 }
 
 @media (max-width: 1000px) {

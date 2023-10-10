@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REMI</title>
     <link rel="stylesheet" type="text/css" href="css/estilo_adm_dtro_pago_cli.css">
+    <link rel="icon" href="img/REMI_logo.png">
 </head>
 <body>
     <header>
