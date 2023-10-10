@@ -48,13 +48,13 @@
 
             <table>
                 <tr>
-                    <td><h2>Fecha</h2></td>
+                    <td><h2 class="subt">Fecha</h2></td>
                 </tr>
                 <tr>
                     <td><h3><?php echo $fecha?></h3></td>
                 </tr>
                 <tr>
-                    <td><h2>Motivo</h2></td>
+                    <td><h2 class="subt">Motivo</h2></td>
                 </tr>
                 <tr>
                     <td><h3><?php echo $comentario?></h3></td>
@@ -62,8 +62,6 @@
             </table>
 
         <br><br>
-
-        <button class="boton" id="btnEliminar"> ELIMINAR </button>
     
     
         
@@ -76,25 +74,8 @@
 
 
 </body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 
-<script>
-    $(document).ready(function(){
-        $('#btnEliminar').click(function(){
-            var cod_cliente = $('#cod_cliente').val();
-            $.ajax({
-                type: "POST",
-                url: "eliminar.php",
-                cod_cliente: cod_cliente,
-                success: function(r){
-                    if(r==1){
-                        alert("Eliminado con exito");
-                    }else{
-                        alert("Fallo el server");
-                    }
-                }
-            });
-        });
-    });
-</script>
 
 </html>

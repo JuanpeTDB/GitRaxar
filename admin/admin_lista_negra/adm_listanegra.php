@@ -8,7 +8,7 @@
     <link rel="icon" href="img/REMI_logo.png">
 </head>
 <body>
-<header>
+    <header>
 		<div class="logo">
 			<img src="img/REMI_logo.png" alt="logo remi">
 			<h2 class="nombre-remi">REMI</h2>
