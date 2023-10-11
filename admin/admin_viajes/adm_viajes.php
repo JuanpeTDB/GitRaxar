@@ -23,30 +23,47 @@
 			<a href="../admin_lista_negra/adm_listanegra.php" class="nav-link">Lista Negra</a>
 			<a href="../admin_mantenimientos/adm_mantenimientos.php" class="nav-link">Mantenimiento</a>
 		</nav>
-	</header>
-
+        </header>
+        <h1>VIAJES</h1>
+<div class="centered-container">
     <div class="contenedor">
 
-        <h1>VIAJES</h1>
 
-        <table class="tbtn">
-            <tr>
-                <td class="btns" onclick="window.location.href='adm_ver_viajes.php';">
-                    <img class="logos" src="img/viaje.png">
-                    <h2>Ver viajes</h2>
-                </td>
-                <td class="btns" onclick="window.location.href='adm_agendar_viaje.php';">
+
+        <div class="container">
+                <div class="card" id="chofer" onclick="window.location.href='admin/admin_chofer/adm_choferes.php';">
+                    <div class="front">
+                        <img class="logos" src="img/viaje.png">
+                        <h2 class="h2-front">Ver viajes</h2>
+                    </div>
+    
+                    <div class="back">
+                        <h2 class="h2-back">Ver viajes</h2>
+                        <p>En esta sección se encuentran las viajes registrados en el sistema.</p>
+                    </div>
+                </div>
+            </div>
+        <div class="container">
+            <div class="card" id="chofer" onclick="window.location.href='admin/admin_chofer/adm_choferes.php';">
+                <div class="front">
                     <img class="logos" src="img/agendar_viaje.png">
-                    <h2>Agendar viaje</h2>
-                </td>
-            </tr>
-        </table>
+                    <h2 class="h2-front">Agendar</h2>
+                </div>
+
+                <div class="back">
+                    <h2 class="h2-back">Agendar viajes</h2>
+                        <p>En esta sección se pueden agendar los viajes.</p>
+                </div>
+            </div>
+        </div>
     </div>
     
-    <br><br><br><br><br>
+    <br><br><br>
+
+    </div>
     <div class="footer">
 		
     </div>
-    </div>
+</div>
 </body>
 </html>
