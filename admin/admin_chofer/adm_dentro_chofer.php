@@ -37,7 +37,22 @@
                 $modelo = $row['modelo']; 
                 $matricula = $row['matricula']; 
         	}
-		}
+		} else {
+            $query = "SELECT *
+            FROM chofer c
+            WHERE c.ci = $ci";
+            $result = mysqli_query($conn, $query);
+            $json = array();
+            if($result) {
+                while($row = mysqli_fetch_assoc($result)) {
+                    $ci = $row['ci'];
+                    $nombre = $row['nombre'];
+                    $apellido = $row['apellido'];
+                    $telefono = $row['telefono'];
+                    $de_la_casa = $row['de_la_casa'];
+                }
+            }
+        }
         
     ?>
     <input type="hidden" name="ci" value="<?php echo $ci; ?>" id="ci">
@@ -55,29 +70,47 @@
                 <td><h4><?php echo $telefono; ?></h4></td>
                 <td><h4><?php echo $marca; ?> <?php echo $modelo; ?> <?php echo $matricula; ?></h4></td>
                 <td><h4><?php if ($de_la_casa == 1) {
-            echo 'De la casa';
-        } else {
-            echo 'Externo';
-        }
+                                    echo 'De la casa';
+                                } else {
+                                    echo 'Externo';
+                                }
          ?></h4></td>
             </tr>
         </table>
 
-        <table class="tbtn">
-            <tr>
-                <td class="btns" onclick="window.location.href = 'adm_dtro_viaje_chof.php?ci=<?php echo $ci; ?>'">
-                    <img class="logos" src="img/viaje.png">
-                    <h2>Ver viajes</h2>
-                </td>
-                <td class="btns" onclick="window.location.href='adm_planilla_cierre_dia.php?ci=<?php echo $ci; ?>';">
-                    <img class="logos" src="img/pago.png">
-                    <h2>Planilla de cierre del dia</h2>
-                </td>
-            </tr>
-        </table>
+        <div class="centered-container">
+            <div class="contenedor2">
+                <div class="container">
+                    <div class="card" id="chofer" onclick="window.location.href='adm_dtro_viaje_chof.php?ci=<?php echo $ci; ?>'">
+                        <div class="front">
+                            <img class="logos" src="img/viaje.png">
+                            <h2 class="h2-front">Ver viajes</h2>
+                        </div>
+                        <div class="back">
+                            <h2 class="h2-back">Ver viajes</h2>
+                            <p>En esta sección encontrarás todos los viajes de este chofer.</p>
+                        </div>
+                    </div>
+                    </div>
+                <div class="container">
+                    <div class="card" id="chofer" onclick="window.location.href='adm_planilla_cierre_dia.php?ci=<?php echo $ci; ?>';">
+                        <div class="front">
+                            <img class="logos" src="img/pago.png">
+                            <h2 class="h2-front">Cierre del dia</h2>
+                        </div>
+                        <div class="back">
+                            <h2 class="h2-back">Cierre del dia</h2>
+                                <p>En esta sección encontrarás todas las planillas de cierre del dia de este chofer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <br><br><br>
+
+        </div>
     </div>
     
-    <br><br><br><br><br>
     <div class="footer">
 		
     </div>

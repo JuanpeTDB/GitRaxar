@@ -5,68 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REMI</title>
     <link rel="stylesheet" type="text/css" href="css/estilo_adm_pagos.css">
-    <link rel="icon" href="img/REMI_logo.png">
+    <link rel="icon" href="img/REMI_logo.png"> 
 </head>
 <body>
-<header>
-		<img class="logo" src="img/REMI_completo.png">
-        <a href="../../admin.php" class="btnatras">ATRAS</a>
+    <header>
+		<div class="logo">
+			<img src="img/REMI_logo.png" alt="logo remi">
+			<h2 class="nombre-remi">REMI</h2>
+		</div>
+        <a href="adm_pagos.php" class="btnatras">ATRAS</a>
 	</header>
 
+    
     <div class="contenedor">
         <h1>CLIENTES</h1>
 
         <a class="agregar"  onclick="window.location.href='agregar_pago_cli.php';">
-            <img src="img/agregar.png" class="boton"><img src="img/silueta.png" class="boton">
+            <img src="img/agregar.png" class="boton_agregar"><img src="img/silueta.png" class="boton_agregar">
         </a>
 
         <div class="box">
-            <table>
-                <tr onclick="window.location.href='adm_dentro_pago_cli.php';">
-                    <td>
-                        <h2>Juan Ramon Gonzales</h2>
-                        <hr>
-                    </td>
-                </tr>
+            <table id="container_info">
                 
-                <tr>
-                    <td>
-                        <h2>Alberto Suarez</h2>
-                        <hr>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <h2>Franco Gonzales</h2>
-                        <hr>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <h2>Danilo Bone</h2>
-                        <hr>
-                        
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <h2>Yonatan Rodriguez</h2>
-                        <hr>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <h2>Diego Rodriguez</h2>
-                        <hr>
-                    </td>
-                </tr>
-                
-            <table>
-            
+            </table>
         </div>
     </div>
 
@@ -78,5 +39,8 @@
     <div class="footer">
 		
     </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script_funciones.js"></script>
 </body>
 </html>

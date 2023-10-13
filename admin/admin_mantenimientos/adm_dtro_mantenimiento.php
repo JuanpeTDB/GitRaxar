@@ -12,7 +12,7 @@
     <?php
         require_once '../../conexion.php';
         $matricula = $_GET['matricula'];
-        $query = "SELECT * FROM auto a
+        $query = "SELECT a.*, r.*, m.* FROM auto a
         INNER JOIN requiere r on r.matricula = a.matricula
         INNER JOIN mantenimiento m on m.cod_mantenimiento = r.cod_mantenimiento
         WHERE a.matricula = '$matricula';";

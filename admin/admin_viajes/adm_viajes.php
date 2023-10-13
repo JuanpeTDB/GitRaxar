@@ -31,7 +31,7 @@
 
 
         <div class="container">
-                <div class="card" id="chofer" onclick="window.location.href='admin/admin_chofer/adm_choferes.php';">
+                <div class="card" id="chofer" onclick="window.location.href='adm_ver_viajes.php';">
                     <div class="front">
                         <img class="logos" src="img/viaje.png">
                         <h2 class="h2-front">Ver viajes</h2>
@@ -44,7 +44,7 @@
                 </div>
             </div>
         <div class="container">
-            <div class="card" id="chofer" onclick="window.location.href='admin/admin_chofer/adm_choferes.php';">
+            <div class="card" id="chofer" onclick="window.location.href='adm_agendar_viaje.php';">
                 <div class="front">
                     <img class="logos" src="img/agendar_viaje.png">
                     <h2 class="h2-front">Agendar</h2>

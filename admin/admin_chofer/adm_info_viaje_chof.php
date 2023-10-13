@@ -48,7 +48,7 @@
 			<img src="img/REMI_logo.png" alt="logo remi">
 			<h2 class="nombre-remi">REMI</h2>
 		</div>
-        <a href="adm_choferes.php" class="btnatras">ATRAS</a>
+        <a href="adm_dtro_viaje_chof.php?ci=<?php echo $ci; ?>" class="btnatras">ATRAS</a>
 	</header>
 
     <div class="contenedor">

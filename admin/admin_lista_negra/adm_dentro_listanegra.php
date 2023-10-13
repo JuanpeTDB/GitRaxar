@@ -23,7 +23,6 @@
         while($row = mysqli_fetch_assoc($result)) {
             $nombre = $row['nombre_cli'];
             $apellido = $row['apellido_cli'];
-            $ci = $row['ci'];
             $estado = $row['estado'];
             $comentario = $row['comentario_chofer']; 
             $cod_cliente = $row['cod_cliente'];

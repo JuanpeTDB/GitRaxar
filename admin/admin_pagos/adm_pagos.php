@@ -31,7 +31,7 @@
 
 
         <div class="container">
-                <div class="card" id="chofer" onclick="window.location.href='admin/admin_chofer/adm_choferes.php';">
+                <div class="card" id="chofer" onclick="window.location.href='adm_pagos_cli.php';">
                     <div class="front">
                         <img class="logos" src="img/empleado.png">
                         <h2 class="h2-front">Clientes</h2>
@@ -44,7 +44,7 @@
                 </div>
             </div>
         <div class="container">
-            <div class="card" id="chofer" onclick="window.location.href='admin/admin_chofer/adm_choferes.php';">
+            <div class="card" id="chofer" onclick="window.location.href='adm_pagos_empr.php';">
                 <div class="front">
                     <img class="logos" src="img/empresa.png">
                     <h2 class="h2-front">Empresas</h2>

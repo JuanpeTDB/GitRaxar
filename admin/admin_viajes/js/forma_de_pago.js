@@ -18,6 +18,7 @@ $(document).ready(function() {
         if (metodoPago === null || metodoPago === "") {
             alert("Por favor, seleccione un método de pago.");
         } else if (metodoPago === "4" && (tipoTarjeta === undefined || tipoTarjeta === null)) {
+            console.log("tarjeta");
             alert("Por favor, seleccione un tipo de tarjeta.");
         } else if (metodoPago === "4" && (tipoTarjeta === "debito")) {
             MP = "debito";
@@ -28,14 +29,17 @@ $(document).ready(function() {
             almacenarViaje(cod_viaje, MP);
             abrirPopup();
         } else if (metodoPago === "1") {
-            MP = "efectivo";
+            console.log("contado");
+            MP = "contado";
             almacenarViaje(cod_viaje, MP);
             abrirPopup();
         } else if (metodoPago === "2") {
+            console.log("transferencia");
             MP = "transferencia";
             almacenarViaje(cod_viaje, MP);
             abrirPopup();
         } else if (metodoPago === "3") {
+            console.log("cta_corriente");
             MP = "cta_corriente";
             almacenarViaje(cod_viaje, MP);
             abrirPopup();
@@ -45,13 +49,15 @@ $(document).ready(function() {
 
 
 function almacenarViaje(cod_viaje, MP) {
+    console.log(cod_viaje);
+    console.log(MP);
     $.ajax({
         url: 'almacenarFp.php',
         type: 'POST',
         data: {
             res: 1,
             cod_viaje: cod_viaje,
-            MP: MP
+            MP: MP,
         },
         success: function(response) {
             console.log(response);

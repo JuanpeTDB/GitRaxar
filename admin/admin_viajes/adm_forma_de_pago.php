@@ -34,7 +34,7 @@
                     <h2>Forma de pago</h2>
                     <select name="metodoPago" id="metodoPago" style="width: 50%">
                         <option value="" disabled selected> Seleccione una forma de pago </option>
-                        <option value="1">Efectivo</option>
+                        <option value="1">Contado</option>
                         <option value="2">Transferencia</option>
                         <option value="3">Cta. Corriente</option>
                         <option value="4">Tarjeta</option>
@@ -67,7 +67,7 @@
         <br>
 
         <div>
-            <button id="btnContinuar">CONTINUAR</button>
+            <button id="btnContinuar">CONFIRMAR</button>
         </div>
     
     
