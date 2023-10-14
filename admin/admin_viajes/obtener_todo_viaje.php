@@ -7,7 +7,7 @@
         INNER JOIN auto a ON co.matricula = a.matricula
         INNER JOIN se_encarga se ON se.ci = c.ci
         INNER JOIN viajes v ON v.cod_viaje = se.cod_viaje
-        ORDER BY  v.fecha ASC, v.hora_inicio ASC;
+        ORDER BY  v.fecha DESC, v.hora_inicio ASC;
         ";
 		$result = mysqli_query($conn, $query);
 		$json = array();

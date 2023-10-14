@@ -119,14 +119,14 @@ $(document).ready(function() {
         let item = $(this).closest('tr');
         let cod_viaje = item.attr('cod');
 
-        function eliminarChofer(a) {
-            console.log(a);
+        function eliminarChofer(cod_viaje) {
+            console.log(cod_viaje);
 
             $.ajax({
-                url: 'eliminarViaje.php',
+                url: 'cancelarViaje.php',
                 type: 'POST',
                 data: {
-                    cod_viaje: a
+                    cod_viaje: cod_viaje
                 },
                 success: function(data) {
                     getAll();

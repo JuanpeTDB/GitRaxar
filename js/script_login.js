@@ -15,7 +15,7 @@ $(document).ready(function() {
             success: function(response) {
                 if (response === "success") {
                     $("#msj_error").html('');
-                    window.location.href = 'admin.php';
+                    window.location.href = 'admin.php?usuario=' + usuario;
                 } else if (response === "success2") {
                     $("#msj_error").html('');
                     window.location.href = 'empleado.php';

@@ -7,6 +7,11 @@
     <link rel="stylesheet" type="text/css" href="css/estilo_login.css">
     <link rel="icon" href="img/REMI_logo.png">
 </head>
+
+<?php
+    session_start();
+?>
+
 <body>
     <div class="contenedor">
         <form id="loginForm" method="POST">

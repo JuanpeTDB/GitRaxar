@@ -27,13 +27,83 @@ body {
     padding: 0;
 }
 
+.bienvenido {
+    font-family: nexa;
+    font-size: 40px;
+    color: #20A144;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    text-align: center;
+    width: 80%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dropdown {
+    display: none;
+    position: relative;
+    z-index: 1;
+}
+
+.dropdown button {
+    color: #9ED4AE;
+    position: relative;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 16px;
+    font-family: nexa;
+    cursor: pointer;
+    outline: none;
+    width: 120px;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: 0.3s;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
+}
+
+.dropdown-content {
+    display: none;
+    border-radius: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    overflow: auto;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
+}
+
+.opc {
+    background-color: #F8F8F8;
+    color: #20A144;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    color: #FFFFFF;
+    background-color: #00A4BD;
+}
+
 .logo {
     display: flex;
     align-items: center;
 }
 
 .logo img {
-    height: 70px;
+    height: 50px;
     margin-right: 10px;
     margin-left: 40px;
 }
@@ -41,6 +111,8 @@ body {
 .nombre-remi {
     font-size: 40px;
     padding: 0%;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 header {
@@ -53,23 +125,42 @@ header {
     align-items: center;
     padding: 10px;
     justify-content: space-between;
+    flex-direction: column;
 }
 
 a {
     text-decoration: none;
     color: #20A144;
     font-family: nexa;
-    font-size: 16px;
+    font-size: 22px;
 }
 
 nav a {
     font-weight: 600;
-    padding-right: 20px;
+    padding: 15px;
+    text-align: center;
 }
 
 nav a:hover {
     color: #F8F8F8;
     font-weight: 800;
+}
+
+.usuario {
+    font-family: nexa;
+    font-size: 22px;
+    color: #20A144;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.usuario button {
+    color: #20A144;
+    margin-left: 15px;
+    font-size: 20px;
+    border-style: none;
+    background-color: transparent;
 }
 
 .logos {
@@ -83,7 +174,7 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding-top: 80px;
+    padding-top: 50px;
 }
 
 .contenedor {
@@ -204,19 +295,43 @@ button:hover {
     margin-top: 20px;
 }
 
+@media (max-width: 1240px) {
+    #btnCancelar {
+        width: 140px !important;
+        font-size: 20px !important;
+    }
+    #btnAceptar {
+        width: 140px !important;
+        font-size: 20px !important;
+    }
+    .parrafoElim {
+        margin: 0px !important;
+    }
+}
+
 @media (max-width: 1000px) {
+    .contElim {
+        height: 28% !important;
+    }
+    #btnCancelar {
+        width: 120px !important;
+        font-size: 17px !important;
+    }
+    #btnAceptar {
+        width: 120px !important;
+        font-size: 17px !important;
+    }
+    .parrafoElim {
+        font-size: 26px !important;
+    }
     .contenedor {
         grid-template-columns: repeat(2, 1fr);
     }
-    header {
-        flex-direction: column;
-    }
     nav {
-        padding: 10px 0px;
-        text-align: center;
+        display: none;
     }
-    .logo img {
-        height: 50px;
+    .dropdown {
+        display: block;
     }
 }
 
@@ -234,6 +349,27 @@ h2 {
     width: auto;
 }
 
+@media(max-width: 860px) {
+    #btnCancelar {
+        width: 110px !important;
+        font-size: 17px !important;
+        margin-right: 10px !important;
+        height: 45px !important;
+    }
+    #btnAceptar {
+        width: 110px !important;
+        font-size: 17px !important;
+        margin-left: 10px !important;
+        height: 45px !important;
+    }
+}
+
+@media(max-width: 750px) {
+    .nom_usu {
+        display: none;
+    }
+}
+
 @media (max-width: 680px) {
     .contenedor {
         grid-template-columns: repeat(2, 1fr);
@@ -241,7 +377,7 @@ h2 {
     }
     .logos {
         margin-top: 4vh;
-        height: 100px;
+        height: 150px;
         object-fit: cover;
     }
     .container {
@@ -260,6 +396,18 @@ h2 {
         color: #20A144;
         width: auto;
         padding: 5px;
+    }
+}
+
+@media (max-width: 500px) {
+    #btnCancelar {
+        margin-top: 20px !important;
+    }
+    #btnAceptar {
+        margin-top: 20px !important;
+    }
+    .contElim {
+        width: 80% !important;
     }
 }
 

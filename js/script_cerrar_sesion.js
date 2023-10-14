@@ -1,10 +1,15 @@
 $(document).ready(function() {
     $("#salir").click(abrirPopup);
+    $("#salir1").click(abrirPopup);
+    $("#config").click(function() {
+        window.location.href = "admin/admin_empleado/adm_editar_empleado.php?ci=" + $("#ci").val();
+    });
 });
 
 function abrirPopup() {
     var cont1 = $("<div>").css({
         "position": "fixed",
+        "z-index": "2",
         "top": "0",
         "left": "0",
         "width": "100%",

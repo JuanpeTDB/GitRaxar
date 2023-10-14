@@ -4,10 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/28b29172a8.js" crossorigin="anonymous"></script>
     <title>REMI</title>
     <link rel="stylesheet" href="css/estilo_inicio.css">
     <link rel="icon" href="img/REMI_logo.png">
 </head>
+
+<?php
+session_start();
+
+if (isset($_GET['usuario'])) {
+    $_SESSION['nombre_usuario'] = $_GET['usuario'];
+}
+require_once 'conexion.php';
+$usuario = $_SESSION['nombre_usuario'];
+$query = "SELECT * FROM usuario WHERE nombre_usuario = '$usuario'";
+		$result = mysqli_query($conn, $query);
+		$json = array();
+		if($result) {
+			while($row = mysqli_fetch_assoc($result)) {
+                $nombre = $row['nombre'];
+                $apellido = $row['apellido'];
+                $usuario = $row['nombre_usuario'];
+                $contrasenia = $row['contrasenia'];
+                $rol = $row['rol'];
+                $telefono = $row['telefono'];
+                $ci = $row['ci'];
+        	}
+		}
+
+?>
+
 
 <body>
 
@@ -26,9 +53,32 @@
             <a href="admin/admin_lista_negra/adm_listanegra.php" class="nav-link">Lista Negra</a>
             <a href="admin/admin_mantenimientos/adm_mantenimientos.php" class="nav-link">Mantenimiento</a>
         </nav>
-    </header>
 
+        <div class="dropdown" style="">
+            <button><i class="fa-solid fa-list"></i></button>
+            <div class="dropdown-content">
+            <a class="opc" href="admin/admin_chofer/adm_choferes.php" class="nav-link">Choferes</a>
+            <a class="opc" href="admin/admin_viajes/adm_viajes.php" class="nav-link">Viajes</a>
+            <a class="opc" href="admin/admin_coches/adm_coches.php" class="nav-link">Coches</a>
+            <a class="opc" href="admin/admin_empleado/adm_empleados.php" class="nav-link">Empleados</a>
+            <a class="opc" href="admin/admin_pagos/adm_pagos.php" class="nav-link">Pagos</a>
+            <a class="opc" href="admin/admin_lista_negra/adm_listanegra.php" class="nav-link">Lista Negra</a>
+            <a class="opc" href="admin/admin_mantenimientos/adm_mantenimientos.php" class="nav-link">Mantenimiento</a>
+            </div>
+        </div>
+        <input type="hidden" id="ci" value="<?php echo $ci; ?>">
+        <div class="usuario">
+            <span class="nom_usu"><?php echo $_SESSION['nombre_usuario']; ?></span>
+            <button id="config" title="Configuración"><i class="fa-solid fa-gear"></i></button>
+            <button id="salir1" title="Cerrar sesión"><i class="fa-solid fa-sign-out"></i></button>
+        
+        </div>
+
+    </header>
+    <h1 class="bienvenido">Binevenido admin: <?php echo $_SESSION['nombre_usuario']; ?> </h1>
     <div class="centered-container">
+
+        
         <div class="contenedor">
 
             <div class="container">
