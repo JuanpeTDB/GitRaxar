@@ -43,22 +43,81 @@ button:hover {
     opacity: 0.8 !important;
 }
 
+.dropdown {
+    display: none;
+    position: relative;
+    z-index: 1;
+}
+
+.dropdown button {
+    color: #9ED4AE;
+    position: relative;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 16px;
+    font-family: nexa;
+    cursor: pointer;
+    outline: none;
+    width: 120px;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: 0.3s;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
+}
+
+.dropdown-content {
+    display: none;
+    border-radius: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    overflow: auto;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
+}
+
+.opc {
+    background-color: #F8F8F8;
+    color: #20A144;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    color: #FFFFFF;
+    background-color: #00A4BD;
+}
+
 .logo {
     display: flex;
     align-items: center;
 }
 
 .logo img {
-    height: 70px;
+    height: 50px;
     margin-right: 10px;
     margin-left: 40px;
 }
 
 .nombre-remi {
     font-size: 40px;
-    padding: 0%;
     font-family: nexa;
     color: #20A144;
+    padding: 0%;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 header {
@@ -71,23 +130,42 @@ header {
     align-items: center;
     padding: 10px;
     justify-content: space-between;
+    flex-direction: column;
 }
 
 a {
     text-decoration: none;
     color: #20A144;
     font-family: nexa;
-    font-size: 16px;
+    font-size: 22px;
 }
 
 nav a {
     font-weight: 600;
-    padding-right: 20px;
+    padding: 15px;
+    text-align: center;
 }
 
 nav a:hover {
     color: #F8F8F8;
     font-weight: 800;
+}
+
+.usuario {
+    font-family: nexa;
+    font-size: 22px;
+    color: #20A144;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.usuario button {
+    color: #20A144;
+    margin-left: 15px;
+    font-size: 20px;
+    border-style: none;
+    background-color: transparent;
 }
 
 .box {
@@ -226,6 +304,12 @@ hr {
 }
 
 @media (max-width: 1000px) {
+    .dropdown {
+        display: block;
+    }
+    nav {
+        display: none;
+    }
     .contElim {
         height: 28% !important;
     }
@@ -354,6 +438,12 @@ hr {
         width: 100%;
         margin-top: 124px;
         margin-bottom: 11px;
+    }
+}
+
+@media(max-width: 750px) {
+    .nom_usu {
+        display: none;
     }
 }
 
