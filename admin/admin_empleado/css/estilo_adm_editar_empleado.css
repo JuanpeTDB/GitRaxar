@@ -108,9 +108,6 @@ header {
 
 .cont2 {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 h1 {
@@ -220,11 +217,15 @@ button {
 }
 
 @media (max-width: 760px) {
-    .div-mobile {
-        display: block;
+    tr td {
+        float: left;
+        width: 100%;
     }
-    .div-dek {
-        display: none;
+    input {
+        width: 65%;
+    }
+    select {
+        width: 65%;
     }
     h1 {
         font-size: 46px;

@@ -12,5 +12,6 @@
 		$query = "UPDATE `usuario` set `telefono` = $telefono, `rol` = '$rol', `nombre` = '$nombre', `apellido` = '$apellido', `nombre_usuario` = '$nombre_usuario', `contrasenia` = '$contrasenia' WHERE `ci` = '$ci';";
 		$result = mysqli_query($conn, $query);
 		echo 'ok';
+		
 		header("Location: adm_empleados.php");
 ?>

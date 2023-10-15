@@ -33,9 +33,13 @@
     ?>
 
     <header>
-		<img class="logo" src="img/REMI_completo.png">
-        <a href="adm_dtro_mantenimiento.php?matricula=<?php echo $matricula; ?>" class="btnatras">ATRAS</a>
-	</header>
+    <div class="logo">
+        <img src="img/REMI_logo.png" alt="logo remi">
+        <h2 class="nombre-remi">REMI</h2>
+    </div>
+    <a href="adm_dtro_mantenimiento.php?matricula=<?php echo $matricula; ?>" class="btnatras">ATRAS</a>
+</header>
+
 
     <div class="contenedor">
     
@@ -75,7 +79,7 @@
                         </td>
                         <td>
                             <h2>Importe</h2>
-                            <input name="costo" type="text"></input>
+                            <input name="costo" type="number"></input>
                         </td>
                     </tr>
                 </table>
@@ -93,4 +97,14 @@
             
         </div>
 </body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        $("#btnAtras").click(function() {
+            if (confirm("¿Estás seguro de que deseas volver atrás sin guardar los cambios?")) {
+                window.history.back();
+            }
+        });
+    </script>
 </html>

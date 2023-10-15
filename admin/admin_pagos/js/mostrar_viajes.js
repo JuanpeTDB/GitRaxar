@@ -20,7 +20,7 @@ $(document).ready(function() {
                 choferes.forEach(res => {
                     ret += `
 						<tr>
-							<td><h4>${res.fecha1}</h4></td> <td><h4>$${res.importe1}</h4></td>
+							<td><h4>${res.fecha1}</h4></td> <td><h4>${res.hora_inicio}</h4></td> <td><h4>$${res.importe1}</h4></td>
 
 						</tr>
 					`

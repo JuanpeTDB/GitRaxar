@@ -13,7 +13,7 @@
 			<img src="img/REMI_logo.png" alt="logo remi">
 			<h2 class="nombre-remi">REMI</h2>
 		</div>
-        <a href="adm_coches.php" class="btnatras">ATRAS</a>
+        <a id="btnAtras" href="adm_coches.php" class="btnatras">ATRAS</a>
 	</header>
 
     <div class="contenedor">
@@ -37,11 +37,11 @@
                     <tr>
                         <td>
                             <h2>Matricula</h2>
-                            <input type="text"  name="matricula"></input>
+                            <input type="number"  name="matricula"></input>
                         </td>
                         <td>
                             <h2>Año</h2>
-                            <input type="text"  name="anio"></input>
+                            <input type="number"  name="anio"></input>
                         </td>
                     </tr>
                 </table>
@@ -58,4 +58,14 @@
             
         </div>
 </body>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        $("#btnAtras").click(function() {
+            if (confirm("¿Estás seguro de que deseas volver atrás sin guardar los cambios?")) {
+                window.history.back();
+            }
+        });
+    </script>
 </html>

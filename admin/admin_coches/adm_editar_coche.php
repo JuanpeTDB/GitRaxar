@@ -58,7 +58,7 @@
                     <tr>
                         <td>
                             <h2>Año</h2>
-                            <input type="text" name="anio" value="<?php echo $anio; ?>"></input>
+                            <input type="number" name="anio" value="<?php echo $anio; ?>"></input>
                         </td>
                     </tr>
                 </table>
@@ -84,7 +84,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script>
         $("#btnAtras").click(function() {
-            window.history.back();
+            if (confirm("¿Estás seguro de que deseas volver atrás sin guardar los cambios?")) {
+                window.history.back();
+            }
         });
         $("#btnGuardar").click(function() {
             $("#edicion").submit();

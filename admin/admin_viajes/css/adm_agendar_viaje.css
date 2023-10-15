@@ -296,6 +296,28 @@ button {
     }
 }
 
+@media (max-width: 760px) {
+    tr td {
+        float: left;
+        width: 100%;
+    }
+    .opcs {
+        float: inherit !important;
+    }
+    input {
+        width: 65%;
+    }
+    select {
+        width: 65%;
+    }
+    h1 {
+        font-size: 46px;
+    }
+    button {
+        margin-top: 50px;
+    }
+}
+
 @media (max-width: 500px) {
     #agendarOtro {
         margin-top: 20px !important;

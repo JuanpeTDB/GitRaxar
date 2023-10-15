@@ -1,6 +1,21 @@
 $(document).ready(function() {
     var cod_viaje = $("#cod_viaje").val();
 
+    $("#btnAtras").click(function() {
+        var cod_viaje2 = $("#cod_viaje").val();
+        $.ajax({
+            url: 'cancelarViaje2.php',
+            type: 'POST',
+            data: {
+                res: 1,
+                cod_viaje2: cod_viaje2,
+            },
+            success: function(response) {
+                console.log("Entro al ajax");
+            }
+        });
+    });
+
     $("#metodoPago").change(function() {
         var tarjeta = " ";
         if ($(this).val() === "4") {

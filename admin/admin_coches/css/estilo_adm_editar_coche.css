@@ -113,13 +113,15 @@ h1 {
 /*============================================================================================================*/
 
 table {
-    width: 60%;
+    width: 100%;
     text-align: center;
-    padding-bottom: 35px;
+    padding-bottom: 20px;
+    padding-top: 15px;
 }
 
 tr td {
     text-align: center;
+    width: 33.33%;
 }
 
 h2 {
@@ -167,6 +169,17 @@ button {
 }
 
 @media (max-width: 1000px) {
+    .btnatras {
+        color: #20A144;
+        font-family: nexa;
+        font-size: 14px;
+        background-color: #ffffff00;
+        border-style: none;
+        position: absolute;
+        right: 33px;
+        top: 20px;
+        text-decoration: none;
+    }
     header {
         flex-direction: column;
     }
@@ -185,6 +198,28 @@ button {
         width: 100%;
         display: inline;
         text-align: center;
+    }
+    h1 {
+        font-size: 52px;
+    }
+    h2 {
+        font-size: 22px;
+    }
+    input {
+        height: 45px;
+        width: 220px;
+        font-size: 16px;
+    }
+    select {
+        height: 45px;
+        width: 220px;
+        font-size: 16px;
+    }
+    button {
+        height: 45px;
+        width: 160px;
+        font-size: 18px;
+        margin: 30px;
     }
 }
 
@@ -211,28 +246,21 @@ button {
     }
 }
 
-@media (max-width:530px) {
-    h1 {
-        font-size: 52px;
-    }
-    h2 {
-        font-size: 20px;
+@media (max-width: 760px) {
+    tr td {
+        float: left;
+        width: 100%;
     }
     input {
-        height: 40px;
-        font-size: 16px;
+        width: 65%;
     }
-}
-
-@media (max-width:480px) {
+    select {
+        width: 65%;
+    }
     h1 {
-        font-size: 44px;
+        font-size: 46px;
     }
-    h2 {
-        font-size: 20px;
-    }
-    input {
-        height: 40px;
-        font-size: 16px;
+    button {
+        margin-top: 50px;
     }
 }

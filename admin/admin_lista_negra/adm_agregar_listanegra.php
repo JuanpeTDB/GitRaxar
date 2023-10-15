@@ -13,7 +13,7 @@
 			<img src="img/REMI_logo.png" alt="logo remi">
 			<h2 class="nombre-remi">REMI</h2>
 		</div>
-        <a href="adm_listanegra.php" class="btnatras">ATRAS</a>
+        <a id="btnAtras" href="adm_listanegra.php" class="btnatras">ATRAS</a>
 	</header>
 
     <div class="contenedor">
@@ -61,6 +61,11 @@
         $("#btnGuardar").click(function() {
             $("#LN").submit();
             window.history.back();
+        });
+        $("#btnAtras").click(function() {
+            if (confirm("¿Estás seguro de que deseas volver atrás sin guardar los cambios?")) {
+                window.history.back();
+            }
         });
 </script>
 </html>

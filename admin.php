@@ -32,7 +32,6 @@ $query = "SELECT * FROM usuario WHERE nombre_usuario = '$usuario'";
                 $ci = $row['ci'];
         	}
 		}
-
 ?>
 
 

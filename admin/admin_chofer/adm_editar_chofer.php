@@ -58,7 +58,7 @@
                     <tr>
                         <td>
                             <h2>Telefono</h2>
-                            <input type="text" name="telefono" value="<?php echo $telefono; ?>"></input>
+                            <input type="number" name="telefono" value="<?php echo $telefono; ?>"></input>
                         </td>
                         <td>
                         <h2>Tipo de chofer</h2>
@@ -91,7 +91,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script>
         $("#btnAtras").click(function() {
-            window.history.back();
+            if (confirm("¿Estás seguro de que deseas volver atrás sin guardar los cambios?")) {
+                window.history.back();
+            }
         });
         $("#btnGuardar").click(function() {
             $("#edicion").submit();

@@ -46,10 +46,10 @@
         
         <table class="tarjeta" style="display: none" id="opcionesTarjeta">
             <tr>
-                <td>
+                <td class="opcs">
                     <input type="radio" name="tipoTarjeta" value="debito">
                 </td>
-                <td>
+                <td class="opcs">
                     <input type="radio" name="tipoTarjeta" value="credito">
                 </td>
             </tr>

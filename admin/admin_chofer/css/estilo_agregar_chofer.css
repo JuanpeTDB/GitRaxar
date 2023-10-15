@@ -125,15 +125,15 @@ h1 {
 /*============================================================================================================*/
 
 table {
-    width: 70%;
+    width: 100%;
     text-align: center;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
+    padding-top: 15px;
 }
 
 tr td {
-    padding-top: 5px;
     text-align: center;
-    width: 50%;
+    width: 33.33%;
 }
 
 h2 {
@@ -156,7 +156,7 @@ input {
 
 select {
     height: 50px;
-    width: 50%;
+    width: 300px;
     border-color: #9ED4AE;
     border-style: solid;
     border-width: 3px;
@@ -193,6 +193,28 @@ button {
     .logo img {
         height: 50px;
     }
+    h1 {
+        font-size: 52px;
+    }
+    h2 {
+        font-size: 22px;
+    }
+    input {
+        height: 45px;
+        width: 220px;
+        font-size: 16px;
+    }
+    select {
+        height: 45px;
+        width: 220px;
+        font-size: 16px;
+    }
+    button {
+        height: 45px;
+        width: 160px;
+        font-size: 18px;
+        margin: 30px;
+    }
 }
 
 @media (max-width: 860px) {
@@ -201,10 +223,6 @@ button {
         font-family: nexa;
         color: #20A144;
         padding-bottom: 4px;
-    }
-    input {
-        width: 75%;
-        font-size: 16px;
     }
     h2 {
         font-size: 18px;
@@ -228,5 +246,24 @@ button {
         right: 33px;
         top: 20px;
         text-decoration: none;
+    }
+}
+
+@media (max-width: 760px) {
+    tr td {
+        float: left;
+        width: 100%;
+    }
+    input {
+        width: 65%;
+    }
+    select {
+        width: 65%;
+    }
+    h1 {
+        font-size: 46px;
+    }
+    button {
+        margin-top: 50px;
     }
 }

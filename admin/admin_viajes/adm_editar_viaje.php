@@ -118,7 +118,7 @@
             <tr>
                 <td>
                     <h2>Importe</h2>
-                    <input type="text" name="importe" value="<?php echo $importe?>"></input>
+                    <input type="number" name="importe" value="<?php echo $importe?>"></input>
                 </td>
                 <td>
                     <h2>Comentario</h2>
@@ -165,7 +165,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script>
         $("#btnAtras").click(function() {
-            window.history.back();
+            if (confirm("¿Estás seguro de que deseas volver atrás sin guardar los cambios?")) {
+                window.history.back();
+            }
         });
         $("#btnGuardar").click(function() {
     var selectedChofer = $("select[name='ciChofer']").val();

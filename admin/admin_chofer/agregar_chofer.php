@@ -40,7 +40,7 @@
 			<img src="img/REMI_logo.png" alt="logo remi">
 			<h2 class="nombre-remi">REMI</h2>
 		</div>
-        <a href="adm_choferes.php" class="btnatras">ATRAS</a>
+        <a id="btnAtras" href="adm_choferes.php" class="btnatras">ATRAS</a>
 	</header>
 
     <div class="contenedor">
@@ -60,18 +60,16 @@
                             <h2>Apellido</h2>
                             <input type="text"  name="apellido"></input>
                         </td>
-                    </tr>
-                    <tr>
                         <td>
                             <h2>Telefono</h2>
-                            <input type="text"  name="telefono"></input>
-                        </td>
-                        <td>
-                            <h2>Cedula de Identidad</h2>
-                            <input type="text"  name="ci"></input>
+                            <input type="number"  name="telefono"></input>
                         </td>
                     </tr>
                     <tr>
+                        <td>
+                            <h2>Cedula de Identidad</h2>
+                            <input type="number"  name="ci"></input>
+                        </td>
                         <td>
                             <h2>Coche que conduce</h2>
                             <select id="auto" name="matricula">
@@ -90,7 +88,7 @@
                         <td>
                             <h2>Tipo de chofer</h2>
                             <select name="de_la_casa">
-                                <option value="1">De la casa</option>
+                                <option value="1">De la casa 🏠</option>
                                 <option value="0">Externo</option>
                             </select>
                         </td>
@@ -110,4 +108,14 @@
             
         </div>
 </body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        $("#btnAtras").click(function() {
+            if (confirm("¿Estás seguro de que deseas volver atrás sin guardar los cambios?")) {
+                window.history.back();
+            }
+        });
+    </script>
 </html>

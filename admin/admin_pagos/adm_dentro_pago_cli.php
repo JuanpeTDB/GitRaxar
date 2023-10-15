@@ -27,7 +27,6 @@
             while($row = mysqli_fetch_assoc($result)) {
                 $nombre_cli = $row['nombre_cli'];
                 $apellido_cli = $row['apellido_cli'];
-                $deuda = $row['deuda'];
             
             }
         }

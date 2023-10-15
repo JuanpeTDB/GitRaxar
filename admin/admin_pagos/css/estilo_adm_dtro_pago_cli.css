@@ -108,7 +108,7 @@ header {
 
 .contenedor {
     text-align: center;
-    padding: 60px;
+    padding: 30px;
 }
 
 h1 {
@@ -162,7 +162,7 @@ td {
     stroke-dasharray: 20px 10px;
     border-width: 3px;
     border-color: #20A144;
-    width: 20%;
+    width: 300px;
 }
 
 button {

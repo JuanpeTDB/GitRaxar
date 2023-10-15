@@ -16,7 +16,7 @@ $(document).ready(function() {
                 choferes.forEach(res => {
                     ret += `
 						<tr cod="${res.cod_viaje}">
-							<td><h2 class="nombres">${res.nombre_viajero} ${res.apellido_viajero} | ${res.fecha}</h2><div class="cont-botones"><button class="boton btnInfo" data-fecha="${res.fecha}" data-cod_viaje="${res.cod_viaje}">Info</button><button class="boton btnEditar" data-cod_viaje="${res.cod_viaje}"> Editar </button> <button class="btneliminar boton"> Eliminar </button></div></td>
+							<td><h2 class="nombres">${res.nombre_viajero} ${res.apellido_viajero} | ${res.fecha}</h2><div class="cont-botones"><button class="boton btnInfo" data-fecha="${res.fecha}" data-cod_viaje="${res.cod_viaje}">Info</button><button class="boton btnEditar" data-cod_viaje="${res.cod_viaje}"> Editar </button> <button class="btneliminar boton"> Cancelar </button></div></td>
 
 						</tr>
                         <tr><td><hr></td></tr>

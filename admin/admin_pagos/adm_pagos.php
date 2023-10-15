@@ -219,7 +219,7 @@
                     url: "../../cerrar_sesion.php",
                     method: "POST",
                     success: function(response) {
-                        window.location.href = "../../login.php";
+                        window.location.href = "../../index.php";
                     }
                 });
             });

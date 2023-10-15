@@ -43,13 +43,6 @@ button:hover {
     opacity: 0.8 !important;
 }
 
-.logo {
-    position: relative;
-    width: 5.5%;
-    left: 6%;
-    top: 14%;
-}
-
 .btnatras {
     color: #20A144;
     font-family: nexa;
@@ -62,12 +55,34 @@ button:hover {
     text-decoration: none;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 70px;
+    margin-right: 10px;
+    margin-left: 40px;
+}
+
+.nombre-remi {
+    font-size: 40px;
+    padding: 0%;
+    font-family: nexa;
+    color: #20A144;
+}
+
 header {
     background-color: #9ED4AE;
-    height: 15vh;
+    min-height: 70px;
     border-bottom: #20A144;
     border-bottom-style: solid;
     border-bottom-width: 4px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
 }
 
 .footer {
@@ -111,7 +126,7 @@ h1 {
 table {
     width: 100%;
     text-align: center;
-    padding-bottom: 60px;
+    padding-bottom: 20px;
     padding-top: 15px;
 }
 
@@ -162,4 +177,84 @@ button {
     width: 180px;
     height: 50px;
     font-size: 20px;
+}
+
+@media (max-width: 1000px) {
+    .btnatras {
+        color: #20A144;
+        font-family: nexa;
+        font-size: 14px;
+        background-color: #ffffff00;
+        border-style: none;
+        position: absolute;
+        right: 33px;
+        top: 20px;
+        text-decoration: none;
+    }
+    header {
+        flex-direction: column;
+    }
+    nav {
+        padding: 10px 0px;
+        text-align: center;
+    }
+    .logo img {
+        height: 50px;
+    }
+    h1 {
+        font-size: 52px;
+    }
+    h2 {
+        font-size: 22px;
+    }
+    input {
+        height: 45px;
+        width: 220px;
+        font-size: 16px;
+    }
+    select {
+        height: 45px;
+        width: 220px;
+        font-size: 16px;
+    }
+    button {
+        height: 45px;
+        width: 160px;
+        font-size: 18px;
+        margin: 30px;
+    }
+}
+
+@media (max-width: 760px) {
+    tr td {
+        float: left;
+        width: 100%;
+    }
+    input {
+        width: 65%;
+    }
+    select {
+        width: 65%;
+    }
+    h1 {
+        font-size: 46px;
+    }
+    button {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 490px) {
+    h1 {
+        font-size: 32px;
+    }
+    button {
+        margin: 0px;
+        margin-top: 50px;
+        height: 40px;
+        width: 140px;
+        font-size: 16px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
 }

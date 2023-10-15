@@ -294,6 +294,12 @@ hr {
         display: inline;
         text-align: center;
     }
+    h1 {
+        font-size: 36px;
+        font-family: nexa;
+        color: #20A144;
+        padding-bottom: 20px;
+    }
 }
 
 @media (max-width: 1250px) {
@@ -383,6 +389,12 @@ hr {
         top: 20px;
         text-decoration: none;
     }
+    h1 {
+        font-size: 32px;
+        font-family: nexa;
+        color: #20A144;
+        padding-bottom: 20px;
+    }
 }
 
 @media (max-width: 500px) {
@@ -394,5 +406,11 @@ hr {
     }
     .contElim {
         width: 80% !important;
+    }
+    h1 {
+        font-size: 28px;
+        font-family: nexa;
+        color: #20A144;
+        padding-bottom: 20px;
     }
 }

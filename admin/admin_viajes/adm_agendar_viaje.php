@@ -31,7 +31,7 @@
 			<img src="img/REMI_logo.png" alt="logo remi">
 			<h2 class="nombre-remi">REMI</h2>
 		</div>
-        <a href="adm_viajes.php" class="btnatras">ATRAS</a>
+        <a id="btnAtras" href="adm_viajes.php" class="btnatras">ATRAS</a>
 	</header>
     <div class="contenedor">
 
@@ -68,8 +68,8 @@
             </tr>
             <tr>
                 <td>
-                    <h2>Monto</h2>
-                    <input name="importe" type="text"></input>
+                    <h2>Importe</h2>
+                    <input name="importe" type="number"></input>
                 </td>
                 <td>
                     <h2>Comentario</h2>
@@ -126,6 +126,11 @@
                 alert("Por favor, complete todos los campos antes de continuar");
             } else {
                 $("#agendar").submit();
+            }
+        });
+        $("#btnAtras").click(function() {
+            if (confirm("¿Estás seguro de que deseas volver atrás sin guardar los cambios?")) {
+                window.history.back();
             }
         });
        

@@ -70,7 +70,7 @@
                 <td><h4><?php echo $telefono; ?></h4></td>
                 <td><h4><?php echo $marca; ?> <?php echo $modelo; ?> <?php echo $matricula; ?></h4></td>
                 <td><h4><?php if ($de_la_casa == 1) {
-                                    echo 'De la casa';
+                                    echo 'De la casa 🏠';
                                 } else {
                                     echo 'Externo';
                                 }
