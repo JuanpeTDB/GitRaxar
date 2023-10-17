@@ -71,9 +71,12 @@
     
         <br><br>
         
-        <button>
-            SALDAR
-        </button>  
+        <form action="saldar_emp.php" method="POST" id="saldarForm">
+        <input type="hidden" id="rut" name="rut" value="<?php echo $rut ?>">
+            <button type="button" id="saldarButton">
+                SALDAR
+            </button>  
+        </form>
 
         <br><br><br>
     
@@ -85,5 +88,14 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/mostrar_viajes_emp.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#saldarButton").on("click", function() {
+                if (confirm("¿Estás seguro de que deseas realizar esta acción?")) {
+                    $("#saldarForm").submit();
+                }
+            });
+        });
+    </script>
 </body>
 </html>

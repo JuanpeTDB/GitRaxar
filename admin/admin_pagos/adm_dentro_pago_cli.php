@@ -13,21 +13,14 @@
     <?php
         require_once '../../conexion.php';
         $cod_cliente = $_GET['cod_cliente'];
-        $query = "SELECT c.nombre_cli, c.apellido_cli, cc.deuda from cuenta_corriente cc
-        join forma_de_pago fp on fp.cod_pago = cc.cod_pago
-        join tiene t on t.cod_pago = fp.cod_pago
-        join viajes v on v.cod_viaje = t.cod_viaje
-        join reserva r on r.cod_viaje = v.cod_viaje
-        join cliente c on c.cod_cliente = r.cod_cliente
-        join particular p on p.cod_cliente = c.cod_cliente
-        WHERE c.cod_cliente = $cod_cliente;";
+        $query = "SELECT * from cliente c WHERE c.cod_cliente = $cod_cliente;";
         $result = mysqli_query($conn, $query);
         $json = array();
         if($result) {
             while($row = mysqli_fetch_assoc($result)) {
                 $nombre_cli = $row['nombre_cli'];
                 $apellido_cli = $row['apellido_cli'];
-            
+                $cod_cliente = $row['cod_cliente'];            
             }
         }
     ?>
@@ -43,8 +36,6 @@
     <div class="contenedor">
 
         <h1><?php echo $nombre_cli?> <?php echo $apellido_cli ?></h1>
-        <input type="hidden" id="cod_cliente" value="<?php echo $cod_cliente ?>">
-
 
         <br><br><br><br>
 
@@ -61,9 +52,13 @@
     
         <br><br>
         
-        <button>
-            SALDAR
-        </button>  
+        <form action="saldar_cli.php" method="POST" id="saldarForm">
+        <input type="hidden" id="cod_cliente" name="cod_cliente" value="<?php echo $cod_cliente ?>">
+            <button type="button" id="saldarButton">
+                SALDAR
+            </button>  
+        </form>
+            
 
         <br><br><br>
     
@@ -75,5 +70,14 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/mostrar_viajes.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#saldarButton").on("click", function() {
+                if (confirm("¿Estás seguro de que deseas realizar esta acción?")) {
+                    $("#saldarForm").submit();
+                }
+            });
+        });
+    </script>
 </body>
 </html>

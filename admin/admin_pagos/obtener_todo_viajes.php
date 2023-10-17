@@ -2,14 +2,14 @@
 	require_once '../../conexion.php';
 	$cod_cliente = $_POST['cod_cliente'];
 	if(ISSET($_POST['res'])){
-		$query = "SELECT v.fecha as fecha1, v.hora_inicio as hora_inicio, v.importe as importe1 from cuenta_corriente cc
+		$query = "SELECT v.fecha as fecha1, v.hora_inicio as hora_inicio, v.importe as importe1 from cliente c
+		join particular p on p.cod_cliente = c.cod_cliente
+		join posee_par po on po.cod_cliente = p.cod_cliente
+		join cuenta_corriente cc on cc.cod_cuenta = po.cod_cuenta
 		join forma_de_pago fp on fp.cod_pago = cc.cod_pago
 		join tiene t on t.cod_pago = fp.cod_pago
 		join viajes v on v.cod_viaje = t.cod_viaje
-		join reserva r on r.cod_viaje = v.cod_viaje
-		join cliente c on c.cod_cliente = r.cod_cliente
-		join particular p on p.cod_cliente = c.cod_cliente
-		WHERE c.cod_cliente = $cod_cliente;";
+		WHERE c.cod_cliente = $cod_cliente and cc.saldado = 0;";
 		$result = mysqli_query($conn, $query);
 		$json = array();
 		if($result) {

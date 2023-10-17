@@ -24,20 +24,13 @@ $(document).ready(function() {
 
                     </tr>
 					`
-
                     deuda += parseInt(res.importe);
-                    $('#deuda').html("$ " + deuda);
                     $('#container_info').html(ret);
+                    $('#deuda').html("$ " + deuda);
 
                 });
 
             }
         })
     }
-
-    $(document).on('click', '.btnInfo', function() {
-        var rut = $(this).data("rut");
-        window.location.href = "adm_dentro_pago_cli.php?rut=" + rut;
-    });
-
 });

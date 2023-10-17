@@ -1,20 +1,17 @@
 <?php
 	require_once '../../conexion.php';
+	$rut = $_POST['rut'];
 	if(ISSET($_POST['res'])){
-		$query = "SELECT
-		C.*
-	FROM particular AS P
-	JOIN cliente AS C ON P.cod_cliente = C.cod_cliente
-	JOIN cuenta_corriente AS CC ON P.cod_cliente = CC.cod_pago;
-	";
+		$query = "SELECT deuda from posee po
+		join cliente c on c.cod_cliente = po.cod_cliente
+		join empresa e on e.cod_cliente = c.cod_cliente
+		where e.rut = $rut;";
 		$result = mysqli_query($conn, $query);
 		$json = array();
 		if($result) {
 			while($row = mysqli_fetch_assoc($result)) {
             $json[] = array(
-                'cod_cliente' => $row['cod_cliente'],
-                'nombre_cli' => $row['nombre_cli'],
-                'apellido_cli' => $row['apellido_cli']
+                'deuda' => $row['deuda']
             );
         	}
         	echo json_encode($json);

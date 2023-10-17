@@ -71,10 +71,10 @@
         </div>
     
     
+    </div>
     <br><br><br><br><br>
     <div class="footer">
 		
-    </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
