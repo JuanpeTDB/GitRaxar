@@ -164,6 +164,19 @@ hr {
     border-color: #20A144;
 }
 
+.agregar {
+    cursor: pointer !important;
+    transition: transform 0.2s, opacity 0.2s !important;
+}
+
+.agregar:active {
+    transform: scale(0.95) !important;
+}
+
+.agregar:hover {
+    opacity: 0.8 !important;
+}
+
 .boton_agregar {
     width: 45%;
 }

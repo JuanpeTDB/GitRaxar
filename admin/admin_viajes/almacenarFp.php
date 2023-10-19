@@ -20,9 +20,7 @@
         $query2 = "INSERT INTO `contado` (cod_pago) values ('$cod_pago')";
     } else if ($MP == "transferencia") {
         $query2 = "INSERT INTO `transferencia` (cod_pago) values ('$cod_pago')";
-    } else if ($MP == "cta_corriente") {
-        $query2 = "INSERT INTO `cta_corriente` (cod_pago) values ('$cod_pago')";
-    }
+    } 
 
     mysqli_query($conn, $query1) && mysqli_query($conn, $query2);    
 ?>

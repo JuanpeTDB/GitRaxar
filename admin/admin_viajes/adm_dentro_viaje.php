@@ -15,19 +15,19 @@
         $query = "SELECT v.*, c.*, fp.*
         FROM viajes v
         LEFT JOIN (
-            SELECT t.cod_viaje, fp.cod_pago, cod_cuenta, activo, deuda, 'cuenta corriente' as rol, null as tipo 
+            SELECT t.cod_viaje, fp.cod_pago, cod_cuenta, activo, 'cuenta corriente' as rol, null as tipo 
             FROM cuenta_corriente fp
             JOIN tiene t ON t.cod_pago = fp.cod_pago
             UNION
-            SELECT t.cod_viaje, fp.cod_pago, null as cod_cuenta, null as activo, null as deuda, 'transferencia' as rol, null as tipo 
+            SELECT t.cod_viaje, fp.cod_pago, null as cod_cuenta, null as activo, 'transferencia' as rol, null as tipo 
             FROM transferencia fp
             JOIN tiene t ON t.cod_pago = fp.cod_pago
             UNION
-            SELECT t.cod_viaje, fp.cod_pago, null as cod_cuenta, null as activo, null as deuda, 'contado' as rol, null as tipo 
+            SELECT t.cod_viaje, fp.cod_pago, null as cod_cuenta, null as activo, 'contado' as rol, null as tipo 
             FROM contado fp
             JOIN tiene t ON t.cod_pago = fp.cod_pago
             UNION
-            SELECT t.cod_viaje, fp.cod_pago, null as cod_cuenta, null as activo, null as deuda, 'tarjeta' as rol, tipo 
+            SELECT t.cod_viaje, fp.cod_pago, null as cod_cuenta, null as activo, 'tarjeta' as rol, tipo 
             FROM tarjeta fp
             JOIN tiene t ON t.cod_pago = fp.cod_pago
         ) AS fp ON v.cod_viaje = fp.cod_viaje

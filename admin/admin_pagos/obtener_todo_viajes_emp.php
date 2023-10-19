@@ -2,7 +2,7 @@
 	require_once '../../conexion.php';
 	$rut = $_POST['rut'];
 	if(ISSET($_POST['res'])){
-		$query = "SELECT C.*, v.*, e.* from cliente c
+		$query = "SELECT v.*, e.* from cliente c
 		join empresa e on e.cod_cliente = c.cod_cliente
 		join posee_emp po on po.rut = e.rut
 		join cuenta_corriente cc on cc.cod_cuenta = po.cod_cuenta

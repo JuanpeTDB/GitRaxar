@@ -74,7 +74,7 @@ $query = "SELECT * FROM usuario WHERE nombre_usuario = '$usuario'";
     </div>
 </header>
 
-    <h1 class="bienvenido">Binevenido admin: <?php echo $_SESSION['nombre_usuario']; ?> </h1>
+    <h1 class="bienvenido">Bienvenido admin: <?php echo $_SESSION['nombre_usuario']; ?> </h1>
     <div class="centered-container">
 
         

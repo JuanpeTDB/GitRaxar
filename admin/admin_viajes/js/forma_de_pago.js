@@ -1,5 +1,39 @@
 $(document).ready(function() {
     var cod_viaje = $("#cod_viaje").val();
+    $("#emp, #par").hide();
+    $('input[name="tipoCC"]').change(function() {
+        tipoCC = $(this).val();
+        cod_cuenta = "";
+        console.log(tipoCC);
+        $("#btnContinuar").click(function() {
+            alert("Por favor, seleccione una cuenta corriente.");
+        });
+        if ($(this).val() === "1") {
+            $('#emp').hide();
+            $('#par').show();
+            $("#par").change(function() {
+                cod_cuenta = $("#par").val();
+                console.log(cod_cuenta);
+                $("#btnContinuar").click(function() {
+                    almacenarViajeCC(cod_viaje, cod_cuenta);
+                    abrirPopup();
+                });
+            });
+        } else if ($(this).val() === "2") {
+            $('#par').hide();
+            $('#emp').show();
+            $("#emp").change(function() {
+                cod_cuenta = $("#emp").val();
+                console.log(cod_cuenta);
+                $("#btnContinuar").click(function() {
+                    almacenarViajeCC(cod_viaje, cod_cuenta);
+                    abrirPopup();
+                });
+            });
+        } else {
+            $('#emp, #par').hide();
+        }
+    });
 
     $("#btnAtras").click(function() {
         var cod_viaje2 = $("#cod_viaje").val();
@@ -19,9 +53,16 @@ $(document).ready(function() {
     $("#metodoPago").change(function() {
         var tarjeta = " ";
         if ($(this).val() === "4") {
+            $("#emp, #par").hide();
             $("#opcionesTarjeta").show();
         } else {
             $("#opcionesTarjeta").hide();
+            $("#emp, #par").hide();
+        }
+        if ($(this).val() === "3") {
+            $("#opcionesCC").show();
+        } else {
+            $("#opcionesCC").hide();
         }
     });
 
@@ -29,10 +70,12 @@ $(document).ready(function() {
         var metodoPago = $("#metodoPago").val();
         var MP = " ";
         var tipoTarjeta = $("input[name='tipoTarjeta']:checked").val();
+        var tipoCC = $("input[name='tipoCC']:checked").val();
 
         if (metodoPago === null || metodoPago === "") {
             alert("Por favor, seleccione un método de pago.");
         } else if (metodoPago === "4" && (tipoTarjeta === undefined || tipoTarjeta === null)) {
+            $("#emp, #par").hide();
             console.log("tarjeta");
             alert("Por favor, seleccione un tipo de tarjeta.");
         } else if (metodoPago === "4" && (tipoTarjeta === "debito")) {
@@ -44,20 +87,20 @@ $(document).ready(function() {
             almacenarViaje(cod_viaje, MP);
             abrirPopup();
         } else if (metodoPago === "1") {
+            $("#emp, #par").hide();
             console.log("contado");
             MP = "contado";
             almacenarViaje(cod_viaje, MP);
             abrirPopup();
         } else if (metodoPago === "2") {
+            $("#emp, #par").hide();
             console.log("transferencia");
             MP = "transferencia";
             almacenarViaje(cod_viaje, MP);
             abrirPopup();
-        } else if (metodoPago === "3") {
+        } else if (metodoPago === "3" && (tipoCC === undefined || tipoCC === null)) {
             console.log("cta_corriente");
-            MP = "cta_corriente";
-            almacenarViaje(cod_viaje, MP);
-            abrirPopup();
+            alert("Por favor, seleccione un tipo de cuenta corriente.");
         }
     });
 });
@@ -73,6 +116,23 @@ function almacenarViaje(cod_viaje, MP) {
             res: 1,
             cod_viaje: cod_viaje,
             MP: MP,
+        },
+        success: function(response) {
+            console.log(response);
+        }
+    });
+}
+
+function almacenarViajeCC(cod_viaje, cod_cuenta) {
+    console.log(cod_viaje);
+    console.log(cod_cuenta);
+    $.ajax({
+        url: 'almacenarFpCc.php',
+        type: 'POST',
+        data: {
+            res: 1,
+            cod_viaje: cod_viaje,
+            cod_cuenta: cod_cuenta,
         },
         success: function(response) {
             console.log(response);

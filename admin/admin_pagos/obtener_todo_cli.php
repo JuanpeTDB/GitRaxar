@@ -1,12 +1,12 @@
 <?php
 	require_once '../../conexion.php';
 	if(ISSET($_POST['res'])){
-		$query = "SELECT
-		C.*
-	FROM particular AS P
-	JOIN cliente AS C ON P.cod_cliente = C.cod_cliente
-	JOIN cuenta_corriente AS CC ON P.cod_cliente = CC.cod_pago;
-	";
+		$query = "SELECT c.nombre_cli, c.apellido_cli, c.cod_cliente from cliente c
+		join particular p on p.cod_cliente = c.cod_cliente
+		join posee_par pp on pp.cod_cliente = p.cod_cliente
+		join cuenta_corriente cc on cc.cod_cuenta = pp.cod_cuenta
+		group by c.cod_cliente;
+		";
 		$result = mysqli_query($conn, $query);
 		$json = array();
 		if($result) {

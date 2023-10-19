@@ -43,23 +43,50 @@ button:hover {
     opacity: 0.8 !important;
 }
 
+.btnatras {
+    color: #20A144;
+    font-family: nexa;
+    font-size: 20px;
+    background-color: #ffffff00;
+    border-style: none;
+    position: absolute;
+    right: 80px;
+    top: 40px;
+    text-decoration: none;
+}
+
 .logo {
-    position: relative;
-    width: 5.5%;
-    left: 6%;
-    top: 14%;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 70px;
+    margin-right: 10px;
+    margin-left: 40px;
+}
+
+.nombre-remi {
+    font-size: 40px;
+    padding: 0%;
+    font-family: nexa;
+    color: #20A144;
 }
 
 header {
     background-color: #9ED4AE;
-    height: 15vh;
+    min-height: 70px;
     border-bottom: #20A144;
     border-bottom-style: solid;
     border-bottom-width: 4px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
 }
 
 .footer {
-    position: relative;
+    flex-shrink: 0;
     background-color: #9ED4AE;
     height: 15vh;
     border-top: #20A144;
@@ -70,7 +97,8 @@ header {
     margin: 0;
     left: 0;
     right: 0;
-    bottom: auto;
+    bottom: 0;
+    margin-top: auto;
 }
 
 .contenedor {
@@ -97,14 +125,14 @@ h1 {
 /*============================================================================================================*/
 
 table {
-    width: 60%;
+    width: 100%;
     text-align: center;
-    padding-bottom: 60px;
-    padding-top: 15px;
+    padding-bottom: 20px;
 }
 
 tr td {
     text-align: center;
+    width: 33.33%;
 }
 
 h2 {
@@ -137,4 +165,131 @@ button {
     width: 180px;
     height: 50px;
     font-size: 20px;
+}
+
+select {
+    height: 50px;
+    width: 300px;
+    box-sizing: border-box;
+    border-color: #9ED4AE;
+    border-style: solid;
+    border-width: 3px;
+    font-size: 20px;
+    color: #20A144;
+    font-family: nexa;
+    padding-left: 15px;
+}
+
+#btnTel {
+    margin: 0px;
+    width: 40px;
+    height: 40px;
+    margin-left: 15px;
+}
+
+#tel {
+    width: 240px;
+}
+
+#btnTel2 {
+    margin: 0px !important;
+    width: 40px !important;
+    height: 40px !important;
+    margin-left: 15px !important;
+    display: none;
+    color: #a12020;
+    border-color: #a12020;
+    background-color: #d49e9e;
+}
+
+#tel2 {
+    width: 240px !important;
+    display: none;
+}
+
+@media (max-width: 1000px) {
+    .btnatras {
+        color: #20A144;
+        font-family: nexa;
+        font-size: 14px;
+        background-color: #ffffff00;
+        border-style: none;
+        position: absolute;
+        right: 33px;
+        top: 20px;
+        text-decoration: none;
+    }
+    header {
+        flex-direction: column;
+    }
+    nav {
+        padding: 10px 0px;
+        text-align: center;
+    }
+    .logo img {
+        height: 50px;
+    }
+    h1 {
+        font-size: 52px;
+    }
+    h2 {
+        font-size: 22px;
+    }
+    input {
+        height: 45px;
+        width: 220px;
+        font-size: 16px;
+    }
+    #tel2,
+    #tel {
+        width: 165px;
+    }
+    select {
+        height: 45px;
+        width: 220px;
+        font-size: 16px;
+    }
+    button {
+        height: 45px;
+        width: 160px;
+        font-size: 18px;
+        margin: 30px;
+    }
+}
+
+@media (max-width: 760px) {
+    tr td {
+        float: left;
+        width: 100%;
+    }
+    input {
+        width: 65%;
+    }
+    #tel2,
+    #tel {
+        width: 58%;
+    }
+    select {
+        width: 65%;
+    }
+    h1 {
+        font-size: 46px;
+    }
+    button {
+        margin: 0px;
+    }
+}
+
+@media (max-width: 490px) {
+    h1 {
+        font-size: 28px;
+    }
+    button {
+        margin: 0px;
+        height: 40px;
+        width: 140px;
+        font-size: 16px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
 }

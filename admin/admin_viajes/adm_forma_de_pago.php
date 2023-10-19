@@ -62,6 +62,108 @@
                 </td>
             </tr>
         </table>
+        
+        <table class="tarjeta" style="display: none" id="opcionesCC">
+            <tr>
+                <td class="opcs">
+                    <input type="radio" id="btnPar" name="tipoCC" value="1">
+                </td>
+                <td class="opcs">
+                    <input type="radio" id="btnEmp" name="tipoCC" value="2">
+                </td>
+            </tr>
+            <tr>
+                <td class="opcs">
+                    Particular
+                </td>
+                <td class="opcs">
+                    Empresa
+                </td>
+            </tr>
+        </table>
+        
+        <table class="tarjeta" id="eleccionCC">
+            <tr>
+                <td class="opcs" id="TRemp">
+                <?php
+                    require_once '../../conexion.php';
+                    $sql = "SELECT MAX(e.nombre_empresa) as nombre_empresa, MAX(cc.cod_cuenta) as cod_cuenta 
+                    FROM cuenta_corriente cc
+                    JOIN posee_emp pe ON pe.cod_cuenta = cc.cod_cuenta
+                    JOIN empresa e ON e.rut = pe.rut
+                    GROUP BY cc.cod_cuenta
+                    ORDER BY MAX(e.nombre_empresa);
+                    ";  
+                    $result = mysqli_query($conn, $sql);
+                    $jsonEmp = array();
+                    if (!$result) {
+                        echo "Error en la consulta: " . mysqli_error($conn);
+                    }
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $cod_cuenta = $row['cod_cuenta'];
+                            $nombre_empresa = $row['nombre_empresa'];
+                            $jsonEmp[] = array('cod_cuenta' => $cod_cuenta, 'nombre_empresa' => $nombre_empresa);
+                        } 
+                    }
+                    ?>
+                    <select id="emp" name="emp">
+                    <?php
+                    if (empty($jsonEmp)) {
+                        echo "<option value='' disabled selected>No hay ctas. corrientes</option>";
+                    } else {
+                        echo "<option value='' disabled selected>Seleccione una cta. corriente</option>";
+                        foreach ($jsonEmp as $Empresa) {
+                            $nombre_empresa = $Empresa['nombre_empresa'];
+                            echo "<option value='{$Empresa['cod_cuenta']}'>$nombre_empresa</option>";
+                        }
+                    }
+                    ?>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="opcs" id="TRpar">
+                    <?php
+                    require_once '../../conexion.php';
+                    $sql = "SELECT cc.cod_cuenta, MAX(c.nombre_cli) as nombre_cli, MAX(c.apellido_cli) as apellido_cli
+                    FROM cuenta_corriente cc
+                    JOIN posee_par par ON par.cod_cuenta = cc.cod_cuenta
+                    JOIN particular p ON p.cod_cliente = par.cod_cliente
+                    JOIN cliente c ON c.cod_cliente = par.cod_cliente
+                    GROUP BY cc.cod_cuenta
+                    ORDER BY MAX(c.nombre_cli);
+                    ";  
+                    $jsonPar = array();
+                    $result = mysqli_query($conn, $sql);
+                    if (!$result) {
+                        echo "Error en la consulta: " . mysqli_error($conn);
+                    } else {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $cod_cuenta = $row['cod_cuenta'];
+                            $nombre_cli = $row['nombre_cli'];
+                            $apellido_cli = $row['apellido_cli'];
+                            $jsonPar[] = array('cod_cuenta' => $cod_cuenta, 'nombre_cli' => $nombre_cli, 'apellido_cli' => $apellido_cli);
+                        } 
+                    }
+                    ?>
+                    <select id="par" name="emp">
+                    <?php
+                    if (empty($jsonEmp)) {
+                        echo "<option value='' disabled selected>No hay ctas. corrientes</option>";
+                    } else {
+                        echo "<option value='' disabled selected>Seleccione una cta. corriente</option>";
+                        foreach ($jsonPar as $Particular) {
+                            $nombre_cli = $Particular['nombre_cli'];
+                            $apellido_cli = $Particular['apellido_cli'];
+                            echo "<option value='{$Particular['cod_cuenta']}'>$nombre_cli $apellido_cli</option>";
+                        }
+                    }
+                    ?>
+                    </select>
+                </td>
+            </tr>
+        </table>
 
         <br>
         <br>

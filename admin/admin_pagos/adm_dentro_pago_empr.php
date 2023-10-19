@@ -43,11 +43,13 @@
     ?>
 
     <header>
-		<div class="logo">
-			<img src="img/REMI_logo.png" alt="logo remi">
-			<h2 class="nombre-remi">REMI</h2>
-		</div>
-        <a href="adm_pagos.php" class="btnatras">ATRAS</a>
+    <a style="text-decoration: none;" href="../../admin.php">
+            <div class="logo">
+                <img src="img/REMI_logo.png" alt="logo remi">
+                <h2 class="nombre-remi">REMI</h2>
+            </div>
+        </a>
+        <a href="adm_pagos_empr.php" class="btnatras">ATRAS</a>
 	</header>
 
     <div class="contenedor">

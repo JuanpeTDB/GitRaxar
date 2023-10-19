@@ -9,10 +9,12 @@
 </head>
 <body>
     <header>
-		<div class="logo">
-			<img src="img/REMI_logo.png" alt="logo remi">
-			<h2 class="nombre-remi">REMI</h2>
-		</div>
+        <a style="text-decoration: none;" href="../../admin.php">
+            <div class="logo">
+                <img src="img/REMI_logo.png" alt="logo remi">
+                <h2 class="nombre-remi">REMI</h2>
+            </div>
+        </a>
         <a href="adm_pagos.php" class="btnatras">ATRAS</a>
 	</header>
 
@@ -20,7 +22,7 @@
     <div class="contenedor">
         <h1>EMPRESAS</h1>
 
-        <a class="agregar"  onclick="window.location.href='agregar_pago_cli.php';">
+        <a class="agregar"  onclick="window.location.href='agregar_pago_empr.php';">
             <img src="img/agregar.png" class="boton_agregar"><img src="img/empresa.png" class="boton_agregar">
         </a>
 
@@ -35,7 +37,7 @@
 
     
 
-    <br><br><br><br><br>
+    <br><br>
     <div class="footer">
 		
     </div>
