@@ -143,6 +143,31 @@ h2 {
     color: #20A144;
 }
 
+.password {
+    border: 3px solid #9ED4AE;
+    position: relative;
+    display: inline-block;
+}
+
+.password input {
+    height: 50px;
+    font-size: 20px;
+    color: #20A144;
+    font-family: nexa;
+    padding-left: 15px;
+    border: none;
+    outline: none;
+}
+
+.pass-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    width: 24px;
+    cursor: pointer;
+}
+
 input {
     height: 50px;
     width: 300px;
@@ -223,6 +248,9 @@ button {
     }
     input {
         width: 65%;
+    }
+    .password input {
+        width: 65vw;
     }
     select {
         width: 65%;

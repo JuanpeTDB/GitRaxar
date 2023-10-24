@@ -9,10 +9,12 @@
 </head>
 <body>
 <header>
-		<div class="logo">
-			<img src="img/REMI_logo.png" alt="logo remi">
-			<h2 class="nombre-remi">REMI</h2>
-		</div>
+<a style="text-decoration: none;" href="../../admin.php">
+            <div class="logo">
+                <img src="img/REMI_logo.png" alt="logo remi">
+                <h2 class="nombre-remi">REMI</h2>
+            </div>
+        </a>
         <a id="btnAtras" href="adm_coches.php" class="btnatras">ATRAS</a>
 	</header>
 
@@ -37,7 +39,7 @@
                     <tr>
                         <td>
                             <h2>Matricula</h2>
-                            <input type="number"  name="matricula"></input>
+                            <input type="text" id="matricula" name="matricula"></input>
                         </td>
                         <td>
                             <h2>Año</h2>
@@ -67,5 +69,17 @@
                 window.history.back();
             }
         });
+        $("#matricula").on("input", function () {
+        var inputValue = $(this).val();
+
+        if (inputValue.length == 4 && inputValue !== "SRE ") {
+            $(this).val("SRE " + inputValue);
+
+        }
+
+        if (inputValue.length > 8) {
+            $(this).val(inputValue.slice(0, 8));
+        }
+    });
     </script>
 </html>

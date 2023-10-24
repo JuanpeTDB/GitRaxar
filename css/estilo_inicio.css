@@ -105,7 +105,6 @@ body {
 .logo img {
     height: 50px;
     margin-right: 10px;
-    margin-left: 40px;
 }
 
 .nombre-remi {
@@ -367,6 +366,23 @@ h2 {
 @media(max-width: 750px) {
     .nom_usu {
         display: none;
+    }
+    .usuario {
+        width: 100%;
+        right: 0px;
+        left: 0px;
+        top: 0px;
+        margin-top: 5px;
+    }
+    .usuario button {
+        margin: 15px;
+        font-size: 23px;
+    }
+    #config {
+        float: right;
+    }
+    #salir1 {
+        float: left;
     }
 }
 

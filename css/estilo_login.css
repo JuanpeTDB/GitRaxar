@@ -81,21 +81,38 @@ body {
     color: #20A144;
 }
 
-#Passwd {
-    width: 345px;
-    height: 80px;
+.password {
     border-radius: 20px;
-    border-color: black;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 40px;
+    border-color: #20A144;
+    border-style: solid;
     border-width: 1px;
     position: relative;
-    left: 50%;
+    display: inline-block;
+}
+
+.password input {
+    border-radius: 20px;
+    width: 345px;
+    height: 80px;
+    position: relative;
     transform: translateX(-50%);
     font-size: 25px;
     padding-left: 30px;
-    border-color: #20A144;
-    border-style: solid;
+    border: none;
     color: #20A144;
-    top: 40px;
+    left: 50%;
+}
+
+.pass-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    width: 24px;
+    cursor: pointer;
 }
 
 input::placeholder {
@@ -180,9 +197,11 @@ button:hover {
         width: 100%;
         top: -22px;
     }
-    #Passwd {
-        width: 100%;
-        top: 20px;
+    .password input {
+        width: 63vw;
+    }
+    .password {
+        top: 15px;
     }
     .div_logo {
         display: none;
@@ -215,8 +234,4 @@ button:hover {
     button:active {
         transform: scale(0.95) translateX(-50%) !important;
     }
-}
-
-@media (max-width: 450px) {
-    #box
 }

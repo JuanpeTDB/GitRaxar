@@ -12,7 +12,7 @@
     <?php
         require_once '../../conexion.php';
         $cod_mantenimiento = $_GET['cod_mantenimiento'];
-        $query = "SELECT * FROM auto a
+        $query = "SELECT *, DATE_FORMAT(r.fecha, '%d-%m-%Y') AS fecha FROM auto a
         INNER JOIN requiere r on r.matricula = a.matricula
         INNER JOIN mantenimiento m on m.cod_mantenimiento = r.cod_mantenimiento
         WHERE m.cod_mantenimiento = '$cod_mantenimiento';";
@@ -34,9 +34,15 @@
         
     ?>
 
-    <header>
-		<img class="logo" src="img/REMI_completo.png">
+<header>
+<a style="text-decoration: none;" href="../../admin.php">
+            <div class="logo">
+                <img src="img/REMI_logo.png" alt="logo remi">
+                <h2 class="nombre-remi">REMI</h2>
+            </div>
+        </a>
         <a href="adm_dtro_mantenimiento.php?matricula=<?php echo $matricula; ?>" class="btnatras">ATRAS</a>
+		
 	</header>
 
     <div class="contenedor">

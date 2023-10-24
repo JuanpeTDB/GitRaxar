@@ -19,7 +19,7 @@
 		$query2 = "UPDATE `se_encarga` set `ci` = '$ciChofer' WHERE `cod_viaje` = '$cod_viaje'";
 
 		if (mysqli_query($conn, $query1) && mysqli_query($conn, $query2)) {
-			header("Location: adm_ver_viajes.php");
+			header("Location: adm_ver_viajes.php?filtro=0");
 		} else {
 			echo "Error: " . mysqli_error($conn);
 		}

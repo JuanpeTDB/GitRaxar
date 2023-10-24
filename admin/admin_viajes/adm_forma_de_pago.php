@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +8,23 @@
     <link rel="stylesheet" type="text/css" href="css/adm_agendar_viaje.css">
     <link rel="icon" href="img/REMI_logo.png">
 </head>
+
 <body>
 
-   <?php
-        require_once '../../conexion.php';
-        $cod_viaje = $_GET['cod_viaje'];        
+    <?php
+    require_once '../../conexion.php';
+    $cod_viaje = $_GET['cod_viaje'];
     ?>
 
     <header>
-		<div class="logo">
-			<img src="img/REMI_logo.png" alt="logo remi">
-			<h2 class="nombre-remi">REMI</h2>
-		</div>
-        <a href="adm_agendar_viaje.php"  id="btnAtras" class="btnatras">ATRAS</a>
-	</header>
+        <a style="text-decoration: none;" href="../../admin.php">
+            <div class="logo">
+                <img src="img/REMI_logo.png" alt="logo remi">
+                <h2 class="nombre-remi">REMI</h2>
+            </div>
+        </a>
+        <a href="adm_agendar_viaje.php" id="btnAtras" class="btnatras">ATRAS</a>
+    </header>
 
     <div class="contenedor">
 
@@ -43,7 +47,7 @@
             </tr>
 
         </table>
-        
+
         <table class="tarjeta" style="display: none" id="opcionesTarjeta">
             <tr>
                 <td class="opcs">
@@ -62,7 +66,7 @@
                 </td>
             </tr>
         </table>
-        
+
         <table class="tarjeta" style="display: none" id="opcionesCC">
             <tr>
                 <td class="opcs">
@@ -81,11 +85,11 @@
                 </td>
             </tr>
         </table>
-        
+
         <table class="tarjeta" id="eleccionCC">
             <tr>
                 <td class="opcs" id="TRemp">
-                <?php
+                    <?php
                     require_once '../../conexion.php';
                     $sql = "SELECT MAX(e.nombre_empresa) as nombre_empresa, MAX(cc.cod_cuenta) as cod_cuenta 
                     FROM cuenta_corriente cc
@@ -93,7 +97,7 @@
                     JOIN empresa e ON e.rut = pe.rut
                     GROUP BY cc.cod_cuenta
                     ORDER BY MAX(e.nombre_empresa);
-                    ";  
+                    ";
                     $result = mysqli_query($conn, $sql);
                     $jsonEmp = array();
                     if (!$result) {
@@ -104,21 +108,21 @@
                             $cod_cuenta = $row['cod_cuenta'];
                             $nombre_empresa = $row['nombre_empresa'];
                             $jsonEmp[] = array('cod_cuenta' => $cod_cuenta, 'nombre_empresa' => $nombre_empresa);
-                        } 
-                    }
-                    ?>
-                    <select id="emp" name="emp">
-                    <?php
-                    if (empty($jsonEmp)) {
-                        echo "<option value='' disabled selected>No hay ctas. corrientes</option>";
-                    } else {
-                        echo "<option value='' disabled selected>Seleccione una cta. corriente</option>";
-                        foreach ($jsonEmp as $Empresa) {
-                            $nombre_empresa = $Empresa['nombre_empresa'];
-                            echo "<option value='{$Empresa['cod_cuenta']}'>$nombre_empresa</option>";
                         }
                     }
                     ?>
+                    <select id="emp" name="emp">
+                        <?php
+                        if (empty($jsonEmp)) {
+                            echo "<option value='' disabled selected>No hay ctas. corrientes</option>";
+                        } else {
+                            echo "<option value='' disabled selected>Seleccione una cta. corriente</option>";
+                            foreach ($jsonEmp as $Empresa) {
+                                $nombre_empresa = $Empresa['nombre_empresa'];
+                                echo "<option value='{$Empresa['cod_cuenta']}'>$nombre_empresa</option>";
+                            }
+                        }
+                        ?>
                     </select>
                 </td>
             </tr>
@@ -133,7 +137,7 @@
                     JOIN cliente c ON c.cod_cliente = par.cod_cliente
                     GROUP BY cc.cod_cuenta
                     ORDER BY MAX(c.nombre_cli);
-                    ";  
+                    ";
                     $jsonPar = array();
                     $result = mysqli_query($conn, $sql);
                     if (!$result) {
@@ -144,22 +148,22 @@
                             $nombre_cli = $row['nombre_cli'];
                             $apellido_cli = $row['apellido_cli'];
                             $jsonPar[] = array('cod_cuenta' => $cod_cuenta, 'nombre_cli' => $nombre_cli, 'apellido_cli' => $apellido_cli);
-                        } 
-                    }
-                    ?>
-                    <select id="par" name="emp">
-                    <?php
-                    if (empty($jsonEmp)) {
-                        echo "<option value='' disabled selected>No hay ctas. corrientes</option>";
-                    } else {
-                        echo "<option value='' disabled selected>Seleccione una cta. corriente</option>";
-                        foreach ($jsonPar as $Particular) {
-                            $nombre_cli = $Particular['nombre_cli'];
-                            $apellido_cli = $Particular['apellido_cli'];
-                            echo "<option value='{$Particular['cod_cuenta']}'>$nombre_cli $apellido_cli</option>";
                         }
                     }
                     ?>
+                    <select id="par" name="emp">
+                        <?php
+                        if (empty($jsonEmp)) {
+                            echo "<option value='' disabled selected>No hay ctas. corrientes</option>";
+                        } else {
+                            echo "<option value='' disabled selected>Seleccione una cta. corriente</option>";
+                            foreach ($jsonPar as $Particular) {
+                                $nombre_cli = $Particular['nombre_cli'];
+                                $apellido_cli = $Particular['apellido_cli'];
+                                echo "<option value='{$Particular['cod_cuenta']}'>$nombre_cli $apellido_cli</option>";
+                            }
+                        }
+                        ?>
                     </select>
                 </td>
             </tr>
@@ -171,15 +175,16 @@
         <div>
             <button id="btnContinuar">CONFIRMAR</button>
         </div>
-    
-    
+
+
     </div>
     <br><br><br><br><br>
     <div class="footer">
-		
+
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/forma_de_pago.js"></script>
 </body>
+
 </html>

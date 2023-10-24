@@ -1,13 +1,14 @@
 $(document).ready(function() {
+    var filtro = $('#filtro').val();
+    getAll(filtro);
 
-    getAll();
-
-    function getAll() {
+    function getAll(filtro) {
         $.ajax({
             url: 'obtener_todo_viaje.php',
             type: 'POST',
             data: {
                 res: 1,
+                filtro: filtro,
             },
             success: function(response) {
                 let choferes = JSON.parse(response);

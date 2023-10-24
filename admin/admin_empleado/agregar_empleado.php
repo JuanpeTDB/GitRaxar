@@ -9,10 +9,12 @@
 </head>
 <body>
 <header>
-		<div class="logo">
-			<img src="img/REMI_logo.png" alt="logo remi">
-			<h2 class="nombre-remi">REMI</h2>
-		</div>
+<a style="text-decoration: none;" href="../../admin.php">
+            <div class="logo">
+                <img src="img/REMI_logo.png" alt="logo remi">
+                <h2 class="nombre-remi">REMI</h2>
+            </div>
+        </a>
         <a id="btnAtras" href="adm_empleados.php" class="btnatras">ATRAS</a>
 	</header>
 

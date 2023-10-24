@@ -1,5 +1,6 @@
 $(document).ready(function() {
     var cod_viaje = $("#cod_viaje").val();
+
     $("#emp, #par").hide();
     $('input[name="tipoCC"]').change(function() {
         tipoCC = $(this).val();

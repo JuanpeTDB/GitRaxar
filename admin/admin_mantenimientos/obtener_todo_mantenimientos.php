@@ -1,9 +1,10 @@
 <?php
 	require_once '../../conexion.php';
 	if(ISSET($_POST['res'])){
-		$query = "SELECT * FROM mantenimiento m
+		$query = "SELECT *, DATE_FORMAT(r.fecha, '%d-%m-%Y') AS fecha FROM mantenimiento m
 				INNER JOIN requiere r on r.cod_mantenimiento = m.cod_mantenimiento
-				INNER JOIN auto a on a.matricula = r.matricula;";
+				INNER JOIN auto a on a.matricula = r.matricula
+				order by r.fecha desc;";
 		$result = mysqli_query($conn, $query);
 		$json = array();
 		if($result) {
@@ -15,7 +16,8 @@
 				'matricula' => $row['matricula'],
                 'marca' => $row['marca'],
                 'modelo' => $row['modelo'],
-                'anio' => $row['anio']
+                'anio' => $row['anio'],
+                'fecha' => $row['fecha']
             );
         	}
         	echo json_encode($json);

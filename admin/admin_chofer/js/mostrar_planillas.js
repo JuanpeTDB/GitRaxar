@@ -24,7 +24,7 @@ $(document).ready(function() {
                     if (!fechasImpresas[res.fecha]) {
                         ret += `
 						<tr cod="${res.cod_viaje}">
-							<td><h2 class="nombres">${res.fecha}</h2><div class="cont-botones"><button class="boton btnInfo" data-fecha="${res.fecha}" data-ci="${res.ci}">Info</button> </div> </td>
+							<td><h2 class="nombres">${res.fecha2}</h2><div class="cont-botones"><button class="boton btnInfo" data-fecha="${res.fecha}" data-ci="${res.ci}">Info</button> </div> </td>
 						</tr>
                         <tr><td><hr></td></tr>
                         `

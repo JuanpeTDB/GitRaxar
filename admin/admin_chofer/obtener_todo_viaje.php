@@ -2,7 +2,7 @@
 	require_once '../../conexion.php';
     $ci = $_POST["ci"];
 	if(ISSET($_POST['res'])){
-		$query = "SELECT *
+		$query = "SELECT *,  DATE_FORMAT(v.fecha, '%d-%m-%Y') AS fecha2
         FROM chofer c
         INNER JOIN conduce co ON c.ci = co.ci
         INNER JOIN auto a ON co.matricula = a.matricula
@@ -33,6 +33,7 @@
                 'hora_inicio' => $row['hora_inicio'],
                 'importe' => $row['importe'],
                 'fecha' => $row['fecha'],
+                'fecha2' => $row['fecha2'],
                 'comentario' => $row['comentario']
             );
         	}

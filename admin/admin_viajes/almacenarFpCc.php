@@ -15,7 +15,7 @@
         $result1 = mysqli_query($conn, $query1);
 
         if ($result1){
-            $query2 = "INSERT into `cuenta_corriente` (cod_cuenta, cod_pago) values ('$cod_cuenta', '$cod_pago')"
+            $query2 = "INSERT into `cuenta_corriente` (cod_cuenta, cod_pago) values ('$cod_cuenta', '$cod_pago')";
             $result2 = mysqli_query($conn, $query2);
 
             if ($result2){

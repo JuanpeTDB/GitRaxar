@@ -49,11 +49,14 @@
         
     ?>
     <header>
-        <div class="logo">
-			<img src="img/REMI_logo.png" alt="logo remi">
-			<h2 class="nombre-remi">REMI</h2>
+    <a style="text-decoration: none;" href="../../admin.php">
+            <div class="logo">
+                <img src="img/REMI_logo.png" alt="logo remi">
+                <h2 class="nombre-remi">REMI</h2>
+            </div>
+        </a>
         <a href="adm_mantenimientos.php" class="btnatras">ATRAS</a>
-		</div>
+		
 	</header>
 
     <input type="hidden" id="matricula" name="matricula" value="<?php echo $matricula; ?>">

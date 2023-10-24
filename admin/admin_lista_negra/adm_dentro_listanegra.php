@@ -13,7 +13,7 @@
 <?php
     require_once '../../conexion.php';
     $pp = $_GET['pp'];
-    $query = "SELECT *
+    $query = "SELECT *,  DATE_FORMAT(p.fecha_LN, '%d-%m-%Y') AS fecha
     FROM particular p
     INNER JOIN cliente c ON p.cod_cliente = c.cod_cliente
     WHERE p.cod_cliente = $pp";
@@ -26,17 +26,19 @@
             $estado = $row['estado'];
             $comentario = $row['comentario_chofer']; 
             $cod_cliente = $row['cod_cliente'];
-            $fecha = $row['fecha_LN'];
+            $fecha = $row['fecha'];
          }
     }
 
 ?>
 
     <header>
-		<div class="logo">
-			<img src="img/REMI_logo.png" alt="logo remi">
-			<h2 class="nombre-remi">REMI</h2>
-		</div>
+    <a style="text-decoration: none;" href="../../admin.php">
+            <div class="logo">
+                <img src="img/REMI_logo.png" alt="logo remi">
+                <h2 class="nombre-remi">REMI</h2>
+            </div>
+        </a>
         <a href="adm_listanegra.php" class="btnatras">ATRAS</a>
 	</header>
 

@@ -3,7 +3,7 @@ $(document).ready(function() {
         event.preventDefault();
 
         var usuario = $("#Usu").val();
-        var contrasenia = $("#Passwd").val();
+        var contrasenia = $("#password").val();
 
         $.ajax({
             type: "POST",
