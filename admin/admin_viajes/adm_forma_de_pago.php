@@ -14,7 +14,36 @@
     <?php
     require_once '../../conexion.php';
     $cod_viaje = $_GET['cod_viaje'];
+    $importe = $_GET['importe'];
+    $nombre_viajero = $_GET['nombre_viajero'];
+    $apellido_viajero = $_GET['apellido_viajero'];
+    $origen = $_GET['origen'];
+    $destino = $_GET['destino'];
+    $hora_inicio = $_GET['hora_inicio'];
+    $fecha = $_GET['fecha'];
+    $fecha_formateada = date("d-m-Y", strtotime($fecha));
+    $comentario = $_GET['comentario'];
+    $ciChofer = $_GET['ciChofer'];
+    $queryChoferes = "SELECT telefono FROM chofer where ci = '$ciChofer'";
+    $resultChoferes = mysqli_query($conn, $queryChoferes);
+    $jsonChoferes = array();
+    while ($row = mysqli_fetch_array($resultChoferes)) {
+        $telefono = $row['telefono'];
+    }
     ?>
+
+    <input type="hidden" id="importe" name="importe" value="<?php echo $importe; ?>">
+    <input type="hidden" id="nombre_viajero" name="nombre_viajero" value="<?php echo $nombre_viajero; ?>">
+    <input type="hidden" id="apellido_viajero" name="apellido_viajero" value="<?php echo $apellido_viajero; ?>">
+    <input type="hidden" id="origen" name="origen" value="<?php echo $origen; ?>">
+    <input type="hidden" id="destino" name="destino" value="<?php echo $destino; ?>">
+    <input type="hidden" id="hora_inicio" name="hora_inicio" value="<?php echo $hora_inicio; ?>">
+    <input type="hidden" id="fecha" name="fecha" value="<?php echo $fecha_formateada; ?>">
+    <input type="hidden" id="comentario" name="comentario" value="<?php echo $comentario; ?>">
+    <input type="hidden" id="ciChofer" name="ciChofer" value="<?php echo $ciChofer; ?>">
+    <input type="hidden" id="cod_viaje" name="cod_viaje" value="<?php echo $cod_viaje; ?>">
+    <input type="hidden" id="telefono" name="telefono" value="<?php echo $telefono; ?>">
+
 
     <header>
         <a style="text-decoration: none;" href="../../admin.php">

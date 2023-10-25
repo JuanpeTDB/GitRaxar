@@ -83,7 +83,7 @@
             <tr>
                 <td>
                     <h4>
-                        <?php echo $telefono; ?>
+                    +598 0<?php echo substr($telefono, 0, 2) ?> <?php echo substr($telefono, 2, 3) ?> <?php echo substr($telefono, 5, 3) ?>
                     </h4>
                 </td>
                 <td>

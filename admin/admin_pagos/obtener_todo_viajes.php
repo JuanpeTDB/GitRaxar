@@ -2,7 +2,7 @@
 	require_once '../../conexion.php';
 	$cod_cliente = $_POST['cod_cliente'];
 	if(ISSET($_POST['res'])){
-		$query = "SELECT  DATE_FORMAT(v.fecha, '%d-%m-%Y') AS fecha1, v.hora_inicio as hora_inicio, v.importe as importe1 from cliente c
+		$query = "SELECT  DATE_FORMAT(v.fecha, '%d-%m-%Y') AS fecha1, DATE_FORMAT(v.hora_inicio, '%h:%i') as hora_inicio, v.importe as importe1 from cliente c
 		join particular p on p.cod_cliente = c.cod_cliente
 		join posee_par po on po.cod_cliente = p.cod_cliente
 		join cuenta_corriente cc on cc.cod_cuenta = po.cod_cuenta

@@ -47,7 +47,7 @@
         <h1>EDITAR EMPLEADO</h1>
 
         <div class="cont2">
-            <form id="edicion" action="editarEmpleado.php" method="POST">
+            <form id="edicion" action="editarEmpleado1.php" method="POST">
                 <input type="hidden" name="ci" value="<?php echo $ci; ?>">
 
                 <table id="miTabla">
@@ -60,22 +60,18 @@
                             <h2>Apellido</h2>
                             <input name="apellido" type="text" value="<?php echo $apellido ?>"></input>
                         </td>
-                        <td>
-                            <h2>Nombre de usuario</h2>
-                            <input name="usuario" type="text" value="<?php echo $usuario ?>"></input>
-                        </td>
                     </tr>
                     <tr>
                         <td>
-                            <h2>Contraseña</h2>
-                            <div class="password">
-                                <input name="contrasenia" type="password" id="password" value="<?php echo $contrasenia ?>"></input>
-                                <i style="color: #20A144;" id="pass-icon" onclick="pass()" class="pass-icon fa-solid fa-eye-slash"></i>
-                            </div>
-                        </td>
-                        <td>
                             <h2>Telefono</h2>
                             <input type="text" name="telefono" value="<?php echo $telefono ?>"></input>
+                        </td>
+                        <td>
+                            <h2>Rol</h2>
+                            <select name="rol">
+                                <option value="administrador">Administrador</option>
+                                <option value="administrativo">Administrativo</option>
+                            </select>
                         </td>
                     </tr>
                 </table>

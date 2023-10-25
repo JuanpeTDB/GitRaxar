@@ -20,9 +20,12 @@ $(document).ready(function() {
                 choferes.forEach(res => {
                     ret += `
                     <tr>
-                        <td><h4>${res.fecha}</h4></td> <td><h4>${res.hora_inicio}</h4></td> <td><h4>${res.nombre_viajero} ${res.apellido_viajero}</h4></td> <td><h4>$${res.importe}</h4></td>
-
+                        <td><h4>${res.fecha} </h4> <h4> ${res.hora_inicio}</h4></td> <td><h4>${res.nombre_viajero} ${res.apellido_viajero} </h4> <h4> $${res.importe}</h4></td>
+                        
                     </tr>
+                    <tr>
+                        <td colspan="4"><hr></td>
+                    </tr> 
 					`
                     deuda += parseInt(res.importe);
                     $('#container_info').html(ret);

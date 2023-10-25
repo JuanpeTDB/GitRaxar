@@ -18,7 +18,7 @@ if (mysqli_query($conn, $query1)) {
     $query2 = "INSERT INTO `se_encarga` (ci, cod_viaje) values ('$ciChofer', '$cod_viaje')";
 
     if (mysqli_query($conn, $query2)) {
-        header("Location: adm_forma_de_pago.php?cod_viaje=$cod_viaje");
+        header("Location: adm_forma_de_pago.php?cod_viaje=$cod_viaje&importe=$importe&nombre_viajero=$nombre_viajero&apellido_viajero=$apellido_viajero&origen=$origen&destino=$destino&hora_inicio=$hora_inicio&fecha=$fecha&comentario=$comentario&ciChofer=$ciChofer");
     } else {
         echo "Error en la segunda consulta: " . mysqli_error($conn);
     }

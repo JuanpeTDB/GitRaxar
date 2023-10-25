@@ -332,6 +332,7 @@ hr {
     }
     .logo img {
         height: 50px;
+        margin-left: 0px;
     }
     .agregar {
         width: 90px;

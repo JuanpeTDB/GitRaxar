@@ -34,6 +34,7 @@ $(document).ready(function() {
 
         var contenedor = $("<div>").css({
             "position": "fixed",
+            "z-index": "3",
             "top": "0",
             "left": "0",
             "width": "100%",
@@ -149,7 +150,7 @@ $(document).ready(function() {
 
     $(document).on('click', '.btnEditar', function() {
         var ci = $(this).data("ci");
-        window.location.href = "adm_editar_empleado.php?ci=" + ci;
+        window.location.href = "adm_editar_empleado1.php?ci=" + ci;
     });
 
     $(document).on('click', '.btnInfo', function() {

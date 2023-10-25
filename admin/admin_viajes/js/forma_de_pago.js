@@ -17,6 +17,7 @@ $(document).ready(function() {
                 console.log(cod_cuenta);
                 $("#btnContinuar").click(function() {
                     almacenarViajeCC(cod_viaje, cod_cuenta);
+                    wpp(MP);
                     abrirPopup();
                 });
             });
@@ -28,6 +29,7 @@ $(document).ready(function() {
                 console.log(cod_cuenta);
                 $("#btnContinuar").click(function() {
                     almacenarViajeCC(cod_viaje, cod_cuenta);
+                    wpp(MP);
                     abrirPopup();
                 });
             });
@@ -82,29 +84,72 @@ $(document).ready(function() {
         } else if (metodoPago === "4" && (tipoTarjeta === "debito")) {
             MP = "debito";
             almacenarViaje(cod_viaje, MP);
+            wpp(MP);
             abrirPopup();
         } else if (metodoPago === "4" && (tipoTarjeta === "credito")) {
             MP = "credito";
             almacenarViaje(cod_viaje, MP);
+            wpp(MP);
             abrirPopup();
         } else if (metodoPago === "1") {
             $("#emp, #par").hide();
             console.log("contado");
             MP = "contado";
             almacenarViaje(cod_viaje, MP);
+            wpp(MP);
             abrirPopup();
         } else if (metodoPago === "2") {
             $("#emp, #par").hide();
             console.log("transferencia");
             MP = "transferencia";
             almacenarViaje(cod_viaje, MP);
+            wpp(MP);
             abrirPopup();
         } else if (metodoPago === "3" && (tipoCC === undefined || tipoCC === null)) {
             console.log("cta_corriente");
             alert("Por favor, seleccione un tipo de cuenta corriente.");
         }
     });
+
+    var fecha = $("#fecha").val();
+    var hora = $("#hora").val();
+    var origen = $("#origen").val();
+    var destino = $("#destino").val();
+    var nombre_viajero = $("#nombre_viajero").val();
+    var apellido_viajero = $("#apellido_viajero").val();
+    var importe = $("#importe").val();
+    var comentario = $("#comentario").val();
+
+    if (wpp == true) {
+
+    }
 });
+
+function wpp(MP) {
+    var fecha = $("#fecha").val();
+    var hora = $("#hora").val();
+    var origen = $("#origen").val();
+    var destino = $("#destino").val();
+    var nombre_viajero = $("#nombre_viajero").val();
+    var apellido_viajero = $("#apellido_viajero").val();
+    var importe = $("#importe").val();
+    var comentario = $("#comentario").val();
+    var msg = "*Viaje:* " + fecha + "\n" +
+        "*Hora:* " + hora + " hs\n" +
+        "*Origen:* " + origen + "\n" +
+        "*Destino:* " + destino + "\n" +
+        "*Cliente:* " + nombre_viajero + " " + apellido_viajero + "\n" +
+        "*Forma de pago: *" + MP + "\n" +
+        "*Importe:* " + importe + "\n" +
+        "*Comentario:* " + comentario;
+    var tel = "+598" + $("#telefono").val();
+    console.log(tel);
+
+    var url = "whatsapp://send?text=" + encodeURIComponent(msg) + "&phone=" + encodeURIComponent(tel);
+
+    window.open(url);
+}
+
 
 
 function almacenarViaje(cod_viaje, MP) {

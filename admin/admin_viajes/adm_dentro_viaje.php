@@ -72,7 +72,7 @@
                 <h2 class="nombre-remi">REMI</h2>
             </div>
         </a>
-        <a href="adm_ver_viajes.php" class="btnatras">ATRAS</a>
+        <a href="adm_ver_viajes.php?filtro=0" class="btnatras">ATRAS</a>
     </header>
 
     <div class="contenedor">

@@ -35,7 +35,7 @@
                 <h2 class="nombre-remi">REMI</h2>
             </div>
         </a>
-        <a id="btnAtras" href="adm_viajes.php" class="btnatras">ATRAS</a>
+        <a id="BtnAtras" href="adm_viajes.php" class="btnatras">ATRAS</a>
     </header>
     <div class="contenedor">
 
@@ -132,7 +132,7 @@
                 $("#agendar").submit();
             }
         });
-        $("#btnAtras").click(function () {
+        $("#BtnAtras").click(function () {
             if (confirm("¿Estás seguro de que deseas volver atrás sin guardar los cambios?")) {
                 window.history.back();
             }

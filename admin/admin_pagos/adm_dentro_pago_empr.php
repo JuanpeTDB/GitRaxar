@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REMI</title>
-    <link rel="stylesheet" type="text/css" href="css/estilo_adm_dtro_pago_cli.css">
+    <link rel="stylesheet" type="text/css" href="css/estilo_adm_dtro_pago_empr.css">
     <link rel="icon" href="img/REMI_logo.png">
 </head>
 <body>
@@ -13,12 +13,13 @@
     <?php
         require_once '../../conexion.php';
         $rut = $_GET['rut'];
-        $query = "SELECT e.nombre_empresa from cuenta_corriente cc
+        $query = "SELECT e.nombre_empresa, tc.telefono from cuenta_corriente cc
         join forma_de_pago fp on fp.cod_pago = cc.cod_pago
         join tiene t on t.cod_pago = fp.cod_pago
         join viajes v on v.cod_viaje = t.cod_viaje
         join reserva r on r.cod_viaje = v.cod_viaje
         join cliente c on c.cod_cliente = r.cod_cliente
+        join tel_cli tc on tc.cod_cliente = c.cod_cliente
         join empresa e on e.cod_cliente = c.cod_cliente
         WHERE e.rut = $rut;";
         $result = mysqli_query($conn, $query);
@@ -26,16 +27,20 @@
         if(!$result) {
             while($row = mysqli_fetch_assoc($result)) {
                 $nombre_empresa = $row['nombre_empresa'];
-                $rut = $row['rut'];
+                $telefono = $row['telefono'];
             
             }
         } else {
-            $query = "SELECT e.nombre_empresa from empresa e WHERE e.rut = $rut;";
+            $query = "SELECT e.nombre_empresa, tc.telefono from empresa e
+            join cliente c on c.cod_cliente = e.cod_cliente
+            join tel_cli tc on tc.cod_cliente = c.cod_cliente 
+            WHERE e.rut = $rut;";
             $result = mysqli_query($conn, $query);
             $json = array();
             if($result) {
                 while($row = mysqli_fetch_assoc($result)) {
                     $nombre_empresa = $row['nombre_empresa'];
+                    $telefono = $row['telefono'];
                 
                 }
         }
@@ -56,6 +61,7 @@
 
         <h1><?php echo $nombre_empresa?></h1>
         <input type="hidden" id="rut" value="<?php echo $rut ?>">
+        <h2>Tel: +598 0<?php echo substr($telefono, 0, 2) ?> <?php echo substr($telefono, 2, 3) ?> <?php echo substr($telefono, 5, 3) ?></h2>
 
 
         <br><br><br><br>

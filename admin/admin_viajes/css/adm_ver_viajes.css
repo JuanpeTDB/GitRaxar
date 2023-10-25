@@ -330,6 +330,7 @@ hr {
     }
     .logo img {
         height: 50px;
+        margin-left: 0px;
     }
     .dropdown button {
         height: 50px;
@@ -353,7 +354,7 @@ hr {
     .btnatras {
         top: 20px;
         right: 25px;
-        font-size: 17px;
+        font-size: 18px;
     }
     .contenedor {
         text-align: center;

@@ -150,6 +150,26 @@ nav a:hover {
     font-weight: 800;
 }
 
+.btnatras {
+    color: #20A144 !important;
+    font-family: nexa !important;
+    font-size: 20px !important;
+    background-color: #ffffff00 !important;
+    border-style: none !important;
+    position: absolute !important;
+    right: 80px !important;
+    top: 40px !important;
+    text-decoration: none !important;
+}
+
+@media (max-width: 860px) {
+    .btnatras {
+        top: 20px !important;
+        right: 25px !important;
+        font-size: 18px !important;
+    }
+}
+
 .usuario {
     font-family: nexa;
     font-size: 22px;
@@ -319,6 +339,7 @@ hr {
     }
     .logo img {
         height: 50px;
+        margin-left: 0px;
     }
     .agregar {
         width: 90px;
@@ -384,10 +405,9 @@ hr {
         border-color: #20A144;
     }
     h1 {
-        font-size: 42px;
+        font-size: 40px;
         font-family: nexa;
         color: #20A144;
-        padding-bottom: 20px;
     }
     .nombres {
         font-size: 28px;

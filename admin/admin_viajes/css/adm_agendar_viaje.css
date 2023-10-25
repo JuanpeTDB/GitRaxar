@@ -44,15 +44,23 @@ button:hover {
 }
 
 .btnatras {
-    color: #20A144;
-    font-family: nexa;
-    font-size: 20px;
-    background-color: #ffffff00;
-    border-style: none;
-    position: absolute;
-    right: 80px;
-    top: 40px;
-    text-decoration: none;
+    color: #20A144 !important;
+    font-family: nexa !important;
+    font-size: 20px !important;
+    background-color: #ffffff00 !important;
+    border-style: none !important;
+    position: absolute !important;
+    right: 80px !important;
+    top: 40px !important;
+    text-decoration: none !important;
+}
+
+@media (max-width: 860px) {
+    .btnatras {
+        top: 20px !important;
+        right: 25px !important;
+        font-size: 18px !important;
+    }
 }
 
 .logo {
@@ -242,6 +250,7 @@ button {
     }
     .logo img {
         height: 50px;
+        margin-left: 0px;
     }
     h1 {
         font-size: 50px;
@@ -283,6 +292,12 @@ button {
     #btnGuardar {
         width: 120px !important;
         font-size: 16px;
+        margin-top: 0px !important;
+    }
+    #btnAtras {
+        width: 120px !important;
+        font-size: 16px;
+        margin-top: 0px !important;
     }
     body {
         justify-content: space-between;

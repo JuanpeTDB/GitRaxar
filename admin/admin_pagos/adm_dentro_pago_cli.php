@@ -13,14 +13,17 @@
     <?php
         require_once '../../conexion.php';
         $cod_cliente = $_GET['cod_cliente'];
-        $query = "SELECT * from cliente c WHERE c.cod_cliente = $cod_cliente;";
+        $query = "SELECT * from cliente c
+        join tel_cli tc on tc.cod_cliente = c.cod_cliente
+        WHERE c.cod_cliente = $cod_cliente;";
         $result = mysqli_query($conn, $query);
         $json = array();
         if($result) {
             while($row = mysqli_fetch_assoc($result)) {
                 $nombre_cli = $row['nombre_cli'];
                 $apellido_cli = $row['apellido_cli'];
-                $cod_cliente = $row['cod_cliente'];            
+                $cod_cliente = $row['cod_cliente']; 
+                $telefono = $row['telefono'];            
             }
         }
     ?>
@@ -38,8 +41,10 @@
     <div class="contenedor">
 
         <h1><?php echo $nombre_cli?> <?php echo $apellido_cli ?></h1>
+        <h2>Tel: +598 0<?php echo substr($telefono, 0, 2) ?> <?php echo substr($telefono, 2, 3) ?> <?php echo substr($telefono, 5, 3) ?></h2>
 
-        <br><br><br><br>
+
+        <br><br>
 
         <div class="deuda">
             <h2>DEUDA: </h2><h2 id="deuda">$</h2>

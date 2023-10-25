@@ -54,15 +54,23 @@ button:hover {
 }
 
 .btnatras {
-    color: #20A144;
-    font-family: nexa;
-    font-size: 20px;
-    background-color: #ffffff00;
-    border-style: none;
-    position: absolute;
-    right: 80px;
-    top: 40px;
-    text-decoration: none;
+    color: #20A144 !important;
+    font-family: nexa !important;
+    font-size: 20px !important;
+    background-color: #ffffff00 !important;
+    border-style: none !important;
+    position: absolute !important;
+    right: 80px !important;
+    top: 40px !important;
+    text-decoration: none !important;
+}
+
+@media (max-width: 860px) {
+    .btnatras {
+        top: 20px !important;
+        right: 25px !important;
+        font-size: 18px !important;
+    }
 }
 
 .logo img {
@@ -204,4 +212,68 @@ button {
     border-radius: 180px;
     border-style: none;
     margin-left: 60px;
+}
+
+@media (max-width: 1000px) {
+    header {
+        flex-direction: column;
+    }
+    nav {
+        padding: 10px 0px;
+        text-align: center;
+    }
+    .logo img {
+        height: 50px;
+        margin-left: 0px;
+    }
+    h1 {
+        font-size: 52px;
+    }
+    h3 {
+        font-size: 22px;
+    }
+    h4 {
+        font-size: 18px;
+    }
+    select {
+        height: 45px;
+        width: 220px;
+        font-size: 16px;
+    }
+    button {
+        height: 45px;
+        width: 160px;
+        font-size: 18px;
+        margin: 30px;
+    }
+}
+
+@media (max-width: 690px) {
+    .div-mobile {
+        display: block;
+    }
+    .div-dek {
+        display: none;
+    }
+    h1 {
+        font-size: 46px;
+    }
+    button {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 490px) {
+    h1 {
+        font-size: 32px;
+    }
+    button {
+        margin: 0px;
+        margin-top: 50px;
+        height: 40px;
+        width: 140px;
+        font-size: 16px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
 }

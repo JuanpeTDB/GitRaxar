@@ -79,15 +79,23 @@ button:hover {
 }
 
 .btnatras {
-    color: #20A144;
-    font-family: nexa;
-    font-size: 20px;
-    background-color: #ffffff00;
-    border-style: none;
-    position: absolute;
-    right: 80px;
-    top: 40px;
-    text-decoration: none;
+    color: #20A144 !important;
+    font-family: nexa !important;
+    font-size: 20px !important;
+    background-color: #ffffff00 !important;
+    border-style: none !important;
+    position: absolute !important;
+    right: 80px !important;
+    top: 40px !important;
+    text-decoration: none !important;
+}
+
+@media (max-width: 860px) {
+    .btnatras {
+        top: 20px !important;
+        right: 25px !important;
+        font-size: 18px !important;
+    }
 }
 
 #container_info {
@@ -318,6 +326,7 @@ button {
     }
     .logo img {
         height: 50px;
+        margin-left: 0px;
     }
     h4 {
         margin: 0px;
@@ -438,17 +447,6 @@ button {
         width: 100%;
         text-align: center;
         padding-top: 10px;
-    }
-    .btnatras {
-        color: #20A144;
-        font-family: nexa;
-        font-size: 14px;
-        background-color: #ffffff00;
-        border-style: none;
-        position: absolute;
-        right: 33px;
-        top: 20px;
-        text-decoration: none;
     }
 }
 

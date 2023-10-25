@@ -60,8 +60,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <h2>Telefono</h2>
-                        <h3><?php echo $telefono ?></h3>
+                        <h2>+598 0<?php echo substr($telefono, 0, 2) ?> <?php echo substr($telefono, 2, 3) ?> <?php echo substr($telefono, 5, 3) ?></h3>
                     </td>
                     <td>
                         <h2>Rol</h2>
