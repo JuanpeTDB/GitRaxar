@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REMI</title>
     <link rel="stylesheet" type="text/css" href="css/estilo_adm_pagos.css">
+    <script src="https://kit.fontawesome.com/28b29172a8.js" crossorigin="anonymous"></script>
     <link rel="icon" href="img/REMI_logo.png"> 
 </head>
 <body>
@@ -22,8 +23,8 @@
     <div class="contenedor">
         <h1>EMPRESAS</h1>
 
-        <a class="agregar"  onclick="window.location.href='agregar_pago_empr.php';">
-            <img src="img/agregar.png" class="boton_agregar"><img src="img/empresa.png" class="boton_agregar">
+        <a title="Agregar chofer" class="agregar" onclick="window.location.href='agregar_chofer.php';">
+            <i class="fa-solid fa-plus"></i><i class="fa-regular fa-building"></i>
         </a>
 
         <div class="box">

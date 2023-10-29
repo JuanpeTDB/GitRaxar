@@ -21,6 +21,9 @@ $(document).ready(function() {
                     window.location.href = 'empleado.php';
                 } else {
                     $("#msj_error").html('<p>Usuario y/o contraseña incorrectos.</p>');
+                    $("#Usu").addClass("invalid");
+                    $("#password").addClass("invalid");
+                    $("#pass-icon").css("color", "red");
                 }
             }
         });

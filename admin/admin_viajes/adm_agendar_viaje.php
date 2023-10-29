@@ -59,21 +59,21 @@
                 <tr>
                     <td>
                         <h2>Nombre Cliente</h2>
-                        <input name="nombre_viajero" type="text"></input>
+                        <input id="nombre" name="nombre_viajero" type="text"></input>
                     </td>
                     <td>
                         <h2>Apellido Cliente</h2>
-                        <input name="apellido_viajero" type="text"></input>
+                        <input id="apellido" name="apellido_viajero" type="text"></input>
                     </td>
                     <td>
                         <h2>Fecha</h2>
-                        <input name="fecha" type="date"></input>
+                        <input name="fecha" type="date" min="<?php echo date('Y-m-d'); ?>"></input>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <h2>Importe</h2>
-                        <input name="importe" type="number"></input>
+                        <input id="importe" name="importe" type="text"></input>
                     </td>
                     <td>
                         <h2>Comentario</h2>
@@ -117,6 +117,38 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script>
+        $(document).ready(function () {
+            $("#nombre").on("input", function () {
+                var regex = /[^a-zA-ZñÑçÇ ]/g;
+                if ($(this).val().match(regex)) {
+                    $(this).addClass("invalid");
+                    $(this).val($(this).val().replace(regex, ""));
+                } else {
+                    $(this).removeClass("invalid");
+                }
+            });
+            $("#apellido").on("input", function () {
+                var regex = /[^a-zA-ZñÑçÇ ]/g;
+                if ($(this).val().match(regex)) {
+                    $(this).addClass("invalid");
+                    $(this).val($(this).val().replace(regex, ""));
+                } else {
+                    $(this).removeClass("invalid");
+                }
+            });
+            $("#importe").on("input", function () {
+                var regex = /[^0-9]/g;
+                if ($(this).val().match(regex)) {
+                    $(this).addClass("invalid");
+                    $(this).val($(this).val().replace(regex, ""));
+                } else {
+                    $(this).removeClass("invalid");
+                }
+                if ($(this).val().length > 8) {
+                    $(this).val($(this).val().slice(0, 8));
+                }
+            });
+        });
         $("#btnGuardar").click(function () {
             var camposVacios = false;
             $("input[type='text'], input[type='time'], input[type='date']").each(function () {

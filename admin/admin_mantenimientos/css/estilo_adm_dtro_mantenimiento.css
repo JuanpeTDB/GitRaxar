@@ -209,8 +209,9 @@ hr {
     opacity: 0.8 !important;
 }
 
-.boton_agregar {
-    width: 45%;
+.agregar i {
+    font-size: 24px;
+    padding: 10px;
 }
 
 .boton {
@@ -269,6 +270,7 @@ hr {
     }
     .logo img {
         height: 50px;
+        margin-left: 0px;
     }
     .agregar {
         width: 90px;
@@ -315,6 +317,9 @@ hr {
         text-align: center;
         display: flex;
         justify-content: center;
+    }
+    .agregar i {
+        padding: 0px;
     }
     #btnCancelar {
         width: 110px !important;

@@ -18,8 +18,8 @@ $(document).ready(function() {
                 coches.forEach(res => {
                     if (res.matricula == matricula) {
                         ret += `
-                                <tr cod="${res.cod_mantenimiento}">
-                                    <td><h2 class="nombres">${res.tipo} - ${res.fecha}</h2><div class="cont-botones"> <button class="boton btnInfo" data-cod_mantenimiento="${res.cod_mantenimiento}"> Info </button></div></td>
+                                <tr cod="${res.cod_visita}">
+                                    <td><h2 class="nombres">${res.tipo} - ${res.fecha}</h2><div class="cont-botones"> <button class="boton btnInfo" data-cod_visita="${res.cod_visita}"> Info </button></div></td>
                                 </tr>
                                 <tr><td><hr></td></tr>
                                 `
@@ -35,8 +35,8 @@ $(document).ready(function() {
 
 
     $(document).on('click', '.btnInfo', function() {
-        var cod_mantenimiento = $(this).data("cod_mantenimiento");
-        window.location.href = "adm_dentro_coche_mantenimiento.php?cod_mantenimiento=" + cod_mantenimiento;
+        var cod_visita = $(this).data("cod_visita");
+        window.location.href = "adm_dentro_coche_mantenimiento.php?cod_visita=" + cod_visita;
     });
 
 });

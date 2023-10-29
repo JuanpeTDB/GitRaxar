@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REMI</title>
     <link rel="stylesheet" type="text/css" href="css/estilo_adm_dtro_pago_cli.css">
+    <script src="https://kit.fontawesome.com/28b29172a8.js" crossorigin="anonymous"></script>
     <link rel="icon" href="img/REMI_logo.png">
 </head>
 <body>
@@ -28,6 +29,10 @@
         }
     ?>
 
+    <input type="hidden" id="telefono" value="<?php echo $telefono ?>">
+    <input type="hidden" id="nombre_cli" value="<?php echo $nombre_cli ?>">
+    <input type="hidden" id="apellido_cli" value="<?php echo $apellido_cli ?>">
+
     <header>
     <a style="text-decoration: none;" href="../../admin.php">
             <div class="logo">
@@ -42,7 +47,7 @@
 
         <h1><?php echo $nombre_cli?> <?php echo $apellido_cli ?></h1>
         <h2>Tel: +598 0<?php echo substr($telefono, 0, 2) ?> <?php echo substr($telefono, 2, 3) ?> <?php echo substr($telefono, 5, 3) ?></h2>
-
+        <button title="Notificar cliente" id="wpp_cli"><i class="fa-brands fa-whatsapp"></i></button>
 
         <br><br>
 

@@ -57,6 +57,15 @@ body {
     display: inline-block;
 }
 
+input.invalid {
+    border: 3px solid red !important;
+    background-color: rgb(255 102 102 / 7%);
+}
+
+input:focus {
+    outline: none;
+}
+
 #logo {
     position: absolute;
     width: 210px;

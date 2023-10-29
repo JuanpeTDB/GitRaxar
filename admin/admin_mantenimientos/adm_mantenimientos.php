@@ -66,7 +66,7 @@
     <input type="hidden" id="ci" value="<?php echo $ci; ?>">
     <div class="usuario">
         <span class="nom_usu"><?php echo $_SESSION['nombre_usuario']; ?></span>
-        <button id="config" title="Configuración"><i class="fa-solid fa-gear"></i></button>
+        <button id="config" title="Configuración"><i class="fa-solid fa-user-gear"></i></button>
         <button id="salir1" title="Cerrar sesión"><i class="fa-solid fa-sign-out"></i></button>
     
     </div>

@@ -75,8 +75,8 @@
     <div class="contenedor">
         <h1>EMPLEADOS</h1>
 
-        <a class="agregar"  onclick="window.location.href='agregar_empleado.php';">
-            <img src="img/agregar.png" class="boton_agregar"><img src="img/silueta.png" class="boton_agregar">
+        <a title="Agregar empleado" class="agregar" onclick="window.location.href='agregar_chofer.php';">
+            <i class="fa-solid fa-plus"></i><i class="fa-regular fa-user"></i>
         </a>
 
         <div class="box">

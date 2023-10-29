@@ -68,6 +68,20 @@ button:hover {
     align-items: center;
 }
 
+.divGuardar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+#btnGuardar {
+    position: relative;
+    margin: 0px;
+    margin-bottom: 20px;
+}
+
 .logo img {
     height: 70px;
     margin-right: 10px;
@@ -130,6 +144,14 @@ h1 {
 
 
 /*============================================================================================================*/
+
+input.invalid {
+    border: 3px solid red;
+}
+
+input:focus {
+    outline: none;
+}
 
 table {
     width: 100%;

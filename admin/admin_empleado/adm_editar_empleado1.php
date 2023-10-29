@@ -54,17 +54,17 @@
                     <tr>
                         <td>
                             <h2>Nombre</h2>
-                            <input name="nombre" type="text" value="<?php echo $nombre ?>"></input>
+                            <input id="nombre" name="nombre" type="text" value="<?php echo $nombre ?>"></input>
                         </td>
                         <td>
                             <h2>Apellido</h2>
-                            <input name="apellido" type="text" value="<?php echo $apellido ?>"></input>
+                            <input id="apellido" name="apellido" type="text" value="<?php echo $apellido ?>"></input>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <h2>Telefono</h2>
-                            <input type="text" name="telefono" value="<?php echo $telefono ?>"></input>
+                            <input id="tel" type="text" name="telefono" value="<?php echo $telefono ?>"></input>
                         </td>
                         <td>
                             <h2>Rol</h2>
@@ -99,6 +99,55 @@
         $("#edicion").submit();
     });
     $(document).ready(function () {
+        $("#nombre").on("input", function () {
+            var regex = /[^a-zA-ZñÑçÇ ]/g;
+            if ($(this).val().match(regex)) {
+                $(this).addClass("invalid");
+                $(this).val($(this).val().replace(regex, ""));
+            } else {
+                $(this).removeClass("invalid");
+            }
+        });
+        $("#apellido").on("input", function () {
+            var regex = /[^a-zA-ZñÑçÇ ]/g;
+            if ($(this).val().match(regex)) {
+                $(this).addClass("invalid");
+                $(this).val($(this).val().replace(regex, ""));
+            } else {
+                $(this).removeClass("invalid");
+            }
+        });
+        $("#ci").on("input", function () {
+            var regex = /[^0-9]/g;
+            if ($(this).val().match(regex)) {
+                $(this).addClass("invalid");
+                $(this).val($(this).val().replace(regex, ""));
+            } else {
+                $(this).removeClass("invalid");
+            }
+            if ($(this).val().length > 8) {
+                $(this).val($(this).val().slice(0, 8));
+            }
+        });
+        $("#tel").on("input", function () {
+            var regex = /[^0-9]/g;
+            if ($(this).val().match(regex)) {
+                $(this).addClass("invalid");
+                $(this).val($(this).val().replace(regex, ""));
+            } else {
+                $(this).removeClass("invalid");
+            }
+            var inputValue = $(this).val();
+
+            if (inputValue.length == 2 && inputValue !== "09") {
+                $(this).val("09" + inputValue);
+
+            }
+
+            if (inputValue.length > 9) {
+                $(this).val(inputValue.slice(0, 9)); // Limita la longitud a 8 caracteres
+            }
+        });
         $("#pass-icon").click(function () {
             if ($("#password").attr("type") == "password") {
                 $("#password").attr("type", "text");
@@ -108,6 +157,15 @@
                 $("#password").attr("type", "password");
                 $("#pass-icon").removeClass("fa-eye");
                 $("#pass-icon").addClass("fa-eye-slash");
+            }
+        });
+        $("#btnGuardar").click(function () {
+            if ($("#nombre").val() == "" || $("#apellido").val() == "" || $("#ci").val() == "" || $("#tel").val() == "" || $("#contrasenia").val() == "" || $("#rol").val() == "") {
+                alert("Por favor, rellene todos los campos.");
+            } else if ($("#contrasenia").hasClass("invalid")) {
+                alert("Por favor, ingrese una contraseña válida.");
+            } else {
+                $("#edicion").submit();
             }
         });
     });

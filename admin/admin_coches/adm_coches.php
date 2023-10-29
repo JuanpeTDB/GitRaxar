@@ -71,7 +71,7 @@
             <span class="nom_usu">
                 <?php echo $_SESSION['nombre_usuario']; ?>
             </span>
-            <button id="config" title="Configuración"><i class="fa-solid fa-gear"></i></button>
+            <button id="config" title="Configuración"><i class="fa-solid fa-user-gear"></i></button>
             <button id="salir1" title="Cerrar sesión"><i class="fa-solid fa-sign-out"></i></button>
 
         </div>
@@ -80,8 +80,8 @@
     <div class="contenedor">
         <h1>COCHES</h1>
 
-        <a class="agregar" onclick="window.location.href='agregar_coche.php';">
-            <img src="img/agregar.png" class="boton_agregar"><img src="img/coche.png" class="boton_agregar">
+        <a title="Agregar coche" class="agregar" onclick="window.location.href='agregar_chofer.php';">
+            <i class="fa-solid fa-plus"></i><i class="fa-solid fa-car"></i>
         </a>
 
         <div class="box">

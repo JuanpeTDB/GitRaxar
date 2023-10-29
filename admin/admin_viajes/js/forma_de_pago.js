@@ -3,12 +3,11 @@ $(document).ready(function() {
 
     $("#emp, #par").hide();
     $('input[name="tipoCC"]').change(function() {
+        MP = "cuenta_corriente";
         tipoCC = $(this).val();
         cod_cuenta = "";
         console.log(tipoCC);
-        $("#btnContinuar").click(function() {
-            alert("Por favor, seleccione una cuenta corriente.");
-        });
+
         if ($(this).val() === "1") {
             $('#emp').hide();
             $('#par').show();
@@ -35,6 +34,9 @@ $(document).ready(function() {
             });
         } else {
             $('#emp, #par').hide();
+            $("#btnContinuar").click(function() {
+                alert("Por favor, seleccione una cuenta corriente.");
+            });
         }
     });
 
@@ -110,24 +112,11 @@ $(document).ready(function() {
             alert("Por favor, seleccione un tipo de cuenta corriente.");
         }
     });
-
-    var fecha = $("#fecha").val();
-    var hora = $("#hora").val();
-    var origen = $("#origen").val();
-    var destino = $("#destino").val();
-    var nombre_viajero = $("#nombre_viajero").val();
-    var apellido_viajero = $("#apellido_viajero").val();
-    var importe = $("#importe").val();
-    var comentario = $("#comentario").val();
-
-    if (wpp == true) {
-
-    }
 });
 
 function wpp(MP) {
     var fecha = $("#fecha").val();
-    var hora = $("#hora").val();
+    var hora = $("#hora_inicio").val();
     var origen = $("#origen").val();
     var destino = $("#destino").val();
     var nombre_viajero = $("#nombre_viajero").val();
@@ -139,7 +128,7 @@ function wpp(MP) {
         "*Origen:* " + origen + "\n" +
         "*Destino:* " + destino + "\n" +
         "*Cliente:* " + nombre_viajero + " " + apellido_viajero + "\n" +
-        "*Forma de pago: *" + MP + "\n" +
+        "*Forma de pago:* " + MP + "\n" +
         "*Importe:* " + importe + "\n" +
         "*Comentario:* " + comentario;
     var tel = "+598" + $("#telefono").val();

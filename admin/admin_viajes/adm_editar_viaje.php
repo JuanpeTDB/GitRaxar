@@ -100,13 +100,13 @@
                     </td>
                     <td>
                         <h2>Nombre Cliente</h2>
-                        <input type="text" name="nombre_viajero" value="<?php echo $nombre_viajero ?>"></input>
+                        <input id="nombre" type="text" name="nombre_viajero" value="<?php echo $nombre_viajero ?>"></input>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <h2>Apellido Cliente</h2>
-                        <input type="text" name="apellido_viajero" value="<?php echo $apellido_viajero ?>"></input>
+                        <input id="apellido" type="text" name="apellido_viajero" value="<?php echo $apellido_viajero ?>"></input>
                     </td>
                     <td>
                         <h2>Hora Inicio</h2>
@@ -114,13 +114,13 @@
                     </td>
                     <td>
                         <h2>Fecha</h2>
-                        <input type="date" name="fecha" value="<?php echo $fecha ?>"></input>
+                        <input type="date" name="fecha" value="<?php echo $fecha ?>" min="<?php echo date('Y-m-d'); ?>"></input>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <h2>Importe</h2>
-                        <input type="number" name="importe" value="<?php echo $importe ?>"></input>
+                        <input id="importe" type="text" name="importe" value="<?php echo $importe ?>"></input>
                     </td>
                     <td>
                         <h2>Comentario</h2>
@@ -166,7 +166,38 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script>
+    <script>$(document).ready(function () {
+            $("#nombre").on("input", function () {
+                var regex = /[^a-zA-ZñÑçÇ ]/g;
+                if ($(this).val().match(regex)) {
+                    $(this).addClass("invalid");
+                    $(this).val($(this).val().replace(regex, ""));
+                } else {
+                    $(this).removeClass("invalid");
+                }
+            });
+            $("#apellido").on("input", function () {
+                var regex = /[^a-zA-ZñÑçÇ ]/g;
+                if ($(this).val().match(regex)) {
+                    $(this).addClass("invalid");
+                    $(this).val($(this).val().replace(regex, ""));
+                } else {
+                    $(this).removeClass("invalid");
+                }
+            });
+            $("#importe").on("input", function () {
+                var regex = /[^0-9]/g;
+                if ($(this).val().match(regex)) {
+                    $(this).addClass("invalid");
+                    $(this).val($(this).val().replace(regex, ""));
+                } else {
+                    $(this).removeClass("invalid");
+                }
+                if ($(this).val().length > 8) {
+                    $(this).val($(this).val().slice(0, 8));
+                }
+            });
+        });
         $("#btnAtras").click(function () {
             if (confirm("¿Estás seguro de que deseas volver atrás sin guardar los cambios?")) {
                 window.history.back();

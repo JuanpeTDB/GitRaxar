@@ -63,6 +63,28 @@ button:hover {
     }
 }
 
+input.invalid {
+    border: 3px solid red;
+}
+
+input:focus {
+    outline: none;
+}
+
+.divGuardar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+#btnGuardar {
+    position: relative;
+    margin: 0px;
+    margin-bottom: 20px;
+}
+
 .logo {
     display: flex;
     align-items: center;
@@ -211,7 +233,7 @@ select {
 }
 
 #tel2 {
-    width: 240px !important;
+    width: 240px;
     display: none;
 }
 
@@ -238,8 +260,10 @@ select {
         width: 220px;
         font-size: 16px;
     }
-    #tel2,
     #tel {
+        width: 165px;
+    }
+    #tel2 {
         width: 165px;
     }
     select {
@@ -263,8 +287,10 @@ select {
     input {
         width: 65%;
     }
-    #tel2,
     #tel {
+        width: 58%;
+    }
+    #tel2 {
         width: 58%;
     }
     select {

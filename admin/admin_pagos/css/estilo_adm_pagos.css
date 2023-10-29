@@ -170,6 +170,7 @@ hr {
     background-color: #9ED4AE;
     border-style: solid;
     border-color: #20A144;
+    color: #20A144;
 }
 
 .agregar {
@@ -185,8 +186,9 @@ hr {
     opacity: 0.8 !important;
 }
 
-.boton_agregar {
-    width: 45%;
+.agregar i {
+    font-size: 24px;
+    padding: 10px;
 }
 
 .boton {
@@ -309,6 +311,9 @@ hr {
         background-color: #9ED4AE;
         border-style: solid;
         border-color: #20A144;
+    }
+    .agregar i {
+        padding: 0px;
     }
     h1 {
         font-size: 42px;

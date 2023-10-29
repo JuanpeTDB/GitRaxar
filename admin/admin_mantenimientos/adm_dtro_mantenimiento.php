@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REMI</title>
     <link rel="stylesheet" type="text/css" href="css/estilo_adm_dtro_mantenimiento.css">
+    <script src="https://kit.fontawesome.com/28b29172a8.js" crossorigin="anonymous"></script>
     <link rel="icon" href="img/REMI_logo.png">
 </head>
 <body>
@@ -14,7 +15,7 @@
         $matricula = $_GET['matricula'];
         $query = "SELECT a.*, r.*, m.* FROM auto a
         INNER JOIN requiere r on r.matricula = a.matricula
-        INNER JOIN mantenimiento m on m.cod_mantenimiento = r.cod_mantenimiento
+        INNER JOIN mantenimiento m on m.cod_visita = r.cod_visita
         WHERE a.matricula = '$matricula';";
 		$result = mysqli_query($conn, $query);
 		$json = array();
@@ -64,8 +65,8 @@
     <div class="contenedor">
         <h1><?php echo $marca; ?> <?php echo $modelo; ?> <?php echo $matricula; ?></h1>
 
-        <a class="agregar"  onclick="window.location.href='adm_agregar_mantenimiento.php?matricula=<?php echo $matricula; ?>';">
-            <img src="img/agregar.png" class="boton_agregar"><img src="img/silueta_mantenimiento.png" class="boton_agregar">
+        <a title="Agregar chofer" class="agregar" onclick="window.location.href='agregar_chofer.php';">
+            <i class="fa-solid fa-plus"></i><i class="fa-solid fa-gears"></i>
         </a>
 
         <div class="box">

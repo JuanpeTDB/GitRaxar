@@ -55,6 +55,14 @@ button:hover {
     text-decoration: none !important;
 }
 
+input.invalid {
+    border: 3px solid red;
+}
+
+input:focus {
+    outline: none;
+}
+
 @media (max-width: 860px) {
     .btnatras {
         top: 20px !important;
