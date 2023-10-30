@@ -1,0 +1,591 @@
+@font-face {
+    font-family: cocogoose;
+    src: url(../../fonts/Cocogoose.ttf);
+}
+
+@font-face {
+    font-family: louis;
+    src: url(../../fonts/Louis.ttf);
+}
+
+@font-face {
+    font-family: nexa;
+    src: url(../../fonts/Nexa.ttf);
+}
+
+@font-face {
+    font-family: heavitas;
+    src: url(../../fonts/Heavitas.ttf);
+}
+
+@font-face {
+    font-family: bebas;
+    src: url(../../fonts/Bebas.otf);
+}
+
+body {
+    background-color: #F8F8F8;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='100%25' gradientTransform='rotate(0,741,333)'%3E%3Cstop offset='0' stop-color='%23F8F8F8'/%3E%3Cstop offset='1' stop-color='%23F8F8F8'/%3E%3C/linearGradient%3E%3Cpattern patternUnits='userSpaceOnUse' id='b' width='300' height='250' x='0' y='0' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.03'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect x='0' y='0' fill='url(%23b)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+button {
+    cursor: pointer !important;
+    transition: transform 0.2s, opacity 0.2s !important;
+}
+
+button:active {
+    transform: scale(0.95) !important;
+}
+
+button:hover {
+    opacity: 0.8 !important;
+}
+
+.dropdown {
+    display: none;
+    position: relative;
+    z-index: 1;
+}
+
+.dropdown button {
+    color: #9ED4AE;
+    position: relative;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 16px;
+    font-family: nexa;
+    cursor: pointer;
+    outline: none;
+    width: 120px;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: 0.3s;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
+}
+
+.dropdown-content {
+    display: none;
+    border-radius: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    overflow: auto;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
+}
+
+.opc {
+    background-color: #F8F8F8;
+    color: #20A144;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    color: #FFFFFF;
+    background-color: #00A4BD;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.nombre-remi {
+    font-size: 40px;
+    font-family: nexa;
+    color: #20A144;
+    padding: 0%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+header {
+    background-color: #9ED4AE;
+    min-height: 70px;
+    border-bottom: #20A144;
+    border-bottom-style: solid;
+    border-bottom-width: 4px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: #20A144;
+    font-family: nexa;
+    font-size: 22px;
+}
+
+nav a {
+    font-weight: 600;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a:hover {
+    color: #F8F8F8;
+    font-weight: 800;
+}
+
+.usuario {
+    font-family: nexa;
+    font-size: 22px;
+    color: #20A144;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.usuario button {
+    color: #20A144;
+    margin-left: 15px;
+    font-size: 20px;
+    border-style: none;
+    background-color: transparent;
+}
+
+.footer {
+    flex-shrink: 0;
+    background-color: #9ED4AE;
+    height: 15vh;
+    border-top: #20A144;
+    border-top-style: solid;
+    border-top-width: 4px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-top: auto;
+}
+
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+    justify-content: center;
+}
+
+.container {
+    position: relative;
+    width: 250px;
+    height: 320px;
+    perspective: 500px;
+}
+
+.card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+.front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    background-color: #9ED4AE;
+}
+
+.btnatras {
+    color: #20A144 !important;
+    font-family: nexa !important;
+    font-size: 20px !important;
+    background-color: #ffffff00 !important;
+    border-style: none !important;
+    position: absolute !important;
+    right: 80px !important;
+    top: 40px !important;
+    text-decoration: none !important;
+}
+
+@media (max-width: 860px) {
+    .btnatras {
+        top: 20px !important;
+        right: 25px !important;
+        font-size: 18px !important;
+    }
+}
+
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    transform: rotateY(180deg);
+    background-color: #20A144;
+}
+
+.h2-front {
+    font-size: 30px;
+    font-family: nexa;
+    color: #20A144;
+    width: auto;
+}
+
+.h2-back {
+    font-size: 30px;
+    font-family: nexa;
+    color: #F8F8F8;
+    width: auto;
+    margin: 0px;
+}
+
+.container:hover .card {
+    transform: rotateY(180deg);
+}
+
+p {
+    font-size: 20px;
+    font-family: nexa;
+    color: #F8F8F8;
+    width: auto;
+    text-align: center;
+    width: 80%;
+}
+
+.container {
+    cursor: pointer !important;
+    transition: transform 0.2s, opacity 0.2s !important;
+}
+
+.container:active {
+    transform: scale(0.95) !important;
+}
+
+.contenedor {
+    text-align: center;
+    padding: 1%;
+}
+
+h1 {
+    font-size: 58px;
+    font-family: nexa;
+    color: #20A144;
+    margin: 0px;
+    padding-top: 30px;
+    text-align: center;
+}
+
+
+/*============================================================================================================*/
+
+.info {
+    text-align: center;
+    width: 100%;
+}
+
+h3 {
+    font-size: 36px;
+    font-family: nexa;
+    color: #20A144;
+}
+
+h4 {
+    font-size: 30px;
+    font-family: louis;
+    color: #9ED4AE;
+}
+
+.tbtn {
+    width: 100%;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.btns {
+    display: inline-block;
+    margin: 0 60px;
+    width: 220px;
+    height: 300px;
+    border-radius: 30px;
+    background-color: #9ED4AE;
+    padding: 5px;
+}
+
+.logos {
+    margin-top: 4vh;
+    height: 55%;
+}
+
+h2 {
+    font-size: 24px;
+    font-family: nexa;
+    color: #20A144;
+}
+
+.acciones {
+    position: absolute;
+    width: 300px;
+    right: 100px;
+    top: 180px;
+}
+
+.imgboton {
+    width: 70%;
+}
+
+@media (max-width: 1240px) {
+    #btnCancelar {
+        width: 140px !important;
+        font-size: 20px !important;
+    }
+    #btnAceptar {
+        width: 140px !important;
+        font-size: 20px !important;
+    }
+    .parrafoElim {
+        margin: 0px !important;
+    }
+}
+
+@media (max-width: 1000px) {
+    .dropdown {
+        display: block;
+    }
+    nav {
+        display: none;
+    }
+    .contElim {
+        height: 28% !important;
+    }
+    #btnCancelar {
+        width: 120px !important;
+        font-size: 17px !important;
+    }
+    #btnAceptar {
+        width: 120px !important;
+        font-size: 17px !important;
+    }
+    .parrafoElim {
+        font-size: 26px !important;
+    }
+    header {
+        flex-direction: column;
+    }
+    nav {
+        padding: 10px 0px;
+        text-align: center;
+    }
+    .logo img {
+        height: 50px;
+        margin-left: 0px;
+    }
+    .agregar {
+        width: 90px;
+        position: absolute;
+        right: 60px;
+        top: 270px;
+        border-radius: 15px;
+        background-color: #9ED4AE;
+        border-style: solid;
+        border-color: #20A144;
+    }
+    .boton {
+        width: 120px;
+        height: 40px;
+        float: right;
+        background-color: #9ED4AE;
+        margin-right: 2%;
+        color: #20A144;
+        font-family: nexa;
+        border-style: solid;
+        border-color: #20A144;
+        font-size: 16px;
+        margin-top: 5px;
+    }
+    .nombres {
+        font-size: 28px;
+        font-family: nexa;
+        color: #20A144;
+        padding-left: 5%;
+        width: 100%;
+        display: inline;
+        text-align: center;
+    }
+}
+
+@media (max-width: 860px) {
+    #btnCancelar {
+        width: 110px !important;
+        font-size: 17px !important;
+        margin-right: 10px !important;
+        height: 45px !important;
+    }
+    #btnAceptar {
+        width: 110px !important;
+        font-size: 17px !important;
+        margin-left: 10px !important;
+        height: 45px !important;
+    }
+    .contenedor {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width:820px) {
+    h1 {
+        font-size: 50px;
+    }
+    .btns {
+        margin: 0 45px;
+    }
+}
+
+@media(max-width: 750px) {
+    .nom_usu {
+        display: none;
+    }
+    .usuario {
+        width: 100%;
+        right: 0px;
+        left: 0px;
+        top: 0px;
+        margin-top: 5px;
+    }
+    .usuario button {
+        margin: 15px;
+        font-size: 23px;
+    }
+    #config {
+        float: right;
+    }
+    #salir1 {
+        float: left;
+    }
+}
+
+@media (max-width:660px) {
+    .contenedor {
+        gap: 50px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .logos {
+        margin-top: 4vh;
+        object-fit: cover;
+    }
+    .container {
+        width: 200px;
+        height: 250px;
+    }
+    .cards {
+        width: 140px;
+        border-radius: 30px;
+        background-color: #9ED4AE;
+        text-align: center;
+    }
+    .h2-front {
+        font-size: 24px;
+        font-family: nexa;
+        color: #20A144;
+        width: auto;
+        padding: 5px;
+    }
+    .btns {
+        margin: 0 5%;
+        width: 160px;
+        height: 240px;
+        border-radius: 30px;
+        background-color: #9ED4AE;
+        padding: 5px;
+    }
+    .nombres {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+    h1 {
+        font-size: 44px;
+    }
+}
+
+@media (max-width: 500px) {
+    #btnCancelar {
+        margin-top: 20px !important;
+    }
+    #btnAceptar {
+        margin-top: 20px !important;
+    }
+    .contElim {
+        width: 80% !important;
+    }
+}
+
+@media (max-width: 437px) {
+    h1 {
+        margin-bottom: 0px;
+        font-size: 34px;
+    }
+    .btns {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 390px) {
+    .h2-front {
+        font-size: 20px;
+    }
+    .container {
+        width: 185px;
+        height: 265px;
+    }
+}

@@ -13,8 +13,55 @@
 
     <?php
     require_once '../../conexion.php';
+    $cod_viaje = $_GET['cod_viaje'];
+    $query = "SELECT v.*, c.*, fp.*
+        FROM viajes v
+        LEFT JOIN (
+            SELECT t.cod_viaje, fp.cod_pago, cod_cuenta, activo, 'cuenta corriente' as rol, null as tipo 
+            FROM cuenta_corriente fp
+            JOIN tiene t ON t.cod_pago = fp.cod_pago
+            UNION
+            SELECT t.cod_viaje, fp.cod_pago, null as cod_cuenta, null as activo, 'transferencia' as rol, null as tipo 
+            FROM transferencia fp
+            JOIN tiene t ON t.cod_pago = fp.cod_pago
+            UNION
+            SELECT t.cod_viaje, fp.cod_pago, null as cod_cuenta, null as activo, 'contado' as rol, null as tipo 
+            FROM contado fp
+            JOIN tiene t ON t.cod_pago = fp.cod_pago
+            UNION
+            SELECT t.cod_viaje, fp.cod_pago, null as cod_cuenta, null as activo, 'tarjeta' as rol, tipo 
+            FROM tarjeta fp
+            JOIN tiene t ON t.cod_pago = fp.cod_pago
+        ) AS fp ON v.cod_viaje = fp.cod_viaje
+        join se_encarga se on se.cod_viaje = v.cod_viaje
+        join chofer c on c.ci = se.ci
+        where v.cod_viaje = $cod_viaje;
+        ";
 
-    $queryChoferes = "SELECT ci, nombre, apellido, de_la_casa FROM chofer where activo = 1 order by de_la_casa desc";
+    $result = mysqli_query($conn, $query);
+    $json = array();
+    if ($result) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $ci = $row['ci'];
+            $nombre_chof = $row['nombre'];
+            $apellido_chof = $row['apellido'];
+            $telefono = $row['telefono'];
+            $de_la_casa = $row['de_la_casa'];
+            $cod_viaje = $row['cod_viaje'];
+            $nombre_viajero = $row['nombre_viajero'];
+            $apellido_viajero = $row['apellido_viajero'];
+            $telefono = $row['telefono'];
+            $origen = $row['origen'];
+            $destino = $row['destino'];
+            $hora_inicio = $row['hora_inicio'];
+            $importe = $row['importe'];
+            $fecha = $row['fecha'];
+            $comentario = $row['comentario'];
+            $tipo_fp = $row['rol'];
+        }
+    }
+
+    $queryChoferes = "SELECT ci, nombre, apellido, de_la_casa FROM chofer where activo = 1";
     $resultChoferes = mysqli_query($conn, $queryChoferes);
     $jsonChoferes = array();
 
@@ -26,70 +73,71 @@
             $jsonChoferes[] = array('ci' => $ciChofer, 'nombre' => $nombreChofer, 'de_la_casa' => $de_la_casa);
         }
     }
-    ?>
 
+
+    ?>
     <header>
-        <a style="text-decoration: none;" href="../../admin.php">
-            <div class="logo">
-                <img src="img/REMI_logo.png" alt="logo remi">
-                <h2 class="nombre-remi">REMI</h2>
-            </div>
-        </a>
-        <a id="BtnAtras" href="adm_viajes.php" class="btnatras">ATRAS</a>
+        <div class="logo">
+            <img src="img/REMI_logo.png" alt="logo remi">
+            <h2 class="nombre-remi">REMI</h2>
+        </div>
     </header>
+
     <div class="contenedor">
 
-        <h1>AGENDAR VIAJE</h1>
-        <form id="agendar" action="agendarViaje.php" method="POST">
+        <h1>EDITAR VIAJE</h1>
+        <form id="edicion" action="editarViaje.php" method="POST">
+            <input type="hidden" name="cod_viaje" value="<?php echo $cod_viaje; ?>">
             <table>
                 <tr>
                     <td>
                         <h2>Origen</h2>
-                        <input name="origen" type="text"></input>
+                        <input type="text" name="origen" value="<?php echo $origen ?>"></input>
                     </td>
                     <td>
                         <h2>Destino</h2>
-                        <input name="destino" type="text"></input>
+                        <input type="text" name="destino" value="<?php echo $destino ?>"></input>
                     </td>
                     <td>
-                        <h2>Hora Inicio</h2>
-                        <input name="hora_inicio" type="time"></input>
+                        <h2>Nombre Cliente</h2>
+                        <input id="nombre" type="text" name="nombre_viajero" value="<?php echo $nombre_viajero ?>"></input>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <h2>Nombre Cliente</h2>
-                        <input id="nombre" name="nombre_viajero" type="text"></input>
+                        <h2>Apellido Cliente</h2>
+                        <input id="apellido" type="text" name="apellido_viajero" value="<?php echo $apellido_viajero ?>"></input>
                     </td>
                     <td>
-                        <h2>Apellido Cliente</h2>
-                        <input id="apellido" name="apellido_viajero" type="text"></input>
+                        <h2>Hora Inicio</h2>
+                        <input type="time" name="hora_inicio" value="<?php echo $hora_inicio ?>"></input>
                     </td>
                     <td>
                         <h2>Fecha</h2>
-                        <input name="fecha" type="date" min="<?php echo date('Y-m-d'); ?>"></input>
+                        <input type="date" name="fecha" value="<?php echo $fecha ?>" min="<?php echo date('Y-m-d'); ?>"></input>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <h2>Importe</h2>
-                        <input id="importe" name="importe" type="text"></input>
+                        <input id="importe" type="text" name="importe" value="<?php echo $importe ?>"></input>
                     </td>
                     <td>
                         <h2>Comentario</h2>
-                        <input name="comentario" type="text"></input>
+                        <input type="text" name="comentario" value="<?php echo $comentario ?>"></input>
                     </td>
                     <td>
                         <h2>Chofer</h2>
                         <select id="chof" name="ciChofer">
                             <?php
                             if (empty($jsonChoferes)) {
+                                echo "<option value='{$ci}'>$nombre_chof $apellido_chof</option>";
                                 echo "<option value='' disabled selected>No hay choferes disponibles</option>";
                             } else {
-                                echo "<option value='' disabled selected>Seleccione un chofer</option>";
+                                echo "<option value='{$ci}'>$nombre_chof $apellido_chof</option>";
                                 foreach ($jsonChoferes as $chofer) {
                                     $nombreChofer = $chofer['nombre'];
-                                    if ($chofer['de_la_casa'] == true) {
+                                    if ($chofer['de_la_casa'] == true && $chofer['ci'] != $ci) {
                                         echo "<option value='{$chofer['ci']}'>$nombreChofer 🏠</option>";
                                     } else {
                                         echo "<option value='{$chofer['ci']}'>$nombreChofer </option>";
@@ -106,7 +154,9 @@
         </form>
         <br>
         <br>
-        <button id="btnGuardar">CONTINUAR</button>
+        <button id="btnAtras">ATRAS</button>
+        <button id="btnGuardar">GUARDAR</button>
+
 
     </div>
     <br><br><br><br><br>
@@ -116,8 +166,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script>
-        $(document).ready(function () {
+    <script>$(document).ready(function () {
             $("#nombre").on("input", function () {
                 var regex = /[^a-zA-ZñÑçÇ ]/g;
                 if ($(this).val().match(regex)) {
@@ -149,29 +198,20 @@
                 }
             });
         });
-        $("#btnGuardar").click(function () {
-            var camposVacios = false;
-            $("input[type='text'], input[type='time'], input[type='date']").each(function () {
-                if ($(this).val() === "") {
-                    camposVacios = true;
-                    return false;
-                }
-            });
-
-            if (camposVacios) {
-                alert("Por favor, complete todos los campos antes de continuar");
-            } else {
-                $("#agendar").submit();
-            }
-        });
-        $("#BtnAtras").click(function () {
+        $("#btnAtras").click(function () {
             if (confirm("¿Estás seguro de que deseas volver atrás sin guardar los cambios?")) {
                 window.history.back();
             }
         });
-
+        $("#btnGuardar").click(function () {
+            var selectedChofer = $("select[name='ciChofer']").val();
+            if (!selectedChofer) {
+                alert("Por favor, seleccione un chofer.");
+            } else {
+                $("#edicion").submit();
+            }
+        });
     </script>
-
 </body>
 
 </html>
