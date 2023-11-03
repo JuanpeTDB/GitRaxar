@@ -273,6 +273,20 @@ hr {
     border-color: #20A144;
 }
 
+.parrafoElim {
+    font-size: 40px;
+    position: relative;
+    left: 50%;
+    margin: 0px;
+    transform: translateX(-50%);
+    font-family: nexa;
+    color: #20A144 !important;
+    width: auto;
+    text-align: center;
+    width: 80%;
+    margin-top: 20px;
+}
+
 .agregar {
     cursor: pointer !important;
     transition: transform 0.2s, opacity 0.2s !important;
@@ -394,6 +408,9 @@ hr {
 }
 
 @media (max-width: 1250px) {
+    .agregar i {
+        padding: 0px;
+    }
     .contenedor {
         text-align: center;
         display: flex;
@@ -477,9 +494,6 @@ hr {
         font-size: 17px !important;
         margin-left: 10px !important;
         height: 45px !important;
-    }
-    .agregar i {
-        padding: 0px;
     }
 }
 

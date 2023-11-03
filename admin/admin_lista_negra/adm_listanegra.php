@@ -75,7 +75,7 @@
     <div class="contenedor">
         <h1>LISTA NEGRA</h1>
 
-        <a title="Agregar chofer" class="agregar" onclick="window.location.href='agregar_chofer.php';">
+        <a title="Agregar chofer" class="agregar" onclick="window.location.href='adm_agregar_listanegra.php';">
             <i class="fa-solid fa-plus"></i><i class="fa-regular fa-user"></i>
         </a>
 

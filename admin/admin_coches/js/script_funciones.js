@@ -16,7 +16,7 @@ $(document).ready(function() {
                 coches.forEach(res => {
                     ret += `
 						<tr cod="${res.matricula}">
-							<td><h2 class="nombres">${res.marca} ${res.modelo} - ${res.matricula} - ${res.anio} </h2><div class="cont-botones"><button class="boton btnEditar" data-matricula="${res.matricula}"> Editar </button> <button class="btneliminar boton"> Eliminar </button></div></td>
+							<td><h2 class="nombres">${res.marca} ${res.modelo} - ${res.matricula} - ${res.anio} </h2><div class="cont-botones"><button class="boton btnEditar" data-matricula="${res.matricula}"> Editar </button> <button class="boton btnViajes" data-matricula="${res.matricula}"> Viajes </button> <button class="btneliminar boton"> Eliminar </button></div></td>
 
 						</tr>
                         <tr><td><hr></td></tr>
@@ -152,6 +152,11 @@ $(document).ready(function() {
     $(document).on('click', '.btnEditar', function() {
         var matricula = $(this).data("matricula");
         window.location.href = "adm_editar_coche.php?matricula=" + matricula;
+    });
+
+    $(document).on('click', '.btnViajes', function() {
+        var matricula = $(this).data("matricula");
+        window.location.href = "adm_viajes_coche.php?matricula=" + matricula;
     });
 
 });

@@ -299,6 +299,20 @@ p {
     width: 80%;
 }
 
+.parrafoElim {
+    font-size: 40px;
+    position: relative;
+    left: 50%;
+    margin: 0px;
+    transform: translateX(-50%);
+    font-family: nexa;
+    color: #20A144 !important;
+    width: auto;
+    text-align: center;
+    width: 80%;
+    margin-top: 20px;
+}
+
 .container {
     cursor: pointer !important;
     transition: transform 0.2s, opacity 0.2s !important;

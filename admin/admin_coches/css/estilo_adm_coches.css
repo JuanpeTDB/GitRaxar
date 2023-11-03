@@ -266,6 +266,20 @@ hr {
     opacity: 0.8 !important;
 }
 
+.parrafoElim {
+    font-size: 40px;
+    position: relative;
+    left: 50%;
+    margin: 0px;
+    transform: translateX(-50%);
+    font-family: nexa;
+    color: #20A144 !important;
+    width: auto;
+    text-align: center;
+    width: 80%;
+    margin-top: 20px;
+}
+
 .agregar i {
     font-size: 24px;
     padding: 10px;
@@ -420,7 +434,7 @@ hr {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        width: 168.3px;
+        width: 265px;
         margin-top: 50px;
     }
     .boton {
@@ -440,6 +454,9 @@ hr {
         margin-top: 124px;
         margin-bottom: 11px;
     }
+    .agregar i {
+        padding: 0px;
+    }
 }
 
 @media (max-width: 860px) {
@@ -454,9 +471,6 @@ hr {
         font-size: 17px !important;
         margin-left: 10px !important;
         height: 45px !important;
-    }
-    .agregar i {
-        padding: 0px;
     }
 }
 

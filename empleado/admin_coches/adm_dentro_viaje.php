@@ -14,28 +14,30 @@
     <?php
     require_once '../../conexion.php';
     $cod_viaje = $_GET['cod_viaje'];
-    $query = "SELECT v.*, c.*, fp.*, DATE_FORMAT(v.fecha, '%d-%m-%Y') AS fecha1
-        FROM viajes v
-        LEFT JOIN (
-            SELECT t.cod_viaje, fp.cod_pago, cod_cuenta, activo, 'Cuenta Corriente' as rol, null as tipo 
-            FROM cuenta_corriente fp
-            JOIN tiene t ON t.cod_pago = fp.cod_pago
-            UNION
-            SELECT t.cod_viaje, fp.cod_pago, null as cod_cuenta, null as activo, 'Transferencia' as rol, null as tipo 
-            FROM transferencia fp
-            JOIN tiene t ON t.cod_pago = fp.cod_pago
-            UNION
-            SELECT t.cod_viaje, fp.cod_pago, null as cod_cuenta, null as activo, 'Contado' as rol, null as tipo 
-            FROM contado fp
-            JOIN tiene t ON t.cod_pago = fp.cod_pago
-            UNION
-            SELECT t.cod_viaje, fp.cod_pago, null as cod_cuenta, null as activo, 'tarjeta' as rol, tipo 
-            FROM tarjeta fp
-            JOIN tiene t ON t.cod_pago = fp.cod_pago
-        ) AS fp ON v.cod_viaje = fp.cod_viaje
-        join se_encarga se on se.cod_viaje = v.cod_viaje
-        join chofer c on c.ci = se.ci
-        where v.cod_viaje = $cod_viaje;
+    $query = "SELECT a.matricula, v.*, c.*, fp.*, DATE_FORMAT(v.fecha, '%d-%m-%Y') AS fecha1
+    FROM viajes v
+    LEFT JOIN (
+        SELECT t.cod_viaje, fp.cod_pago, cod_cuenta, activo, 'Cuenta Corriente' as rol, null as tipo 
+        FROM cuenta_corriente fp
+        JOIN tiene t ON t.cod_pago = fp.cod_pago
+        UNION
+        SELECT t.cod_viaje, fp.cod_pago, null as cod_cuenta, null as activo, 'Transferencia' as rol, null as tipo 
+        FROM transferencia fp
+        JOIN tiene t ON t.cod_pago = fp.cod_pago
+        UNION
+        SELECT t.cod_viaje, fp.cod_pago, null as cod_cuenta, null as activo, 'Contado' as rol, null as tipo 
+        FROM contado fp
+        JOIN tiene t ON t.cod_pago = fp.cod_pago
+        UNION
+        SELECT t.cod_viaje, fp.cod_pago, null as cod_cuenta, null as activo, 'tarjeta' as rol, tipo 
+        FROM tarjeta fp
+        JOIN tiene t ON t.cod_pago = fp.cod_pago
+    ) AS fp ON v.cod_viaje = fp.cod_viaje
+    join se_encarga se on se.cod_viaje = v.cod_viaje
+    join chofer c on c.ci = se.ci
+    join conduce co on co.ci = c.ci
+    join auto a on a.matricula = co.matricula
+    where v.cod_viaje = 46;
         ";
 
     $result = mysqli_query($conn, $query);
@@ -58,7 +60,7 @@
             $fecha1 = $row['fecha1'];
             $comentario = $row['comentario'];
             $tipo_fp = $row['rol'];
-            ;
+            $matricula = $row['matricula'];
             $tipo = $row['tipo'];
         }
     }
@@ -72,7 +74,7 @@
                 <h2 class="nombre-remi">REMI</h2>
             </div>
         </a>
-        <a href="adm_ver_viajes.php?filtro=0" class="btnatras">ATRAS</a>
+        <a href="adm_viajes_coche.php?matricula=<?php echo $matricula?>" class="btnatras">ATRAS</a>
     </header>
 
     <div class="contenedor">
@@ -165,7 +167,6 @@
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="js/script_eliminar_viaje.js"></script>
 </body>
 
 </html>

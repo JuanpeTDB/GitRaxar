@@ -178,6 +178,20 @@ button:hover {
     overflow: auto;
 }
 
+.parrafoElim {
+    font-size: 40px;
+    position: relative;
+    left: 50%;
+    margin: 0px;
+    transform: translateX(-50%);
+    font-family: nexa;
+    color: #20A144 !important;
+    width: auto;
+    text-align: center;
+    width: 80%;
+    margin-top: 20px;
+}
+
 .footer {
     flex-shrink: 0;
     background-color: #9ED4AE;
@@ -420,7 +434,6 @@ hr {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        width: 168.3px;
         margin-top: 50px;
     }
     .boton {

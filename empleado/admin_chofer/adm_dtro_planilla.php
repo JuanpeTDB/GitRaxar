@@ -97,7 +97,7 @@ if ($result2) {
 
 <body>
     <header>
-        <a style="text-decoration: none;" href="../../admin.php">
+        <a style="text-decoration: none;" href="../../empleado.php">
             <div class="logo">
                 <img src="img/REMI_logo.png" alt="logo remi">
                 <h2 class="nombre-remi">REMI</h2>
