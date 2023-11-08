@@ -10,7 +10,7 @@ if (isset($_POST["usuario"]) && isset($_POST["contrasenia"])) {
     $usuario = $_POST["usuario"];
     $contrasenia = $_POST["contrasenia"];
 
-    $query = "SELECT * FROM usuario WHERE nombre_usuario = '$usuario' AND contrasenia = '$contrasenia'";
+    $query = "SELECT * from usuario WHERE nombre_usuario = '$usuario' AND contrasenia = '$contrasenia'";
     
     $stmt = mysqli_prepare($conn, $query);
     mysqli_stmt_execute($stmt);

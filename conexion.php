@@ -1,4 +1,4 @@
 <?php
-   $conn = mysqli_connect('localhost', 'root', '', 'appweb5');
+   $conn = mysqli_connect('localhost', 'root', '', 'appweb6');
    $conn->query("SET NAMES 'utf8'");
 ?>

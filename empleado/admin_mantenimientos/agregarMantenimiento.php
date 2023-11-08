@@ -12,11 +12,11 @@ $queryMantenimiento = "INSERT INTO `mantenimiento` (descripcion, tipo) VALUES ('
 $resultMantenimiento = mysqli_query($conn, $queryMantenimiento);
 
 if ($resultMantenimiento) {
-    // Obtiene el valor de `cod_mantenimiento` generado durante la inserción
-    $cod_mantenimiento = mysqli_insert_id($conn);
+    // Obtiene el valor de `cod_visita` generado durante la inserción
+    $cod_visita = mysqli_insert_id($conn);
 
-    // Luego, inserta en la tabla `requiere` usando el valor de `cod_mantenimiento`
-    $queryRequiere = "INSERT INTO `requiere` (costo, matricula, fecha, cod_mantenimiento) VALUES ('$costo', '$matricula', '$fecha', '$cod_mantenimiento')";
+    // Luego, inserta en la tabla `requiere` usando el valor de `cod_visita`
+    $queryRequiere = "INSERT INTO `requiere` (costo, matricula, fecha, cod_visita) VALUES ('$costo', '$matricula', '$fecha', '$cod_visita')";
     $resultRequiere = mysqli_query($conn, $queryRequiere);
 
     if ($resultRequiere) {

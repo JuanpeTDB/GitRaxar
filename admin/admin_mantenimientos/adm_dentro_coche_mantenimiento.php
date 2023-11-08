@@ -11,11 +11,11 @@
 
     <?php
         require_once '../../conexion.php';
-        $cod_mantenimiento = $_GET['cod_mantenimiento'];
+        $cod_visita = $_GET['cod_visita'];
         $query = "SELECT *, DATE_FORMAT(r.fecha, '%d-%m-%Y') AS fecha FROM auto a
         INNER JOIN requiere r on r.matricula = a.matricula
-        INNER JOIN mantenimiento m on m.cod_mantenimiento = r.cod_mantenimiento
-        WHERE m.cod_mantenimiento = '$cod_mantenimiento';";
+        INNER JOIN mantenimiento m on m.cod_visita = r.cod_visita
+        WHERE m.cod_visita = '$cod_visita';";
 		$result = mysqli_query($conn, $query);
 		$json = array();
 		if($result) {
@@ -24,7 +24,7 @@
                 $marca = $row['marca'];
                 $modelo = $row['modelo'];
                 $anio = $row['anio'];
-                $cod_mantenimiento = $row['cod_mantenimiento'];
+                $cod_visita = $row['cod_visita'];
                 $tipo = $row['tipo']; 
                 $descripcion = $row['descripcion'];
                 $fecha = $row['fecha'];

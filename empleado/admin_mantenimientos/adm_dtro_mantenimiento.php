@@ -26,7 +26,7 @@
                 $marca = $row['marca'];
                 $modelo = $row['modelo'];
                 $anio = $row['anio'];
-                $cod_mantenimiento = $row['cod_mantenimiento'];
+                $cod_visita = $row['cod_visita'];
                 $tipo = $row['tipo']; 
                 $descripcion = $row['descripcion'];
                 $vacio = 0;

@@ -9,7 +9,15 @@
     <script src="https://kit.fontawesome.com/28b29172a8.js" crossorigin="anonymous"></script>
     <link rel="icon" href="img/REMI_logo.png">
 </head>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        window.location.hash = "no-back-button";
+        window.location.hash = "Again-No-back-button";//esta linea es necesaria para chrome
+        window.onhashchange = function () { window.location.hash = "no-back-button"; }
+    }
+    );
+</script>
 <?php
 session_start();
 ?>

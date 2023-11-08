@@ -126,11 +126,11 @@ $query = "SELECT * FROM usuario WHERE nombre_usuario = '$usuario'";
                 <div class="card" id="pago" onclick="window.location.href='empleado/admin_pagos/adm_pagos.php';">
                     <div class="front">
                         <img class="logos" src="img/pago.png">
-                        <h2 class="h2-front">Pagos</h2>
+                        <h2 class="h2-front">Cuentas</h2>
                     </div>
 
                     <div class="back">
-                        <h2 class="h2-back">Pagos</h2>
+                        <h2 class="h2-back">Cuentas</h2>
                         <p>En esta sección podrás ver las cuentas corrientes registradas en el sistema.</p>
                     </div>
                 </div>
