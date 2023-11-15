@@ -55,6 +55,10 @@ button:hover {
     text-decoration: none !important;
 }
 
+#btnGuardar {
+    margin-top: 0px;
+}
+
 @media (max-width: 860px) {
     .btnatras {
         top: 20px !important;

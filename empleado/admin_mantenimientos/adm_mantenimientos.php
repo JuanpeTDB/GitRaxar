@@ -46,7 +46,7 @@
         <a href="../admin_chofer/adm_choferes.php" class="nav-link">Choferes</a>
         <a href="../admin_viajes/adm_viajes.php" class="nav-link">Viajes</a>
         <a href="../admin_coches/adm_coches.php" class="nav-link">Coches</a>
-        <a href="../admin_pagos/adm_pagos.php" class="nav-link">Pagos</a>
+        <a href="../admin_pagos/adm_pagos.php" class="nav-link">Cuentas</a>
     </nav>
 
     <div class="dropdown" style="">
@@ -56,7 +56,7 @@
         <a class="opc" href="../admin_chofer/adm_choferes.php" class="nav-link">Choferes</a>
         <a class="opc" href="../admin_viajes/adm_viajes.php" class="nav-link">Viajes</a>
         <a class="opc" href="../admin_coches/adm_coches.php" class="nav-link">Coches</a>
-        <a class="opc" href="../admin_pagos/adm_pagos.php" class="nav-link">Pagos</a>
+        <a class="opc" href="../admin_pagos/adm_pagos.php" class="nav-link">Cuentas</a>
         </div>
     </div>
     <input type="hidden" id="ci" value="<?php echo $ci; ?>">

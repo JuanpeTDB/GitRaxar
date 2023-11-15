@@ -47,7 +47,7 @@ $query = "SELECT * FROM usuario WHERE nombre_usuario = '$usuario'";
         <a href="empleado/admin_chofer/adm_choferes.php" class="nav-link">Choferes</a>
         <a href="empleado/admin_viajes/adm_viajes.php" class="nav-link">Viajes</a>
         <a href="empleado/admin_coches/adm_coches.php" class="nav-link">Coches</a>
-        <a href="empleado/admin_pagos/adm_pagos.php" class="nav-link">Pagos</a>
+        <a href="empleado/admin_pagos/adm_pagos.php" class="nav-link">Cuentas</a>
         <a href="empleado/admin_mantenimientos/adm_mantenimientos.php" class="nav-link">Mantenimiento</a>
     </nav>
 
@@ -57,7 +57,7 @@ $query = "SELECT * FROM usuario WHERE nombre_usuario = '$usuario'";
         <a class="opc" href="empleado/admin_chofer/adm_choferes.php" class="nav-link">Choferes</a>
         <a class="opc" href="empleado/admin_viajes/adm_viajes.php" class="nav-link">Viajes</a>
         <a class="opc" href="empleado/admin_coches/adm_coches.php" class="nav-link">Coches</a>
-        <a class="opc" href="empleado/admin_pagos/adm_pagos.php" class="nav-link">Pagos</a>
+        <a class="opc" href="empleado/admin_pagos/adm_pagos.php" class="nav-link">Cuentas</a>
         <a class="opc" href="empleado/admin_mantenimientos/adm_mantenimientos.php" class="nav-link">Mantenimiento</a>
         </div>
     </div>

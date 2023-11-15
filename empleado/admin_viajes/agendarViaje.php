@@ -9,9 +9,10 @@
 	$fecha = $_POST['fecha'];
 	$importe = $_POST['importe'];
 	$comentario = $_POST['comentario'];
+    $telefono = $_POST['telefono'];
     $ciChofer = $_POST['ciChofer'];
 	
-	$query1 = "INSERT INTO `viajes` (nombre_viajero, apellido_viajero, origen, destino, hora_inicio, fecha, importe, comentario) VALUES('$nombre_viajero', '$apellido_viajero', '$origen', '$destino', '$hora_inicio', '$fecha', '$importe', '$comentario')";
+	$query1 = "INSERT INTO `viajes` (telefono, nombre_viajero, apellido_viajero, origen, destino, hora_inicio, fecha, importe, comentario) VALUES('$telefono', '$nombre_viajero', '$apellido_viajero', '$origen', '$destino', '$hora_inicio', '$fecha', '$importe', '$comentario')";
 
 if (mysqli_query($conn, $query1)) {
     $cod_viaje = mysqli_insert_id($conn); // Obten el valor autoincremental después de la inserción en 'viajes'

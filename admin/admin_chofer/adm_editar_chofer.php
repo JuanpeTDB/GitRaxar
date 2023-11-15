@@ -92,12 +92,12 @@
         </form>
         <button id="btnAtras">ATRAS</button>
         <button id="btnGuardar">GUARDAR</button>
+    </div>
 
         <br><br><br><br><br>
         <div class="footer">
 
         </div>
-    </div>
 
 
 

@@ -24,6 +24,7 @@
     $fecha_formateada = date("d-m-Y", strtotime($fecha));
     $comentario = $_GET['comentario'];
     $ciChofer = $_GET['ciChofer'];
+    $telefono_cli = $_GET['telefono_cli'];
     $queryChoferes = "SELECT telefono FROM chofer where ci = '$ciChofer'";
     $resultChoferes = mysqli_query($conn, $queryChoferes);
     $jsonChoferes = array();
@@ -43,6 +44,7 @@
     <input type="hidden" id="ciChofer" name="ciChofer" value="<?php echo $ciChofer; ?>">
     <input type="hidden" id="cod_viaje" name="cod_viaje" value="<?php echo $cod_viaje; ?>">
     <input type="hidden" id="telefono" name="telefono" value="<?php echo $telefono; ?>">
+    <input type="hidden" id="telefono_cli" name="telefono_cli" value="<?php echo $telefono_cli; ?>">
 
 
     <header>

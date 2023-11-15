@@ -45,7 +45,7 @@
         <a href="../admin_chofer/adm_choferes.php" class="nav-link">Choferes</a>
         <a href="../admin_coches/adm_coches.php" class="nav-link">Coches</a>
         <a href="../admin_empleado/adm_empleados.php" class="nav-link">Empleados</a>
-        <a href="../admin_pagos/adm_pagos.php" class="nav-link">Pagos</a>
+        <a href="../admin_pagos/adm_pagos.php" class="nav-link">Cuentas</a>
         <a href="../admin_lista_negra/adm_listanegra.php" class="nav-link">Lista Negra</a>
         <a href="../admin_mantenimientos/adm_mantenimientos.php" class="nav-link">Mantenimiento</a>
     </nav>
@@ -57,7 +57,7 @@
         <a class="opc" href="../admin_chofer/adm_choferes.php" class="nav-link">Choferes</a>
         <a class="opc" href="../admin_coches/adm_coches.php" class="nav-link">Coches</a>
         <a class="opc" href="../admin_empleado/adm_empleados.php" class="nav-link">Empleados</a>
-        <a class="opc" href="../admin_pagos/adm_pagos.php" class="nav-link">Pagos</a>
+        <a class="opc" href="../admin_pagos/adm_pagos.php" class="nav-link">Cuentas</a>
         <a class="opc" href="../admin_lista_negra/adm_listanegra.php" class="nav-link">Lista Negra</a>
         <a class="opc" href="../admin_mantenimientos/adm_mantenimientos.php" class="nav-link">Mantenimiento</a>
         </div>

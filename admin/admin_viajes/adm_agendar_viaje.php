@@ -76,8 +76,8 @@
                         <input id="importe" name="importe" type="text"></input>
                     </td>
                     <td>
-                        <h2>Comentario</h2>
-                        <input name="comentario" type="text"></input>
+                        <h2>Telefono</h2>
+                        <input name="telefono" id="tel" type="text"></input>
                     </td>
                     <td>
                         <h2>Chofer</h2>
@@ -99,6 +99,14 @@
                             }
                             ?>
                         </select>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td>
+                        <h2>Comentario</h2>
+                        <input style="width: 60%;" name="comentario" type="text"></input>
                     </td>
                 </tr>
 
@@ -146,6 +154,25 @@
                 }
                 if ($(this).val().length > 8) {
                     $(this).val($(this).val().slice(0, 8));
+                }
+            });
+            $("#tel").on("input", function () {
+                var regex = /[^0-9]/g;
+                if ($(this).val().match(regex)) {
+                    $(this).addClass("invalid");
+                    $(this).val($(this).val().replace(regex, ""));
+                } else {
+                    $(this).removeClass("invalid");
+                }
+                var inputValue = $(this).val();
+
+                if (inputValue.length == 2 && inputValue !== "09") {
+                    $(this).val("09" + inputValue);
+
+                }
+
+                if (inputValue.length > 9) {
+                    $(this).val(inputValue.slice(0, 9)); // Limita la longitud a 8 caracteres
                 }
             });
         });

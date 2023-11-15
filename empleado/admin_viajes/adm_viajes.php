@@ -44,7 +44,7 @@
         <a href="../../empleado.php" class="nav-link">Inicio</a>
         <a href="../admin_chofer/adm_choferes.php" class="nav-link">Choferes</a>
         <a href="../admin_coches/adm_coches.php" class="nav-link">Coches</a>
-        <a href="../admin_pagos/adm_pagos.php" class="nav-link">Pagos</a>
+        <a href="../admin_pagos/adm_pagos.php" class="nav-link">Cuentas</a>
         <a href="../admin_mantenimientos/adm_mantenimientos.php" class="nav-link">Mantenimiento</a>
     </nav>
 
@@ -54,7 +54,7 @@
         <a class="opc" href="../../empleado.php" class="nav-link">Inicio</a>
         <a class="opc" href="../admin_chofer/adm_choferes.php" class="nav-link">Choferes</a>
         <a class="opc" href="../admin_coches/adm_coches.php" class="nav-link">Coches</a>
-        <a class="opc" href="../admin_pagos/adm_pagos.php" class="nav-link">Pagos</a>
+        <a class="opc" href="../admin_pagos/adm_pagos.php" class="nav-link">Cuentas</a>
         <a class="opc" href="../admin_mantenimientos/adm_mantenimientos.php" class="nav-link">Mantenimiento</a>
         </div>
     </div>

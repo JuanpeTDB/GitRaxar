@@ -116,6 +116,7 @@ $(document).ready(function() {
 
 function wpp(MP) {
     var fecha = $("#fecha").val();
+    var telefono_cli = $("#telefono_cli").val();
     var hora = $("#hora_inicio").val();
     var origen = $("#origen").val();
     var destino = $("#destino").val();
@@ -130,7 +131,8 @@ function wpp(MP) {
         "*Cliente:* " + nombre_viajero + " " + apellido_viajero + "\n" +
         "*Forma de pago:* " + MP + "\n" +
         "*Importe:* " + importe + "\n" +
-        "*Comentario:* " + comentario;
+        "*Comentario:* " + comentario + "\n" +
+        "*Telefono:* " + telefono_cli;
     var tel = "+598" + $("#telefono").val();
     console.log(tel);
 

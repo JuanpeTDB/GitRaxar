@@ -126,9 +126,9 @@
             </tr>
             <tr>
                 <td>
-                    <h2>Comentario</h2>
+                    <h2>Telefono</h2>
                     <h3>
-                        <?php echo $comentario; ?>
+                        <?php echo $telefono; ?>
                     </h3>
                 </td>
                 <td>
@@ -150,6 +150,16 @@
                     <h3>
                         <?php echo $nombre; ?>
                         <?php echo $apellido; ?>
+                    </h3>
+                </td>
+            </tr>
+        </table>
+        <table style="width: 100%;">
+            <tr>
+                <td>
+                    <h2>Comentario</h2>
+                    <h3>
+                        <?php echo $comentario; ?>
                     </h3>
                 </td>
             </tr>
