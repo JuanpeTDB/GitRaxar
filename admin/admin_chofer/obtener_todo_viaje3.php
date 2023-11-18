@@ -4,7 +4,7 @@
     $fecha = $_POST["fecha"];
 	if(ISSET($_POST['res'])){
         $query = "SELECT * from mantenimiento m 
-        join requiere re on re.cod_mantenimiento = m.cod_mantenimiento
+        join requiere re on re.cod_visita = m.cod_visita
         join auto au on au.matricula = re.matricula
         join conduce co on co.matricula = re.matricula
         join chofer c on c.ci = co.ci

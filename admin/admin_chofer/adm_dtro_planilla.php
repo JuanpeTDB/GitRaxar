@@ -78,7 +78,7 @@ if ($result) {
 
 }
 $query2 = "SELECT * from requiere re
-        join mantenimiento m on re.cod_mantenimiento = m.cod_mantenimiento
+        join mantenimiento m on re.cod_visita = m.cod_visita
         join auto au on au.matricula = re.matricula
         join conduce co on co.matricula = re.matricula
         join chofer c on c.ci = co.ci

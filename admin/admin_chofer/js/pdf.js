@@ -108,12 +108,14 @@ $(document).ready(function() {
                         let total_mant = 0;
 
                         choferes.forEach(res => {
+                            console.log('costo_mant:', res.costo_mant); // add this line
                             ret2.push([
                                 res.tipo,
                                 res.descripcion,
                                 res.costo_mant
                             ]);
                             total_mant = parseFloat(total_mant) + parseFloat(res.costo_mant);
+                            console.log('total_mant:', total_mant); // add this line
                         });
 
                         let saldoChof = 0;
@@ -277,7 +279,11 @@ $(document).ready(function() {
                     $("#pdf").off("click");
                     $("#pdf").click(function() {
                         pdfMake.createPdf(docDefinition).download(nombrePDF);
-                        location.reload();
+                    });
+                    $("#pdf").click(function() {
+                        setTimeout(function() {
+                            location.reload();
+                        }, 3000); // 5000 milliseconds = 5 seconds
                     });
                 };
                 reader.readAsDataURL(blob);

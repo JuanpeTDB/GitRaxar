@@ -9,7 +9,7 @@
 		join forma_de_pago fp on fp.cod_pago = cc.cod_pago
 		join tiene t on t.cod_pago = fp.cod_pago
 		join viajes v on v.cod_viaje = t.cod_viaje
-		WHERE e.rut = $rut and cc.saldado = 0; ;
+		WHERE e.rut = $rut and cc.saldado = 0; 
 	";
 		$result = mysqli_query($conn, $query);
 		$json = array();

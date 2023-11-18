@@ -37,7 +37,7 @@
     join chofer c on c.ci = se.ci
     join conduce co on co.ci = c.ci
     join auto a on a.matricula = co.matricula
-    where v.cod_viaje = 46;
+    where v.cod_viaje = $cod_viaje;
         ";
 
     $result = mysqli_query($conn, $query);
